@@ -1,0 +1,632 @@
+[
+  {
+    "id": "mystery-021",
+    "title": "The Case of the Vanishing Victoria Sponge",
+    "scenario": "A freshly baked Victoria sponge, cooling on the kitchen worktop for the village fete, has disappeared without a trace. Only crumbs remain.",
+    "suspects": ["Grandad Ted", "The dog, Biscuit", "Cousin Sophie"],
+    "locations": ["The kitchen", "The conservatory", "The garden shed"],
+    "items": ["A trail of crumbs", "A jammy fingerprint", "A chewed cake doily"],
+    "clues": [
+      "Grandad Ted was napping in the conservatory all afternoon and has a clean cardigan.",
+      "There is a jammy fingerprint on the back door handle at about four feet high.",
+      "Biscuit the dog has been locked in the garden shed since lunchtime.",
+      "Cousin Sophie was seen heading to the shops but came back suspiciously quickly.",
+      "A second, smaller cake box from the bakery was found hidden in the recycling bin."
+    ],
+    "solution": {
+      "who": "Cousin Sophie",
+      "where": "The kitchen",
+      "evidence": "A jammy fingerprint"
+    },
+    "explanation": "Cousin Sophie snuck back from the shops, scoffed a generous portion of the sponge in the kitchen, then panicked and bought a replacement from the bakery. The jammy fingerprint on the back door handle at her height and the hidden bakery box gave her away!"
+  },
+  {
+    "id": "mystery-022",
+    "title": "The Phantom Remote Control Thief",
+    "scenario": "The TV remote has vanished from the living room just before the evening news. Everyone is pointing fingers.",
+    "suspects": ["Dad", "Teenage son Jake", "The cat, Whiskers"],
+    "locations": ["The living room sofa", "Jake's bedroom", "The downstairs loo"],
+    "items": ["A warm sofa cushion indent", "A half-eaten packet of crisps", "A suspicious paw print on the coffee table"],
+    "clues": [
+      "Dad claims he last saw the remote on the arm of the sofa before making tea.",
+      "Jake's bedroom door has been shut all evening and his music is blaring.",
+      "Whiskers has a habit of batting small objects under furniture.",
+      "There is a suspicious paw print on the coffee table near where the remote sat.",
+      "The remote is eventually found wedged behind the radiator in the living room, still warm."
+    ],
+    "solution": {
+      "who": "The cat, Whiskers",
+      "where": "The living room sofa",
+      "evidence": "A suspicious paw print on the coffee table"
+    },
+    "explanation": "Whiskers knocked the remote off the sofa arm while prowling the coffee table, and it slid behind the radiator. The paw print on the table was the giveaway. Classic cat behaviour - no remorse whatsoever."
+  },
+  {
+    "id": "mystery-023",
+    "title": "The Great Milk Bottle Mystery",
+    "scenario": "The last pint of milk has been used up overnight, and nobody is owning up. There will be no tea this morning unless the culprit confesses.",
+    "suspects": ["Mum", "Uncle Brian", "Teenager Chloe"],
+    "locations": ["The kitchen", "The spare bedroom", "The upstairs bathroom"],
+    "items": ["An empty milk bottle", "A cereal bowl with residue", "A hot chocolate mug ring"],
+    "clues": [
+      "Mum always has black coffee in the morning and doesn't use milk.",
+      "Uncle Brian is staying in the spare bedroom and was heard moving about at midnight.",
+      "Chloe insists she went straight to sleep after coming home at ten.",
+      "A hot chocolate mug with a milk ring was found rinsed but not washed in the upstairs bathroom.",
+      "Uncle Brian's spare bedroom has a distinct chocolatey smell this morning."
+    ],
+    "solution": {
+      "who": "Uncle Brian",
+      "where": "The spare bedroom",
+      "evidence": "A hot chocolate mug ring"
+    },
+    "explanation": "Uncle Brian made himself a hot chocolate at midnight using the last of the milk, drank it in the spare bedroom (hence the chocolatey smell), and tried to hide the evidence by rinsing the mug in the upstairs bathroom. The mug ring and the midnight noises sealed his fate!"
+  },
+  {
+    "id": "mystery-024",
+    "title": "The Mysterious Muddy Footprints",
+    "scenario": "Someone has tracked muddy footprints across the freshly mopped kitchen floor. Mum is furious.",
+    "suspects": ["Dad", "Daughter Lily", "The postman, Dave"],
+    "locations": ["The back garden", "The front porch", "The utility room"],
+    "items": ["Size 10 muddy boot prints", "A dropped parcel slip", "Muddy gardening gloves"],
+    "clues": [
+      "Dad wears size 10 boots and was supposedly fixing the fence in the back garden.",
+      "Lily was at her friend's house and only just got home through the front door.",
+      "Dave the postman delivered a parcel earlier and left it on the front porch.",
+      "The muddy footprints lead from the back door straight to the fridge and back again.",
+      "Dad's muddy gardening gloves were found stuffed behind the bread bin."
+    ],
+    "solution": {
+      "who": "Dad",
+      "where": "The back garden",
+      "evidence": "Muddy gardening gloves"
+    },
+    "explanation": "Dad tramped in from the back garden in his muddy boots to grab a quick snack from the fridge, then tried to hide his gardening gloves behind the bread bin. The size 10 prints from the back door and the hidden gloves were a dead giveaway!"
+  },
+  {
+    "id": "mystery-025",
+    "title": "The Disappearing Digestives",
+    "scenario": "A brand new packet of chocolate digestives has been opened and half-emptied overnight. This is a household emergency.",
+    "suspects": ["Son Tom", "Nan", "The dog, Rufus"],
+    "locations": ["The kitchen cupboard", "The living room", "Tom's bedroom"],
+    "items": ["Chocolate smudges on a games controller", "An open biscuit wrapper", "A crumb trail on the stairs"],
+    "clues": [
+      "Nan went to bed at half eight and takes her teeth out at night, making biscuit eating tricky.",
+      "Tom was supposedly asleep by ten but his bedroom light was seen on at midnight.",
+      "Rufus cannot open cupboard doors and was in his crate all night.",
+      "There are chocolate smudges on Tom's games controller in his bedroom.",
+      "A trail of crumbs leads from the kitchen cupboard up the stairs to Tom's room."
+    ],
+    "solution": {
+      "who": "Son Tom",
+      "where": "Tom's bedroom",
+      "evidence": "Chocolate smudges on a games controller"
+    },
+    "explanation": "Tom snuck downstairs at midnight, raided the biscuit cupboard, and took half the packet back to his room for a late-night gaming session. The crumb trail on the stairs and the chocolate smudges on his controller were impossible to deny!"
+  },
+  {
+    "id": "mystery-026",
+    "title": "The Case of the Crooked Christmas Tree",
+    "scenario": "The Christmas tree has been found leaning at a dangerous angle on Christmas morning, with two baubles smashed. Someone bumped into it during the night.",
+    "suspects": ["Dad after the pub", "The cat, Tinsel", "Auntie Margaret"],
+    "locations": ["The living room", "The hallway", "The dining room"],
+    "items": ["A knocked-over sherry glass", "Ginger fur on a low branch", "A scuffed skirting board"],
+    "clues": [
+      "Dad came home from the pub at closing time and insists he went straight to bed.",
+      "Tinsel the cat has been fascinated by the tree baubles all week.",
+      "Auntie Margaret was arranging presents under the tree before bed.",
+      "A knocked-over sherry glass was found near the base of the tree, and Auntie Margaret loves a sherry.",
+      "The scuffed skirting board near the tree matches Auntie Margaret's shoe height."
+    ],
+    "solution": {
+      "who": "Auntie Margaret",
+      "where": "The living room",
+      "evidence": "A knocked-over sherry glass"
+    },
+    "explanation": "Auntie Margaret, after one too many sherries, bumped into the tree while arranging presents. She knocked over her sherry glass and scuffed the skirting board with her shoe but crept off to bed hoping nobody would notice. The sherry glass by the tree gave her away!"
+  },
+  {
+    "id": "mystery-027",
+    "title": "The Mystery of the Moved Motor",
+    "scenario": "Dad's car, which was parked on the drive facing left, is now parked facing right. Someone has moved it overnight.",
+    "suspects": ["Teenage daughter Abi", "Neighbour Pete", "Mum"],
+    "locations": ["The driveway", "The garage", "The high street"],
+    "items": ["A readjusted driver's seat", "A petrol receipt from 11pm", "A different radio station on"],
+    "clues": [
+      "Abi recently passed her driving test and has been desperate to borrow the car.",
+      "Neighbour Pete needed to move his skip and might have needed access.",
+      "Mum says she was watching telly all evening and went to bed at half ten.",
+      "The driver's seat has been moved forward from Dad's position to a shorter person's setting.",
+      "A petrol receipt from the high street garage timestamped at 11pm was found in the cup holder."
+    ],
+    "solution": {
+      "who": "Teenage daughter Abi",
+      "where": "The high street",
+      "evidence": "A petrol receipt from 11pm"
+    },
+    "explanation": "Abi took the car for a sneaky joyride to the high street after everyone was in bed, even stopping for petrol. She moved the seat forward to drive and forgot to readjust it or remove the receipt. Busted!"
+  },
+  {
+    "id": "mystery-028",
+    "title": "The Suspicious Sandwich Situation",
+    "scenario": "Someone has eaten Dad's labelled lunch from the work fridge. The container was found rinsed and put back empty.",
+    "suspects": ["Karen from accounts", "Dave the IT bloke", "The new intern, Josh"],
+    "locations": ["The staff kitchen", "The meeting room", "Dave's desk"],
+    "items": ["A pickle stain on a keyboard", "An empty container with the label still on", "Crumbs in the meeting room bin"],
+    "clues": [
+      "Karen from accounts is a strict vegetarian and the sandwich had ham in it.",
+      "Dave was in the meeting room between 12 and 1 with the door closed.",
+      "Josh started this week and doesn't know about the label system yet.",
+      "There are crumbs and a pickle stain in the meeting room, and the bin has sandwich wrapper remnants.",
+      "Dave's computer shows he was browsing food delivery websites at 11:45am."
+    ],
+    "solution": {
+      "who": "Dave the IT bloke",
+      "where": "The meeting room",
+      "evidence": "A pickle stain on a keyboard"
+    },
+    "explanation": "Dave nicked Dad's sandwich from the fridge, ate it in the meeting room behind closed doors during lunch, and left crumbs and pickle evidence everywhere. His browsing history showed he was already thinking about food before the theft. The pickle stain on the meeting room keyboard sealed his fate!"
+  },
+  {
+    "id": "mystery-029",
+    "title": "The Great Garden Gnome Caper",
+    "scenario": "Gerald the garden gnome has been moved from the front garden to the roof of the garden shed overnight. Nobody is admitting anything.",
+    "suspects": ["Teenager Sam", "Neighbour's kids", "Grandad"],
+    "locations": ["The front garden", "The back garden shed", "The side passage"],
+    "items": ["A muddy ladder left out", "A blurry phone photo", "Size 8 trainer prints in the flower bed"],
+    "clues": [
+      "Sam was supposedly at his mate's house but got home unusually late.",
+      "The neighbour's kids are aged 5 and 7 and too small to reach the shed roof.",
+      "Grandad has a bad hip and cannot climb ladders.",
+      "A blurry photo of Gerald on the shed roof was posted to Sam's Instagram story at 11pm.",
+      "Size 8 trainer prints matching Sam's shoes were found in the flower bed by the shed."
+    ],
+    "solution": {
+      "who": "Teenager Sam",
+      "where": "The back garden shed",
+      "evidence": "A blurry phone photo"
+    },
+    "explanation": "Sam and his mates thought it would be hilarious to relocate Gerald to the shed roof. The Instagram story posted at 11pm and his trainer prints in the flower bed made it an open-and-shut case. Gerald was safely retrieved the next morning."
+  },
+  {
+    "id": "mystery-030",
+    "title": "The Thermostat Tamperer",
+    "scenario": "The central heating thermostat keeps being turned up to 25 degrees despite Dad insisting it stays at 19. Someone is secretly adjusting it.",
+    "suspects": ["Mum", "Nan who's visiting", "The cat, Chairman Meow"],
+    "locations": ["The hallway", "The living room", "Nan's guest room"],
+    "items": ["A fingerprint on the thermostat dial", "A pile of extra blankets unused", "A draught excluder moved from the door"],
+    "clues": [
+      "Mum says she's perfectly comfortable at 19 degrees and has a good cardigan.",
+      "Nan keeps complaining about the cold and asking if the heating is on.",
+      "Chairman Meow is too short to reach the thermostat on the wall.",
+      "A pile of extra blankets left in Nan's guest room remain completely untouched.",
+      "Nan's reading glasses were found on the hall table right next to the thermostat."
+    ],
+    "solution": {
+      "who": "Nan who's visiting",
+      "where": "The hallway",
+      "evidence": "A fingerprint on the thermostat dial"
+    },
+    "explanation": "Nan has been sneaking into the hallway to crank up the thermostat every time Dad turns it down. She left her reading glasses by the thermostat and didn't touch the extra blankets because she preferred the guerrilla heating approach. Classic Nan."
+  },
+  {
+    "id": "mystery-031",
+    "title": "The Last Teabag Treachery",
+    "scenario": "There were three teabags left in the box last night. This morning, the box is empty and no one has been to the shops. This is a crisis.",
+    "suspects": ["Dad", "Lodger Mike", "Daughter Emma"],
+    "locations": ["The kitchen", "The home office", "The utility room"],
+    "items": ["Three used teabags in the kitchen bin", "A mug with tea stains in the home office", "A suspiciously alert demeanour"],
+    "clues": [
+      "Dad only drinks coffee and hasn't touched tea in years.",
+      "Lodger Mike works night shifts and was up all night.",
+      "Emma doesn't usually drink tea but has an exam this morning.",
+      "Three used teabags are in the kitchen bin, suggesting one person made three cups.",
+      "A mug with fresh tea stains was found on Mike's desk in the home office alongside work papers."
+    ],
+    "solution": {
+      "who": "Lodger Mike",
+      "where": "The home office",
+      "evidence": "A mug with tea stains in the home office"
+    },
+    "explanation": "Mike, working through the night in the home office, fuelled his shift with three consecutive cups of tea, wiping out the entire supply. The tea-stained mug on his desk and the three spent teabags in the bin pointed squarely at him. He did offer to pop to the shop."
+  },
+  {
+    "id": "mystery-032",
+    "title": "The Bathroom Flood Fiasco",
+    "scenario": "The upstairs bathroom has flooded, soaking the ceiling below. Someone left the bath running and walked away.",
+    "suspects": ["Son Ollie", "Dad", "Au pair Katja"],
+    "locations": ["The upstairs bathroom", "The garden", "Ollie's bedroom"],
+    "items": ["A rubber duck on the landing", "Wet footprints to the garden door", "A running bath tap"],
+    "clues": [
+      "Ollie was playing with his rubber ducks at bathtime before the flood.",
+      "Dad was called outside to help the neighbour with a flat tyre.",
+      "Katja was supposed to be supervising Ollie's bath.",
+      "Wet footprints lead from the bathroom down the stairs to the garden door.",
+      "A rubber duck was found on the landing, dropped in someone's hurry to get downstairs."
+    ],
+    "solution": {
+      "who": "Dad",
+      "where": "The upstairs bathroom",
+      "evidence": "Wet footprints to the garden door"
+    },
+    "explanation": "Dad was running Ollie's bath when the neighbour called for help with the flat tyre. He dashed downstairs and out to the garden, leaving wet footprints and a dropped rubber duck on the landing, completely forgetting the taps were still on. Ollie and Katja were blameless!"
+  },
+  {
+    "id": "mystery-033",
+    "title": "The Case of the Commandeered Charger",
+    "scenario": "Mum's phone charger has vanished from the kitchen. Her phone is on 3% and she is not happy.",
+    "suspects": ["Son Max", "Daughter Izzy", "Dad"],
+    "locations": ["The kitchen", "Max's bedroom", "The living room"],
+    "items": ["An extra-long charging cable", "A phone plugged in under a pillow", "An innocent expression"],
+    "clues": [
+      "Max has his own charger and it's still plugged in by his bed.",
+      "Izzy's phone died last night and she was seen wandering around the house.",
+      "Dad has a charger at work but claims he didn't need one at home.",
+      "A phone is found plugged in and hidden under a sofa cushion in the living room with Izzy's phone case.",
+      "Izzy has a suspiciously full battery this morning despite claiming her phone died."
+    ],
+    "solution": {
+      "who": "Daughter Izzy",
+      "where": "The living room",
+      "evidence": "A phone plugged in under a pillow"
+    },
+    "explanation": "Izzy's phone died, so she swiped Mum's charger from the kitchen and hid her phone charging under a sofa cushion in the living room overnight. Her suspiciously full battery and the hidden phone gave away the whole scheme!"
+  },
+  {
+    "id": "mystery-034",
+    "title": "The Wheelie Bin Whodunit",
+    "scenario": "The wheelie bin has been put out on the wrong day again, and the neighbours are complaining. Someone dragged it to the kerb at 6am.",
+    "suspects": ["Dad", "Mum", "Teenage son Ryan"],
+    "locations": ["The front drive", "The kitchen", "Ryan's bedroom"],
+    "items": ["A dressing gown belt caught on the bin handle", "A wrong-day recycling leaflet on the fridge", "Muddy slippers by the front door"],
+    "clues": [
+      "Dad is colour-blind and mixes up the bin collection calendar colours.",
+      "Mum double-checked the calendar last night and said it was tomorrow.",
+      "Ryan has never voluntarily taken the bin out in his entire life.",
+      "A dressing gown belt matching Dad's tartan robe is caught on the wheelie bin handle.",
+      "Muddy slippers matching Dad's size are by the front door, still damp from the morning dew."
+    ],
+    "solution": {
+      "who": "Dad",
+      "where": "The front drive",
+      "evidence": "A dressing gown belt caught on the bin handle"
+    },
+    "explanation": "Dad, being colour-blind, misread the bin collection calendar and enthusiastically dragged the bin out in his dressing gown and slippers at 6am on the wrong day. His dressing gown belt snagged on the handle and his muddy slippers gave him away. Bless him, he was trying to be helpful."
+  },
+  {
+    "id": "mystery-035",
+    "title": "The Suspicious Stain on the Sofa",
+    "scenario": "A large red stain has appeared on the cream sofa. Nobody will confess, and Mum has gone very quiet, which is scarier than shouting.",
+    "suspects": ["Daughter Poppy", "The dog, Crumble", "Visiting Uncle Steve"],
+    "locations": ["The living room", "The kitchen", "The downstairs loo"],
+    "items": ["A Ribena carton with the straw out", "A red-stained cushion flipped over", "A damp cloth hidden behind the sofa"],
+    "clues": [
+      "Poppy was drinking Ribena earlier but insists she finished it in the kitchen.",
+      "Crumble the dog has a clean mouth and no red stains on his fur.",
+      "Uncle Steve was watching the football in the living room and gets very animated during goals.",
+      "A cushion near the stain has been suspiciously flipped over to hide a second splash.",
+      "A damp cloth with red stains was found hidden behind the sofa, suggesting someone tried a hasty cleanup."
+    ],
+    "solution": {
+      "who": "Visiting Uncle Steve",
+      "where": "The living room",
+      "evidence": "A damp cloth hidden behind the sofa"
+    },
+    "explanation": "Uncle Steve knocked his Ribena over during an exciting goal, panicked, flipped the cushion to hide the second splash, and attempted a cleanup with a cloth that he stashed behind the sofa. The hidden cloth and flipped cushion revealed his guilt. He offered to pay for cleaning."
+  },
+  {
+    "id": "mystery-036",
+    "title": "The Affair of the Eaten Easter Egg",
+    "scenario": "Someone has broken into the Easter egg stash two weeks before Easter Sunday. A large chocolate egg meant for Nan is now just foil and an empty box.",
+    "suspects": ["Son Freddie", "Daughter Rosie", "Dad"],
+    "locations": ["The top kitchen cupboard", "Freddie's room", "The garage"],
+    "items": ["Chocolate on a shirt cuff", "A kitchen step-stool left out", "Foil hidden in a coat pocket"],
+    "clues": [
+      "Freddie is 8 and cannot reach the top cupboard even on tiptoes.",
+      "Rosie has a nut allergy and the egg contained hazelnuts.",
+      "Dad has a well-known weakness for chocolate and knows where everything is hidden.",
+      "The kitchen step-stool has been left out, pulled up to the top cupboard.",
+      "Chocolate was found on Dad's shirt cuff, and foil was discovered stuffed in his coat pocket in the garage."
+    ],
+    "solution": {
+      "who": "Dad",
+      "where": "The top kitchen cupboard",
+      "evidence": "Chocolate on a shirt cuff"
+    },
+    "explanation": "Dad used the step-stool to reach the top cupboard, scoffed Nan's Easter egg, and tried to hide the evidence by stuffing the foil in his coat pocket in the garage. The chocolate on his shirt cuff was the final nail in the coffin. A replacement egg was procured under duress."
+  },
+  {
+    "id": "mystery-037",
+    "title": "The Wi-Fi Password Panic",
+    "scenario": "Someone has changed the Wi-Fi password, and now nobody can get online. The household is in uproar.",
+    "suspects": ["Teenager Callum", "Mum", "Younger sister Evie"],
+    "locations": ["The study", "Callum's bedroom", "The living room"],
+    "items": ["A router settings page left open on the study PC", "A scribbled note with a new password", "A parental controls guide bookmarked"],
+    "clues": [
+      "Callum has been gaming until 3am and someone threatened consequences.",
+      "Evie is 9 and doesn't know what a router is.",
+      "Mum was complaining about everyone's screen time at dinner.",
+      "The router settings page is still open on the study PC, and the browser history shows it was accessed at 10pm.",
+      "A scribbled note with the new password was found in Mum's bedside drawer."
+    ],
+    "solution": {
+      "who": "Mum",
+      "where": "The study",
+      "evidence": "A scribbled note with a new password"
+    },
+    "explanation": "Mum, fed up with excessive screen time and Callum's late-night gaming, changed the Wi-Fi password via the study PC at 10pm and wrote the new one down for safekeeping in her bedside drawer. The nuclear option. Fair play, Mum."
+  },
+  {
+    "id": "mystery-038",
+    "title": "The Case of the Missing Washing",
+    "scenario": "A load of washing hung out on the line has vanished. The pegs are still there but the clothes are gone.",
+    "suspects": ["Neighbour Linda", "The wind", "Son Ben"],
+    "locations": ["The back garden", "The neighbour's garden", "Ben's bedroom floor"],
+    "items": ["A familiar shirt on next door's line", "Empty pegs still on the line", "Grass stains on retrieved items"],
+    "clues": [
+      "It was a perfectly calm day with no wind whatsoever.",
+      "Linda has been known to accidentally grab the wrong washing before.",
+      "Ben needed clean PE kit urgently for tomorrow.",
+      "A shirt matching Dad's is now hanging on Linda's washing line next door.",
+      "Linda's reading glasses were found by our washing line, suggesting she was nearby."
+    ],
+    "solution": {
+      "who": "Neighbour Linda",
+      "where": "The back garden",
+      "evidence": "A familiar shirt on next door's line"
+    },
+    "explanation": "Linda came round the back to return a casserole dish, saw what she thought was her own washing on the line, and took it all. She left her reading glasses behind, which is why she couldn't tell the clothes apart. Dad's shirt on her line was the proof. An honest mix-up and she was very apologetic."
+  },
+  {
+    "id": "mystery-039",
+    "title": "The Mysterious Mince Pie Muncher",
+    "scenario": "Six mince pies were left on a plate for Father Christmas on Christmas Eve. By morning, all six are gone - but only one was bitten into. The rest vanished whole.",
+    "suspects": ["Dad", "The dog, Sprout", "Big sister Holly"],
+    "locations": ["The living room fireplace", "The kitchen", "Holly's bedroom"],
+    "items": ["A half-bitten mince pie on the hearth", "Pastry crumbs in a coat pocket", "An empty plate licked clean"],
+    "clues": [
+      "Dad ate one mince pie and took a bite of another to make it look like Santa visited.",
+      "Sprout has been known to counter-surf and can reach low tables.",
+      "Holly was wrapping last-minute presents in her bedroom until midnight.",
+      "The plate has been licked completely clean, with no crumb or trace of mincemeat remaining.",
+      "Sprout's breath smells strongly of mincemeat and dried fruit this morning."
+    ],
+    "solution": {
+      "who": "The dog, Sprout",
+      "where": "The living room fireplace",
+      "evidence": "An empty plate licked clean"
+    },
+    "explanation": "Dad ate one pie and bit into another for authenticity, then went to bed. Sprout then helped himself to the remaining five pies left on the low table by the fireplace and licked the plate spotless. His mincemeat breath was the undeniable evidence. The vet was called as a precaution."
+  },
+  {
+    "id": "mystery-040",
+    "title": "The Shed Door Scandal",
+    "scenario": "The garden shed was found wide open in the morning with the lawn mower pulled halfway out. Rain got in overnight and soaked everything.",
+    "suspects": ["Dad", "Son Jamie", "Neighbour Derek"],
+    "locations": ["The garden shed", "The back lawn", "Derek's garden"],
+    "items": ["A half-mown lawn stripe", "An abandoned cup of tea by the shed", "Borrowed hedge trimmers returned"],
+    "clues": [
+      "There is exactly one fresh mowing stripe on the back lawn, then it stops abruptly.",
+      "Dad was called inside for an urgent phone call yesterday evening.",
+      "Jamie hasn't mown a lawn voluntarily ever in his life.",
+      "An abandoned cup of tea, now full of rainwater, was found on the upturned bucket by the shed door.",
+      "Derek borrowed the hedge trimmers last week and they've been returned to just inside the shed door."
+    ],
+    "solution": {
+      "who": "Dad",
+      "where": "The garden shed",
+      "evidence": "An abandoned cup of tea by the shed"
+    },
+    "explanation": "Dad started mowing the lawn after tea, got one stripe done, then was called inside for an urgent phone call. He left his cup of tea by the shed, the mower halfway out, and the door wide open, and completely forgot to go back out. The abandoned tea and single mown stripe told the whole story."
+  },
+  {
+    "id": "mystery-041",
+    "title": "The Burnt Toast Cover-Up",
+    "scenario": "The kitchen smells of burning, the toaster has been unplugged, and a window has been flung open. But there is no toast in sight.",
+    "suspects": ["Daughter Maisie", "Grandad Ron", "The au pair, Lucia"],
+    "locations": ["The kitchen", "The back garden", "The downstairs bin"],
+    "items": ["Two charcoal slices in the garden bush", "A wiped-down toaster", "An open jar of Marmite"],
+    "clues": [
+      "Grandad Ron doesn't eat toast and prefers porridge every morning.",
+      "Lucia usually has fruit and yoghurt for breakfast.",
+      "Maisie is obsessed with Marmite on toast and has it every single day.",
+      "Two completely charcoaled slices of bread were found thrown into the garden bush outside the kitchen window.",
+      "The toaster has been suspiciously wiped clean and the Marmite jar is open on the counter."
+    ],
+    "solution": {
+      "who": "Daughter Maisie",
+      "where": "The kitchen",
+      "evidence": "Two charcoal slices in the garden bush"
+    },
+    "explanation": "Maisie left her Marmite toast in too long, burnt it to charcoal, panicked, threw the evidence out the window into the bush, unplugged the toaster, opened the window to air out the smell, and wiped down the toaster. She forgot to close the Marmite jar and hide the charcoal slices properly!"
+  },
+  {
+    "id": "mystery-042",
+    "title": "The Parking Ticket Puzzle",
+    "scenario": "The car has a parking ticket on the windscreen, but nobody admits to parking on the high street yesterday.",
+    "suspects": ["Mum", "Eldest son Dan", "Auntie Val"],
+    "locations": ["The high street", "The supermarket car park", "Home driveway"],
+    "items": ["A Boots receipt from yesterday", "A parking ticket timestamped 2:15pm", "A suspiciously clean car"],
+    "clues": [
+      "Dan was at work all day and caught the bus in.",
+      "Auntie Val doesn't drive and gets lifts everywhere.",
+      "Mum said she only went to the supermarket, which has free parking.",
+      "A Boots receipt from the high street timestamped at 2:10pm was found in the glovebox.",
+      "The parking ticket was issued at 2:15pm on the high street, five minutes after the Boots receipt."
+    ],
+    "solution": {
+      "who": "Mum",
+      "where": "The high street",
+      "evidence": "A Boots receipt from yesterday"
+    },
+    "explanation": "Mum made a detour to Boots on the high street before the supermarket, parked without paying, and got ticketed at 2:15pm. The Boots receipt timestamped five minutes before the ticket proved she was there. She tried to claim she only went to the supermarket, but the glovebox betrayed her!"
+  },
+  {
+    "id": "mystery-043",
+    "title": "The Tumble Dryer Tie-Dye Disaster",
+    "scenario": "The white washing has come out of the machine completely pink. Someone put a red sock in with the whites.",
+    "suspects": ["Dad", "Son Archie", "Daughter Freya"],
+    "locations": ["The utility room", "Archie's PE bag", "The laundry basket"],
+    "items": ["A single red football sock", "A pink-tinged school shirt", "A hastily written apology note"],
+    "clues": [
+      "Dad claims he sorted the washing carefully and didn't see any reds.",
+      "Archie had football practice yesterday and dumped his kit in the laundry basket.",
+      "Freya only wears black and grey and has no red clothing.",
+      "A single bright red football sock matching Archie's team colours was found in the drum.",
+      "Archie's PE bag in the utility room is missing one red sock."
+    ],
+    "solution": {
+      "who": "Son Archie",
+      "where": "The utility room",
+      "evidence": "A single red football sock"
+    },
+    "explanation": "Archie dumped his football kit in the laundry basket without checking, and one red sock ended up in with the whites. Dad loaded the machine without spotting it because it was wrapped inside a towel. Archie's PE bag missing one red sock confirmed the culprit. The school shirts are now a lovely shade of pink."
+  },
+  {
+    "id": "mystery-044",
+    "title": "The Suspicious Sunday Roast Sabotage",
+    "scenario": "The Yorkshire puddings have come out completely flat for Sunday lunch. Someone has interfered with the oven temperature mid-cook.",
+    "suspects": ["Dad", "Daughter Zara", "Visiting cousin Alfie"],
+    "locations": ["The kitchen", "The dining room", "The garden"],
+    "items": ["An oven dial turned down to 120C", "A half-baked pizza on a tray", "A handwritten recipe splattered with grease"],
+    "clues": [
+      "The oven was set to 220C for the Yorkshires but is now showing 120C.",
+      "Dad was setting the table in the dining room and doesn't know how to change the oven.",
+      "Zara is eleven and follows Mum's recipe to the letter.",
+      "A half-baked frozen pizza was found hidden at the back of the oven on a separate tray.",
+      "Cousin Alfie was in the kitchen 'getting a glass of water' twenty minutes before lunch."
+    ],
+    "solution": {
+      "who": "Visiting cousin Alfie",
+      "where": "The kitchen",
+      "evidence": "A half-baked pizza on a tray"
+    },
+    "explanation": "Alfie was hungry and tried to sneak a frozen pizza into the oven alongside the Yorkshires, turning the temperature down to 120C because the pizza packet said so. He forgot to turn it back up, resulting in flat Yorkshires and a half-baked pizza. He was not invited to serve himself first."
+  },
+  {
+    "id": "mystery-045",
+    "title": "The Case of the Garden Hose Soaking",
+    "scenario": "Someone left the garden hose running overnight, creating a massive puddle and a hefty water bill. The tap is still on.",
+    "suspects": ["Son Ethan", "Dad", "Daughter Lola"],
+    "locations": ["The front garden", "The back garden tap", "The paddling pool area"],
+    "items": ["A half-filled paddling pool", "A sprinkler still attached to the hose", "Wet football boots by the back door"],
+    "clues": [
+      "Ethan was washing his football boots with the hose after practice last night.",
+      "Dad watered the flower beds at 6pm and says he turned the tap off.",
+      "Lola set up the paddling pool but it's only half full, suggesting the hose was moved.",
+      "Wet football boots are by the back door, and the hose nozzle is near them, not near the paddling pool.",
+      "The sprinkler is still attached to the hose end but was left face-down in the grass."
+    ],
+    "solution": {
+      "who": "Son Ethan",
+      "where": "The back garden tap",
+      "evidence": "Wet football boots by the back door"
+    },
+    "explanation": "Ethan borrowed the hose from Lola's paddling pool to wash his football boots, left it running by the back door, then got called inside for dinner and forgot to turn the tap off. The hose nozzle by his boots and the half-filled pool proved he was the last to use it."
+  },
+  {
+    "id": "mystery-046",
+    "title": "The Library Book Overdue Outrage",
+    "scenario": "A library book is three months overdue and the fine is now astronomical. It has been found under a sofa cushion. Nobody remembers borrowing it.",
+    "suspects": ["Mum", "Daughter Grace", "Grandma Dot"],
+    "locations": ["The living room sofa", "The bookshelf", "The library"],
+    "items": ["A library card receipt", "A bookmark from a tea shop", "A pair of reading glasses on the book"],
+    "clues": [
+      "The book is a romance novel set in Cornwall, which is Grandma Dot's favourite genre.",
+      "Grace only reads fantasy novels and graphic novels.",
+      "Mum prefers audiobooks and rarely borrows physical books.",
+      "A bookmark from the Cornish tea shop Grandma Dot visited in September is inside the book at page 47.",
+      "Grandma Dot's spare reading glasses were found resting on top of the book under the cushion."
+    ],
+    "solution": {
+      "who": "Grandma Dot",
+      "where": "The living room sofa",
+      "evidence": "A bookmark from a tea shop"
+    },
+    "explanation": "Grandma Dot borrowed the Cornish romance novel, read it on the sofa with her spare glasses, fell asleep at page 47, and the book slipped down the cushion. She forgot all about it, and the Cornish tea shop bookmark and her glasses proved it was her cosy reading session that caused the fine."
+  },
+  {
+    "id": "mystery-047",
+    "title": "The Freezer Door Fiasco",
+    "scenario": "The freezer door was left slightly ajar overnight. Everything has defrosted and the kitchen floor is a puddle. Someone was the last one in the freezer.",
+    "suspects": ["Dad", "Son Lucas", "Daughter Amy"],
+    "locations": ["The kitchen", "The dining room", "Lucas's bedroom"],
+    "items": ["A box of fish fingers left on the counter", "A half-eaten ice lolly stick in the bin", "A defrosted bag of peas on the floor"],
+    "clues": [
+      "Dad cooked fish fingers for tea and says he put the box back properly.",
+      "Amy doesn't eat anything from the freezer and had a salad.",
+      "Lucas was seen heading to the kitchen at 9pm for a 'glass of water'.",
+      "A half-eaten ice lolly stick was found in the kitchen bin, timestamped by the still-sticky wrapper.",
+      "The freezer drawer where the ice lollies are kept is the one that isn't closing properly."
+    ],
+    "solution": {
+      "who": "Son Lucas",
+      "where": "The kitchen",
+      "evidence": "A half-eaten ice lolly stick in the bin"
+    },
+    "explanation": "Lucas snuck downstairs for an ice lolly at 9pm, pulled out the lolly drawer, and didn't push it back in fully, preventing the freezer door from closing. The lolly stick in the bin and the specific drawer left open pointed squarely at his midnight snacking habits."
+  },
+  {
+    "id": "mystery-048",
+    "title": "The Mysterious Midnight Music",
+    "scenario": "The neighbours have complained about loud music at 2am. Everyone in the house claims they were asleep.",
+    "suspects": ["Teenager Jess", "Dad", "The smart speaker, Alexa"],
+    "locations": ["Jess's bedroom", "The living room", "The kitchen"],
+    "items": ["A phone with Spotify open", "A smart speaker flashing blue", "Earplugs on Dad's bedside table"],
+    "clues": [
+      "Dad wears earplugs every night and genuinely heard nothing.",
+      "Jess's phone shows Spotify was playing a playlist that ended at 2:30am.",
+      "The smart speaker in the kitchen is still flashing blue, suggesting recent activity.",
+      "Jess's phone was connected via Bluetooth to the living room speaker, not her bedroom one.",
+      "The living room speaker volume was found set to maximum."
+    ],
+    "solution": {
+      "who": "Teenager Jess",
+      "where": "The living room",
+      "evidence": "A phone with Spotify open"
+    },
+    "explanation": "Jess fell asleep listening to Spotify in bed, but her phone was still connected to the living room Bluetooth speaker from earlier, which was set to full volume. The music blasted through the living room until 2:30am while she slept peacefully upstairs. An accidental but deeply annoying crime."
+  },
+  {
+    "id": "mystery-049",
+    "title": "The Case of the Clogged Sink",
+    "scenario": "The kitchen sink is completely blocked. A plumber has pulled out a mysterious blockage, and someone needs to explain how it got there.",
+    "suspects": ["Son Oscar", "Daughter Millie", "Grandad Ken"],
+    "locations": ["The kitchen sink", "The downstairs loo", "The back garden"],
+    "items": ["A clump of rice and pasta", "A toy soldier covered in grease", "An 'I'm sorry' card from Millie"],
+    "clues": [
+      "Grandad Ken always scrapes his plate into the food bin properly.",
+      "Oscar was washing up after dinner last night and hates doing it.",
+      "Millie was playing soldiers in the kitchen earlier and is now acting very quiet.",
+      "The plumber found a toy soldier jammed in the U-bend, surrounded by rice.",
+      "Millie left a handmade 'I'm sorry' card on Mum's pillow this morning."
+    ],
+    "solution": {
+      "who": "Daughter Millie",
+      "where": "The kitchen sink",
+      "evidence": "A toy soldier covered in grease"
+    },
+    "explanation": "Millie was playing soldiers near the kitchen sink and accidentally dropped one in. It got washed down with leftover rice when Oscar did the washing up, and the combination blocked the U-bend. Millie's pre-emptive apology card confirmed she knew exactly what had happened."
+  },
+  {
+    "id": "mystery-050",
+    "title": "The Back Door Bandit",
+    "scenario": "The back door was found wide open at 7am, letting in a fox who raided the kitchen bin. Someone forgot to lock up last night.",
+    "suspects": ["Dad", "Mum", "Son Will"],
+    "locations": ["The back door", "The kitchen", "The garden patio"],
+    "items": ["A cigarette stub on the patio", "An unlocked back door", "Fox paw prints through spilled bin juice"],
+    "clues": [
+      "Dad went to bed at 10pm after locking the front door but says the back door isn't his job.",
+      "Mum was last downstairs at 11pm making a camomile tea.",
+      "Will claims he was in bed all night but smells faintly of smoke this morning.",
+      "A cigarette stub was found on the patio, and nobody in the house officially smokes.",
+      "The back door was unlocked but not forced, suggesting someone opened it from inside."
+    ],
+    "solution": {
+      "who": "Son Will",
+      "where": "The garden patio",
+      "evidence": "A cigarette stub on the patio"
+    },
+    "explanation": "Will snuck outside for a secret cigarette on the patio, then forgot to lock the back door when he came back in. The fox took advantage of the open door and ransacked the bin. The cigarette stub on the patio and Will's smoky smell confirmed his nocturnal excursion and his new habit."
+  }
+]

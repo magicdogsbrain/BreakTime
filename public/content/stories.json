@@ -1,0 +1,602 @@
+[
+  {
+    "id": "story-001",
+    "title": "Retired Postman Delivers Christmas Cards to Every Home in His Village",
+    "description": "After 35 years of service, retired postman Derek Wilkins hand-delivered personalised Christmas cards to all 400 homes in his Dorset village. Residents were so touched they clubbed together to buy him a holiday to the Lake District.",
+    "category": "kindness"
+  },
+  {
+    "id": "story-002",
+    "title": "Lost Dog Reunited With Family After 600-Mile Journey",
+    "description": "A border collie named Biscuit was found trotting along the A1 near Newcastle, over 600 miles from where she went missing in Cornwall. Microchip records confirmed her identity, and the tearful reunion was captured on video by a local news crew.",
+    "category": "animals"
+  },
+  {
+    "id": "story-003",
+    "title": "Eight-Year-Old Raises Thousands for Local Food Bank by Running a Marathon",
+    "description": "Lily Chen from Birmingham completed a full marathon over the course of a month, running one mile each day in her local park. Her JustGiving page raised over twelve thousand pounds for the city's largest food bank.",
+    "category": "achievement"
+  },
+  {
+    "id": "story-004",
+    "title": "New Coral Reef Discovered Thriving Off the Coast of Tahiti",
+    "description": "Marine scientists have discovered a pristine coral reef stretching nearly two miles at unusual depth near Tahiti. The reef appears untouched by bleaching and is home to giant rose-shaped corals, some over two metres wide.",
+    "category": "nature"
+  },
+  {
+    "id": "story-005",
+    "title": "Community Builds Wheelchair-Accessible Treehouse for Local Boy",
+    "description": "Neighbours in a small Welsh town came together over three weekends to build a fully accessible treehouse for ten-year-old Rhys, who uses a wheelchair. The treehouse features a ramp, sensory lights, and a view of the Brecon Beacons.",
+    "category": "community"
+  },
+  {
+    "id": "story-006",
+    "title": "Scientists Develop Plastic-Eating Enzyme That Works in Hours",
+    "description": "Researchers at a university in Texas have engineered an enzyme that can break down common plastics in as little as 24 hours. The breakthrough could transform recycling and significantly reduce landfill waste worldwide.",
+    "category": "science"
+  },
+  {
+    "id": "story-007",
+    "title": "Bus Driver Learns Sign Language to Chat With Deaf Passenger",
+    "description": "A Glasgow bus driver spent six months teaching himself British Sign Language after noticing a regular passenger was deaf. The passenger, who rides the number 38 every morning, said it was the first time a stranger had made the effort.",
+    "category": "kindness"
+  },
+  {
+    "id": "story-008",
+    "title": "Wild Beaver Population Returns to London for First Time in 400 Years",
+    "description": "Conservationists have confirmed that beavers are now breeding in the wild in west London, marking their return to the capital after four centuries. The animals have already begun building dams that are helping to reduce local flood risk.",
+    "category": "nature"
+  },
+  {
+    "id": "story-009",
+    "title": "Strangers Form Human Chain to Rescue Dog From Frozen Lake",
+    "description": "A group of park-goers in Minnesota formed a human chain across a frozen lake to rescue a golden retriever that had fallen through thin ice. The dog, named Waffles, was dried off with donated scarves and reunited with its grateful owner.",
+    "category": "animals"
+  },
+  {
+    "id": "story-010",
+    "title": "94-Year-Old Grandmother Graduates With Master's Degree",
+    "description": "Nola Ochs from Kansas has become one of the oldest people to receive a master's degree, completing her studies in liberal arts. She told reporters her secret was simply never losing her curiosity.",
+    "category": "achievement"
+  },
+  {
+    "id": "story-011",
+    "title": "Town Rallies to Save 150-Year-Old Bakery From Closure",
+    "description": "When a beloved bakery in Ludlow, Shropshire, announced it would close due to rising costs, the community raised enough money in 48 hours to keep it open. The bakery has been supplying the town with sourdough since 1873.",
+    "category": "community"
+  },
+  {
+    "id": "story-012",
+    "title": "Firefighter Adopts Kitten He Rescued From Burning Building",
+    "description": "A firefighter in Sydney adopted a tiny ginger kitten he pulled from a house fire, naming her Ember. She now rides along to the station and has become an unofficial mascot for the crew.",
+    "category": "heartwarming"
+  },
+  {
+    "id": "story-013",
+    "title": "New Gene Therapy Restores Hearing in Deaf Children",
+    "description": "A pioneering gene therapy trial has successfully restored hearing in children born with a rare genetic form of deafness. Several participants heard their parents' voices for the first time, with results described as remarkable by the research team.",
+    "category": "science"
+  },
+  {
+    "id": "story-014",
+    "title": "Couple Finds Wedding Ring Lost in Ocean 37 Years Ago",
+    "description": "A metal detectorist in Bournemouth found a gold wedding band buried in the sand and traced its engraving back to a couple who lost it while swimming in 1987. The ring was returned just in time for their 40th anniversary.",
+    "category": "heartwarming"
+  },
+  {
+    "id": "story-015",
+    "title": "Schoolchildren Plant 10,000 Trees in Record-Breaking Weekend",
+    "description": "Over 500 primary school children in the Scottish Highlands planted ten thousand native trees across a single weekend as part of a national reforestation project. The saplings included Scots pine, birch, and rowan.",
+    "category": "nature"
+  },
+  {
+    "id": "story-016",
+    "title": "Barber Offers Free Haircuts to Homeless People Every Sunday",
+    "description": "A barber in Manchester has been opening his shop every Sunday morning to offer free haircuts, hot drinks, and a chat to anyone sleeping rough. He says it's about giving people their dignity back.",
+    "category": "kindness"
+  },
+  {
+    "id": "story-017",
+    "title": "Rescue Donkey Becomes Therapy Animal at Children's Hospital",
+    "description": "A rescue donkey named Pippin has become a regular visitor at a children's hospital in Devon, bringing smiles to young patients during weekly therapy sessions. Staff say the children's faces light up the moment she walks through the door.",
+    "category": "animals"
+  },
+  {
+    "id": "story-018",
+    "title": "Teenager Invents Low-Cost Water Filter for Developing Countries",
+    "description": "A seventeen-year-old student from Nairobi has designed a solar-powered water filtration device that can be built for under ten dollars. The invention won a global science prize and is now being trialled in rural communities across East Africa.",
+    "category": "achievement"
+  },
+  {
+    "id": "story-019",
+    "title": "Neighbours Secretly Renovate Elderly Woman's Garden Overnight",
+    "description": "Residents of a street in Bristol discovered that their 89-year-old neighbour could no longer tend her beloved garden. They organised a secret overnight makeover, and she woke up to a freshly planted, fully accessible garden the next morning.",
+    "category": "community"
+  },
+  {
+    "id": "story-020",
+    "title": "Baby Panda Born at Edinburgh Zoo in Historic First",
+    "description": "Edinburgh Zoo has celebrated the birth of a giant panda cub, the first ever born in the United Kingdom. The tiny cub, weighing just 150 grams, is said to be healthy and feeding well.",
+    "category": "animals"
+  },
+  {
+    "id": "story-021",
+    "title": "Train Passengers Sing Happy Birthday to Surprised Commuter",
+    "description": "A packed morning commuter train from Brighton to London erupted into a spontaneous rendition of Happy Birthday after a woman's phone alarm went off with a birthday reminder. She said it was the best start to a birthday she'd ever had.",
+    "category": "heartwarming"
+  },
+  {
+    "id": "story-022",
+    "title": "New Vaccine Shows 97% Effectiveness Against Malaria",
+    "description": "Clinical trials for a new malaria vaccine have shown an unprecedented 97% efficacy rate in young children. The World Health Organisation has fast-tracked approval, and distribution to affected regions is expected within the year.",
+    "category": "science"
+  },
+  {
+    "id": "story-023",
+    "title": "Lollipop Lady Retires After 40 Years and Gets Guard of Honour",
+    "description": "Pat Grover, who spent four decades helping children cross the road outside a primary school in Somerset, was given a guard of honour by hundreds of former pupils on her last day. Some of them now bring their own children to the same school.",
+    "category": "community"
+  },
+  {
+    "id": "story-024",
+    "title": "Dog Learns to Use Buttons to Tell Owner When He's Happy",
+    "description": "A Labrador in California has learned to press speech buttons to communicate with his owner, regularly pressing the sequence for 'outside happy walk.' His owner says he also presses 'love you' before bed every night.",
+    "category": "animals"
+  },
+  {
+    "id": "story-025",
+    "title": "Mystery Donor Pays Off School Dinner Debts for Entire County",
+    "description": "An anonymous benefactor paid off all outstanding school meal debts across an entire county in Wales, ensuring no child started the new term with a balance owed. The donation covered over three thousand families.",
+    "category": "kindness"
+  },
+  {
+    "id": "story-026",
+    "title": "High Street Bookshop Saved by 5,000 Online Orders in One Week",
+    "description": "A struggling independent bookshop in York went viral on social media after a customer posted about its potential closure. Within a week, over five thousand online orders flooded in from around the world, securing its future.",
+    "category": "community"
+  },
+  {
+    "id": "story-027",
+    "title": "Ocean Cleanup Project Removes One Million Kilograms of Plastic",
+    "description": "The Ocean Cleanup project has reached a major milestone, removing over one million kilograms of plastic from the Great Pacific Garbage Patch. The team says their latest technology is collecting waste at ten times the original rate.",
+    "category": "nature"
+  },
+  {
+    "id": "story-028",
+    "title": "Blind Runner Completes London Marathon With Guide Dog",
+    "description": "Thomas Panek became the first blind person to complete the London Marathon guided entirely by his Labrador, Gus. The pair crossed the finish line to a standing ovation from thousands of spectators.",
+    "category": "achievement"
+  },
+  {
+    "id": "story-029",
+    "title": "Café Owner Leaves Secret Notes of Encouragement in Takeaway Bags",
+    "description": "A café owner in Edinburgh has been tucking handwritten notes of encouragement into every takeaway order for the past two years. Customers have started sharing them online, with many saying the notes arrived on days they needed them most.",
+    "category": "kindness"
+  },
+  {
+    "id": "story-030",
+    "title": "Wild Puffin Numbers Double on Scottish Islands",
+    "description": "Annual surveys on the Shetland Islands have recorded a doubling of wild puffin numbers compared to five years ago. Conservationists attribute the recovery to improved sand eel populations and reduced disturbance from boats.",
+    "category": "nature"
+  },
+  {
+    "id": "story-031",
+    "title": "Toddler's Drawing Chosen as Design for Town's New Mural",
+    "description": "A three-year-old's crayon drawing of a rainbow and her cat was selected from hundreds of entries to become a giant mural in her hometown of Aberystwyth. Local artists scaled the drawing up to cover an entire building.",
+    "category": "heartwarming"
+  },
+  {
+    "id": "story-032",
+    "title": "Scientists Successfully Grow New Kidney Tissue From Stem Cells",
+    "description": "A research team in Japan has successfully grown functional kidney tissue from human stem cells for the first time. The breakthrough could eventually reduce the need for organ donors and transform treatment of kidney disease.",
+    "category": "science"
+  },
+  {
+    "id": "story-033",
+    "title": "Grandad Walks Daughter Down the Aisle Despite Being Told He'd Never Walk Again",
+    "description": "After a devastating spinal injury, 68-year-old Frank Bowman was told he would never walk again. Two years of determination and physiotherapy later, he walked his daughter down the aisle without any assistance.",
+    "category": "heartwarming"
+  },
+  {
+    "id": "story-034",
+    "title": "Penguin Swims 5,000 Miles to Visit Man Who Saved Him Every Year",
+    "description": "A Magellanic penguin in Brazil swims thousands of miles each year to visit the retired fisherman who rescued him from an oil slick. The penguin spends several months with his rescuer before heading back out to sea.",
+    "category": "animals"
+  },
+  {
+    "id": "story-035",
+    "title": "Village Pub Becomes Free Coworking Space for Remote Workers",
+    "description": "A quiet village pub in the Cotswolds has started offering free Wi-Fi, power sockets, and unlimited tea to remote workers during weekday mornings. The landlord says it has brought life back to the village and boosted lunch trade.",
+    "category": "community"
+  },
+  {
+    "id": "story-036",
+    "title": "12-Year-Old Coder Creates App to Help Grandparents Video Call",
+    "description": "A twelve-year-old from Leeds created a simplified video-calling app after watching her grandparents struggle with existing technology. The app has a single large button and has been downloaded over fifty thousand times.",
+    "category": "achievement"
+  },
+  {
+    "id": "story-037",
+    "title": "Street Cleaner Secretly Waters Neglected Plants Across Town",
+    "description": "A street cleaner in Seville was caught on camera tenderly watering neglected plants in window boxes and public spaces during his rounds. When the footage went viral, the town council gave him a special award for civic pride.",
+    "category": "kindness"
+  },
+  {
+    "id": "story-038",
+    "title": "New Moss Species Found Growing on London's Tower Bridge",
+    "description": "Botanists have identified a previously undiscovered species of moss thriving on the stonework of Tower Bridge. The find suggests that London's air quality has improved enough to support species not seen in the city for decades.",
+    "category": "nature"
+  },
+  {
+    "id": "story-039",
+    "title": "Hospital Installs Slide for Children Going Into Surgery",
+    "description": "A children's hospital in São Paulo has installed a colourful slide that takes young patients from the ward directly to the operating theatre. Doctors say it dramatically reduces anxiety and helps children arrive smiling instead of scared.",
+    "category": "heartwarming"
+  },
+  {
+    "id": "story-040",
+    "title": "Solar-Powered Desalination Plant Provides Water for 35,000 People",
+    "description": "A new solar-powered desalination plant in Kenya is now providing clean drinking water to over 35,000 people in the Kiunga region. The facility runs entirely on renewable energy and produces 75,000 litres of fresh water daily.",
+    "category": "science"
+  },
+  {
+    "id": "story-041",
+    "title": "Cat Adopted From Shelter Saves Owner's Life by Detecting Gas Leak",
+    "description": "A rescue cat named Mabel repeatedly pawed at her sleeping owner's face until she woke up and discovered a dangerous gas leak in her kitchen. The fire service said Mabel's persistence likely saved her owner's life.",
+    "category": "animals"
+  },
+  {
+    "id": "story-042",
+    "title": "Retired Teacher Starts Free Tutoring Sessions in Local Library",
+    "description": "A retired maths teacher in Liverpool has been offering free tutoring sessions at her local library three times a week. Over sixty students have attended, and several have gone on to achieve grades they never thought possible.",
+    "category": "kindness"
+  },
+  {
+    "id": "story-043",
+    "title": "New Zealand Town Elects Cat as Honorary Mayor",
+    "description": "The small New Zealand town of Talkeetna has elected a ginger cat named Paddles as its honorary mayor. Paddles holds office hours at the local café and has boosted tourism by an estimated twenty percent.",
+    "category": "animals"
+  },
+  {
+    "id": "story-044",
+    "title": "Blind Footballer Scores Goal of the Season in National League",
+    "description": "A visually impaired footballer scored what pundits are calling the goal of the season in the National Blind Football League, dribbling past four defenders before curling the ball into the top corner. The crowd erupted.",
+    "category": "achievement"
+  },
+  {
+    "id": "story-045",
+    "title": "Community Fridge Scheme Saves 500 Tonnes of Food From Landfill",
+    "description": "A network of community fridges across London has saved over 500 tonnes of food from going to waste in its first year. Local shops and restaurants donate surplus items, and anyone can help themselves for free.",
+    "category": "community"
+  },
+  {
+    "id": "story-046",
+    "title": "Five-Year-Old Writes Letter to NASA and Gets Personal Reply",
+    "description": "A five-year-old boy from Cardiff wrote to NASA asking if he could visit Mars. He received a personalised reply from an astronaut, along with a signed photograph and a promise that they'd save him a seat on a future mission.",
+    "category": "heartwarming"
+  },
+  {
+    "id": "story-047",
+    "title": "New AI Tool Can Detect Early Signs of Parkinson's Disease",
+    "description": "Researchers have developed an AI system that can detect early signs of Parkinson's disease up to seven years before symptoms appear, using routine brain scans. Early detection could allow treatment to begin far sooner.",
+    "category": "science"
+  },
+  {
+    "id": "story-048",
+    "title": "Hedgehog Highway Project Connects 500 Gardens Across Suffolk",
+    "description": "A community initiative in Suffolk has seen residents cut small holes in their garden fences to create a hedgehog highway spanning over 500 homes. Local hedgehog sightings have tripled since the project began.",
+    "category": "nature"
+  },
+  {
+    "id": "story-049",
+    "title": "Taxi Driver Returns Bag Containing Life Savings to Elderly Passenger",
+    "description": "A taxi driver in Rome found a bag containing an elderly woman's life savings left in his cab. He drove across the city to return it, refusing any reward. The woman insisted on baking him a cake instead.",
+    "category": "kindness"
+  },
+  {
+    "id": "story-050",
+    "title": "Council Estate Residents Win National Award for Rooftop Allotment",
+    "description": "Residents of a tower block in Hackney won a national gardening award for their rooftop allotment, which now supplies fresh vegetables to over forty households. The project was started by two neighbours with a single planter box.",
+    "category": "community"
+  },
+  {
+    "id": "story-051",
+    "title": "Sea Turtle Released After Record-Breaking Rehabilitation",
+    "description": "A loggerhead sea turtle named Odyssey was released back into the ocean after 18 months of rehabilitation at a marine centre in Florida. She was fitted with a satellite tracker, and thousands of schoolchildren are now following her journey online.",
+    "category": "animals"
+  },
+  {
+    "id": "story-052",
+    "title": "Deaf Girl Hears Mother's Voice for First Time Thanks to Cochlear Implant",
+    "description": "A four-year-old girl born profoundly deaf heard her mother say 'I love you' for the first time after receiving a cochlear implant. The video of her reaction, a huge grin followed by joyful tears, has been watched millions of times.",
+    "category": "heartwarming"
+  },
+  {
+    "id": "story-053",
+    "title": "Electric Bus Fleet Saves City 2,000 Tonnes of CO2 Per Year",
+    "description": "Oxford's new fleet of fully electric buses has saved an estimated two thousand tonnes of carbon dioxide in its first year of operation. The city reports improved air quality along major routes and increased ridership.",
+    "category": "science"
+  },
+  {
+    "id": "story-054",
+    "title": "Marathon Runner Stops to Help Rival Competitor Cross Finish Line",
+    "description": "During a half-marathon in Barcelona, a runner stopped just metres from the finish line to help a struggling competitor who had collapsed. She supported him across the line, giving up her own chance at a personal best.",
+    "category": "kindness"
+  },
+  {
+    "id": "story-055",
+    "title": "Woodland Trust Plants Its One Millionth Tree",
+    "description": "The Woodland Trust has planted its one millionth tree as part of a nationwide campaign to restore the UK's ancient woodlands. The milestone tree, a native oak, was planted by a class of primary school children in Yorkshire.",
+    "category": "nature"
+  },
+  {
+    "id": "story-056",
+    "title": "Woman Finds Birth Mother Through Knitting Pattern on Jumper",
+    "description": "A woman adopted as a baby traced her birth mother after recognising an unusual knitting pattern on a jumper in a charity shop. The pattern turned out to be a family tradition unique to a small village in Donegal.",
+    "category": "heartwarming"
+  },
+  {
+    "id": "story-057",
+    "title": "13-Year-Old Becomes Youngest Person to Climb All Welsh 3,000-Footers",
+    "description": "Thirteen-year-old Seren Williams has become the youngest person to summit all fifteen Welsh peaks over three thousand feet in a single day. She completed the challenge to raise money for mountain rescue teams.",
+    "category": "achievement"
+  },
+  {
+    "id": "story-058",
+    "title": "Street Musicians Form Orchestra and Play Free Concert in Park",
+    "description": "A group of street musicians who regularly perform outside tube stations in London came together to form a pop-up orchestra. Their free concert in Hyde Park drew over two thousand people and raised money for music education in schools.",
+    "category": "community"
+  },
+  {
+    "id": "story-059",
+    "title": "Farm Sanctuary Goat Becomes Best Friends With Rescue Donkey",
+    "description": "A rescued goat named Gerald and a retired donkey called Mavis have become inseparable at a farm sanctuary in Kent. Staff say they share meals, sleep side by side, and loudly protest whenever they are briefly separated.",
+    "category": "animals"
+  },
+  {
+    "id": "story-060",
+    "title": "New Study Finds Forests Are Growing Faster Than They're Being Cut Down",
+    "description": "A global satellite study has found that tree cover is increasing in many parts of the world, with new growth outpacing deforestation for the first time in decades. The trend is particularly strong in Europe and parts of Asia.",
+    "category": "nature"
+  },
+  {
+    "id": "story-061",
+    "title": "Baker Leaves Fresh Bread Outside Door Every Morning for Struggling Neighbour",
+    "description": "A baker in a small Northumberland village has been leaving a fresh loaf outside his elderly neighbour's door every morning for three years. He only told people about it when the neighbour wrote a letter to the local paper to say thank you.",
+    "category": "kindness"
+  },
+  {
+    "id": "story-062",
+    "title": "Scientists Discover New Species of Owl in Remote Indonesian Forest",
+    "description": "Researchers have identified a previously unknown species of owl in a remote forest in Sulawesi. The small owl, with distinctive orange feathers, is the first new owl species discovered in the region in over a century.",
+    "category": "science"
+  },
+  {
+    "id": "story-063",
+    "title": "Girl Guides Build Shelters for Rough Sleepers as Part of Badge",
+    "description": "A troop of Girl Guides in Nottingham designed and built portable rain shelters for people sleeping rough as part of their community action badge. Local homeless charities said the shelters were both practical and thoughtful.",
+    "category": "community"
+  },
+  {
+    "id": "story-064",
+    "title": "Grandma Breaks Skydiving Record on Her 100th Birthday",
+    "description": "A 100-year-old grandmother from Texas broke the record for the oldest female skydiver, jumping from 14,000 feet on her birthday. She said she plans to do it again next year if the weather is nice.",
+    "category": "achievement"
+  },
+  {
+    "id": "story-065",
+    "title": "Orphaned Duckling Adopted by Family of Swans on Village Pond",
+    "description": "An orphaned duckling in a Wiltshire village has been adopted by a family of mute swans who are raising it as one of their own. The duckling paddles happily among the cygnets, apparently unaware of the size difference.",
+    "category": "animals"
+  },
+  {
+    "id": "story-066",
+    "title": "Strangers Pool Money to Buy Wheelchair for Man at Bus Stop",
+    "description": "When commuters at a bus stop in Dublin learned that a fellow passenger needed a new wheelchair he couldn't afford, they organised a collection on the spot. Within twenty minutes, enough had been raised, and the wheelchair was ordered that evening.",
+    "category": "kindness"
+  },
+  {
+    "id": "story-067",
+    "title": "New Prosthetic Hand Allows Amputee to Feel Temperature for First Time",
+    "description": "Engineers in Italy have developed a prosthetic hand with sensors that allow the wearer to feel hot and cold for the first time since amputation. The patient described holding a warm cup of coffee as an overwhelming experience.",
+    "category": "science"
+  },
+  {
+    "id": "story-068",
+    "title": "50-Year-Old Love Letter Found Behind Skirting Board Returned to Sender",
+    "description": "A love letter written in 1974 was found behind a skirting board during a house renovation in Bath. The current homeowner tracked down the original writer, now a grandfather, who said he'd always wondered what happened to it.",
+    "category": "heartwarming"
+  },
+  {
+    "id": "story-069",
+    "title": "Abandoned Railway Line Transformed Into Wildflower Meadow",
+    "description": "A disused railway line in County Durham has been transformed into a mile-long wildflower meadow by local volunteers. The project has attracted over 30 species of butterfly and become a popular walking route.",
+    "category": "nature"
+  },
+  {
+    "id": "story-070",
+    "title": "Nine-Year-Old Writes Book About His Autism to Help Classmates Understand",
+    "description": "A nine-year-old boy from Brighton wrote and illustrated a short book explaining what it feels like to have autism. His school printed copies for every class, and several other schools have since requested their own.",
+    "category": "achievement"
+  },
+  {
+    "id": "story-071",
+    "title": "Chip Shop Gives Free Meals to Anyone Who Can't Afford to Eat",
+    "description": "A fish and chip shop in Blackpool has introduced a quiet policy where anyone who can't afford a meal can simply ask for a 'number 7' and receive a full portion for free, no questions asked. The owner funds it from his own pocket.",
+    "category": "kindness"
+  },
+  {
+    "id": "story-072",
+    "title": "Rare White Stork Chicks Hatch in England for First Time in Centuries",
+    "description": "White stork chicks have hatched in the wild in Sussex for the first time in nearly 600 years. The birds are part of a reintroduction project that aims to establish a self-sustaining population across southern England.",
+    "category": "nature"
+  },
+  {
+    "id": "story-073",
+    "title": "Postwoman Notices Missing Milk Bottles and Saves Elderly Man's Life",
+    "description": "A postwoman in rural Scotland raised the alarm after noticing that milk bottles had been piling up outside an elderly man's door for two days. Emergency services found him after a fall, and doctors said the early response was crucial.",
+    "category": "community"
+  },
+  {
+    "id": "story-074",
+    "title": "Therapy Dog Attends Every Court Date With Nervous Witnesses",
+    "description": "A golden retriever named Comfort has been trained to sit with anxious witnesses during court proceedings in a London courthouse. Lawyers say his calm presence helps people speak more clearly and feel less afraid.",
+    "category": "animals"
+  },
+  {
+    "id": "story-075",
+    "title": "Teenager Designs 3D-Printed Prosthetic for Injured Tortoise",
+    "description": "A sixteen-year-old from Sheffield used a 3D printer to create a custom wheel attachment for a tortoise who lost a leg in a garden accident. The tortoise, named Tank, now zooms around his enclosure at impressive speed.",
+    "category": "animals"
+  },
+  {
+    "id": "story-076",
+    "title": "Research Shows Acts of Kindness Boost Immune System",
+    "description": "A new study from a university in British Columbia has found that performing small acts of kindness triggers a measurable boost in immune function. Participants who carried out five kind acts per week showed improved markers after just six weeks.",
+    "category": "science"
+  },
+  {
+    "id": "story-077",
+    "title": "Children's Hospital Grants 1,000th Wish to Young Patient",
+    "description": "Great Ormond Street Hospital celebrated granting its one thousandth wish through its patient wishes programme, sending a young boy with a heart condition to meet his favourite footballer. The boy said it was the best day of his life.",
+    "category": "heartwarming"
+  },
+  {
+    "id": "story-078",
+    "title": "Ex-Offender Starts Gardening Business That Employs Fellow Former Prisoners",
+    "description": "A former prisoner in Leeds started a landscaping business that now employs twelve other ex-offenders, helping them rebuild their lives. The company has won contracts with local councils and earned praise for the quality of its work.",
+    "category": "community"
+  },
+  {
+    "id": "story-079",
+    "title": "Man Walks Every Street in His City to Raise Money for Charity",
+    "description": "A man in Sheffield walked every single one of the city's 2,500 streets over the course of a year to raise money for a local hospice. He covered over 1,200 miles and discovered corners of the city he never knew existed.",
+    "category": "achievement"
+  },
+  {
+    "id": "story-080",
+    "title": "Car Park Attendant Leaves Uplifting Notes on Windscreens",
+    "description": "A car park attendant in Canterbury has been leaving cheerful handwritten notes under windscreen wipers instead of tickets for minor overstays. Messages include reminders to have a good day and that someone is rooting for them.",
+    "category": "kindness"
+  },
+  {
+    "id": "story-081",
+    "title": "Wild Salmon Return to River Thames After 200-Year Absence",
+    "description": "Environmental surveys have confirmed the return of wild Atlantic salmon to the River Thames for the first time in two centuries. The comeback is attributed to decades of effort to clean the river and restore its ecosystems.",
+    "category": "nature"
+  },
+  {
+    "id": "story-082",
+    "title": "Hospital Cleaner Serenades Patients and Goes Viral",
+    "description": "A hospital cleaner in a ward in Swansea has gone viral after a patient filmed him softly singing classic songs while mopping the floors. Staff say his singing has become a beloved part of the ward's daily routine.",
+    "category": "heartwarming"
+  },
+  {
+    "id": "story-083",
+    "title": "New Biodegradable Packaging Made Entirely From Seaweed",
+    "description": "A startup in Indonesia has developed food packaging made entirely from seaweed that dissolves harmlessly in water within weeks. Several major food chains are now trialling the material as a replacement for single-use plastic.",
+    "category": "science"
+  },
+  {
+    "id": "story-084",
+    "title": "Elderly Couple Celebrate 75th Wedding Anniversary With Original Cake Recipe",
+    "description": "A couple in Norfolk celebrated their 75th wedding anniversary by baking the same cake they had at their wedding in 1950, using the original handwritten recipe. They said the secret to a long marriage is a good sense of humour.",
+    "category": "heartwarming"
+  },
+  {
+    "id": "story-085",
+    "title": "Stray Dog Walks Children to School Every Day and Waits to Walk Them Home",
+    "description": "A friendly stray dog in a small Turkish town has appointed himself as the school crossing guard, walking alongside children every morning and waiting patiently at the gate until home time. The school has given him his own name badge.",
+    "category": "animals"
+  },
+  {
+    "id": "story-086",
+    "title": "Library Installs Seed Exchange Where Books Once Stood",
+    "description": "A library in Norwich has converted a disused book return station into a seed exchange, allowing residents to swap flower, herb, and vegetable seeds for free. Over 400 varieties have been exchanged in the first three months.",
+    "category": "community"
+  },
+  {
+    "id": "story-087",
+    "title": "Blind Chef Opens Restaurant and Earns Rave Reviews",
+    "description": "A blind chef from São Paulo has opened her own restaurant, which has earned rave reviews from food critics within weeks of opening. She says cooking without sight has sharpened her other senses and made her food more flavourful.",
+    "category": "achievement"
+  },
+  {
+    "id": "story-088",
+    "title": "Scientists Record New Birdsong Never Heard Before",
+    "description": "Ornithologists in the Amazon rainforest have recorded a completely new birdsong from a species previously thought to be silent. The haunting melody, captured at dawn, is now being studied to understand its role in the forest ecosystem.",
+    "category": "science"
+  },
+  {
+    "id": "story-089",
+    "title": "Delivery Driver Runs Into Burning House to Save Family's Pets",
+    "description": "A delivery driver in Auckland spotted smoke pouring from a house and ran inside to rescue two cats and a budgie before firefighters arrived. The family, who were out at the time, said they could never repay his bravery.",
+    "category": "kindness"
+  },
+  {
+    "id": "story-090",
+    "title": "Urban Farm on Disused Car Park Grows Food for 200 Families",
+    "description": "An urban farm built on a disused car park in Tottenham now grows enough fruit and vegetables to supply over 200 local families. The project also runs gardening workshops and has become a hub for the community.",
+    "category": "community"
+  },
+  {
+    "id": "story-091",
+    "title": "Boy Saves Pocket Money for Two Years to Buy Mum a Bench in Her Favourite Park",
+    "description": "A ten-year-old boy in Harrogate saved his pocket money for two years to buy his mum a memorial bench in her favourite park. The bench has a small plaque that reads 'For Mum, who always sat here and smiled.'",
+    "category": "heartwarming"
+  },
+  {
+    "id": "story-092",
+    "title": "Record Number of Leatherback Turtles Nest on Caribbean Beach",
+    "description": "Conservationists in Trinidad have recorded a record number of leatherback turtle nests on Grande Riviere beach this season. Strict protection measures and reduced light pollution along the coast are credited with the increase.",
+    "category": "nature"
+  },
+  {
+    "id": "story-093",
+    "title": "Paramedic Proposes to Girlfriend He Saved in an Accident Ten Years Ago",
+    "description": "A paramedic proposed to his girlfriend at the exact roadside spot where he helped save her life in a car accident a decade earlier. She said yes immediately, and the attending ambulance crew cheered from the sidelines.",
+    "category": "heartwarming"
+  },
+  {
+    "id": "story-094",
+    "title": "School Janitor Secretly Pays for Students' Yearbooks for 15 Years",
+    "description": "A school janitor in Ohio was discovered to have quietly paid for yearbooks for students who couldn't afford them for the past fifteen years. When the school found out, they dedicated the latest yearbook to him.",
+    "category": "kindness"
+  },
+  {
+    "id": "story-095",
+    "title": "Breakthrough Battery Can Charge an Electric Car in Five Minutes",
+    "description": "An Israeli startup has demonstrated a lithium-ion battery that can fully charge an electric vehicle in just five minutes. The technology could remove one of the biggest barriers to widespread electric car adoption.",
+    "category": "science"
+  },
+  {
+    "id": "story-096",
+    "title": "Rescue Parrot Learns to Say 'Thank You' to Shelter Volunteers",
+    "description": "An African grey parrot rescued from neglect has learned to say 'thank you' to the shelter volunteers who nursed him back to health. He now greets every visitor with the phrase and occasionally adds 'nice cup of tea.'",
+    "category": "animals"
+  },
+  {
+    "id": "story-097",
+    "title": "Neighbours Organise Weekly Street Dinners That Have Run for Five Years",
+    "description": "Residents of a terraced street in Cardiff have hosted a weekly communal dinner every Friday for five years, rotating who cooks. What began with eight people now regularly draws forty, and two marriages have come from it.",
+    "category": "community"
+  },
+  {
+    "id": "story-098",
+    "title": "Teenager Swims English Channel to Raise Money for Refugee Charity",
+    "description": "A sixteen-year-old from Dover swam the English Channel in just over fourteen hours to raise money for a refugee support charity. She trained for eighteen months in the cold waters off the Kent coast.",
+    "category": "achievement"
+  },
+  {
+    "id": "story-099",
+    "title": "Man Plants Tree Every Day for 40 Years and Creates an Entire Forest",
+    "description": "Jadav Payeng has single-handedly planted a forest larger than Central Park on a barren sandbar in India over the course of four decades. The forest is now home to elephants, tigers, and over a hundred species of bird.",
+    "category": "nature"
+  },
+  {
+    "id": "story-100",
+    "title": "Dog Waits Outside Hospital Every Day Until Owner Is Discharged",
+    "description": "A loyal collie in Istanbul waited outside a hospital entrance every day for six days while his owner was treated inside. When the man was finally discharged, the dog leapt into his arms, and the pair walked home together.",
+    "category": "animals"
+  }
+]

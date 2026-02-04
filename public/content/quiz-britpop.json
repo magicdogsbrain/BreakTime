@@ -1,0 +1,702 @@
+[
+  {
+    "id": "extra-001",
+    "question": "Which Oasis album features the tracks 'Wonderwall' and 'Don't Look Back in Anger'?",
+    "options": ["Definitely Maybe", "(What's the Story) Morning Glory?", "Be Here Now", "Standing on the Shoulder of Giants"],
+    "answer": "(What's the Story) Morning Glory?",
+    "fact": "(What's the Story) Morning Glory? has sold over 22 million copies worldwide, making it one of the best-selling albums in UK history."
+  },
+  {
+    "id": "extra-002",
+    "question": "What was Blur's first UK number one single?",
+    "options": ["Girls & Boys", "Country House", "Parklife", "Song 2"],
+    "answer": "Country House",
+    "fact": "Country House famously beat Oasis's 'Roll With It' to number one in the 1995 'Battle of Britpop'."
+  },
+  {
+    "id": "extra-003",
+    "question": "Which Pulp album contains the hit 'Common People'?",
+    "options": ["His 'n' Hers", "Different Class", "This Is Hardcore", "We Love Life"],
+    "answer": "Different Class",
+    "fact": "Different Class entered the UK album chart at number one and won the 1996 Mercury Music Prize."
+  },
+  {
+    "id": "extra-004",
+    "question": "Who is the lead singer of Suede?",
+    "options": ["Damon Albarn", "Brett Anderson", "Jarvis Cocker", "Richard Ashcroft"],
+    "answer": "Brett Anderson",
+    "fact": "Brett Anderson's flamboyant stage presence and androgynous image helped define the early Britpop aesthetic."
+  },
+  {
+    "id": "extra-005",
+    "question": "Which song by The Verve was famously built around an orchestral sample?",
+    "options": ["Lucky Man", "Bitter Sweet Symphony", "The Drugs Don't Work", "Sonnet"],
+    "answer": "Bitter Sweet Symphony",
+    "fact": "The song sampled an orchestral version of a Rolling Stones track, leading to a lengthy royalties dispute that was eventually resolved in The Verve's favour in 2019."
+  },
+  {
+    "id": "extra-006",
+    "question": "Elastica's debut single 'Stutter' was released in which year?",
+    "options": ["1993", "1994", "1995", "1996"],
+    "answer": "1994",
+    "fact": "Elastica's self-titled debut album became the fastest-selling debut album in the UK since Definitely Maybe."
+  },
+  {
+    "id": "extra-007",
+    "question": "Which Supergrass single features the lyric 'We are young, we run green'?",
+    "options": ["Caught by the Fuzz", "Alright", "Pumping on Your Stereo", "Moving"],
+    "answer": "Alright",
+    "fact": "The band were just teenagers when they formed in Oxford in 1993, making 'Alright' an authentic anthem of youth."
+  },
+  {
+    "id": "extra-008",
+    "question": "What is the name of The Smiths' debut album?",
+    "options": ["Meat Is Murder", "The Queen Is Dead", "The Smiths", "Strangeways, Here We Come"],
+    "answer": "The Smiths",
+    "fact": "The Smiths' self-titled debut was released in 1984 and is widely regarded as one of the greatest debut albums of all time."
+  },
+  {
+    "id": "extra-009",
+    "question": "Which Morrissey solo single reached number one in the UK in 1988?",
+    "options": ["Suedehead", "Every Day Is Like Sunday", "The Last of the Famous International Playboys", "None of these"],
+    "answer": "None of these",
+    "fact": "Despite his huge popularity, Morrissey never achieved a solo UK number one single during the 1980s or 1990s."
+  },
+  {
+    "id": "extra-010",
+    "question": "James had a massive hit in 1991 with which song?",
+    "options": ["Sit Down", "Laid", "She's a Star", "Born of Frustration"],
+    "answer": "Sit Down",
+    "fact": "'Sit Down' became one of the defining anthems of the early 90s indie scene and is still a staple at festivals."
+  },
+  {
+    "id": "extra-011",
+    "question": "The Stone Roses' debut album was released in which year?",
+    "options": ["1987", "1988", "1989", "1990"],
+    "answer": "1989",
+    "fact": "The Stone Roses' debut is often cited as the album that paved the way for Britpop and the entire 1990s indie movement."
+  },
+  {
+    "id": "extra-012",
+    "question": "Which member of Manic Street Preachers disappeared in February 1995?",
+    "options": ["James Dean Bradfield", "Nicky Wire", "Richey Edwards", "Sean Moore"],
+    "answer": "Richey Edwards",
+    "fact": "Richey Edwards was officially declared 'presumed dead' in 2008, thirteen years after his disappearance."
+  },
+  {
+    "id": "extra-013",
+    "question": "What was Radiohead's breakthrough single from 1993?",
+    "options": ["Creep", "Fake Plastic Trees", "High and Dry", "Just"],
+    "answer": "Creep",
+    "fact": "'Creep' was initially a flop in the UK but became a worldwide hit after gaining popularity in the US and Israel."
+  },
+  {
+    "id": "extra-014",
+    "question": "Which Northern Irish band had a hit with 'Girl from Mars' in 1995?",
+    "options": ["Therapy?", "Ash", "Snow Patrol", "Divine Comedy"],
+    "answer": "Ash",
+    "fact": "Ash's members were still attending school in Downpatrick when they signed their record deal."
+  },
+  {
+    "id": "extra-015",
+    "question": "Catatonia's lead singer Cerys Matthews is from which country?",
+    "options": ["England", "Scotland", "Wales", "Ireland"],
+    "answer": "Wales",
+    "fact": "Catatonia were part of the 'Cool Cymru' movement, a Welsh cultural boom in the late 1990s."
+  },
+  {
+    "id": "extra-016",
+    "question": "Which Stereophonics album features 'The Bartender and the Thief'?",
+    "options": ["Word Gets Around", "Performance and Cocktails", "Just Enough Education to Perform", "You Gotta Go There to Come Back"],
+    "answer": "Performance and Cocktails",
+    "fact": "Performance and Cocktails debuted at number one in the UK and went on to sell over two million copies."
+  },
+  {
+    "id": "extra-017",
+    "question": "Travis are named after a character in which film?",
+    "options": ["Taxi Driver", "Paris, Texas", "Raging Bull", "Goodfellas"],
+    "answer": "Paris, Texas",
+    "fact": "The character Travis Henderson in Wim Wenders' Paris, Texas inspired the band's name."
+  },
+  {
+    "id": "extra-018",
+    "question": "Which Feeder single was a tribute to their late drummer Jon Lee?",
+    "options": ["Buck Rogers", "Just a Day", "Come Back Around", "Feeling a Moment"],
+    "answer": "Just a Day",
+    "fact": "The re-released version of 'Just a Day' reached number one on the UK singles chart following Jon Lee's death in 2002."
+  },
+  {
+    "id": "extra-019",
+    "question": "Ocean Colour Scene's album 'Moseley Shoals' is named after an area in which city?",
+    "options": ["Manchester", "London", "Birmingham", "Liverpool"],
+    "answer": "Birmingham",
+    "fact": "Moseley is a suburb of Birmingham, and the album title is a play on the famous Muscle Shoals recording studio in Alabama."
+  },
+  {
+    "id": "extra-020",
+    "question": "Cast's lead singer John Power was previously in which Liverpool band?",
+    "options": ["Echo & the Bunnymen", "The La's", "The Zutons", "The Coral"],
+    "answer": "The La's",
+    "fact": "John Power played bass in The La's before forming Cast, taking a more upbeat, anthemic approach to songwriting."
+  },
+  {
+    "id": "extra-021",
+    "question": "Dodgy had a top ten hit in 1996 with which song?",
+    "options": ["Staying Out for the Summer", "Good Enough", "If You're Thinking of Me", "In a Room"],
+    "answer": "Good Enough",
+    "fact": "'Good Enough' reached number four in the UK charts and remains Dodgy's biggest hit."
+  },
+  {
+    "id": "extra-022",
+    "question": "Shed Seven are from which English city?",
+    "options": ["Leeds", "Sheffield", "York", "Manchester"],
+    "answer": "York",
+    "fact": "Shed Seven were one of the first bands to emerge from York's indie scene in the early 1990s."
+  },
+  {
+    "id": "extra-023",
+    "question": "Sleeper's lead singer Louise Wener later became known for what career?",
+    "options": ["TV presenter", "Novelist", "Fashion designer", "Film director"],
+    "answer": "Novelist",
+    "fact": "Louise Wener published several novels after Sleeper disbanded, including 'Goodnight Steve McQueen'."
+  },
+  {
+    "id": "extra-024",
+    "question": "Kula Shaker's hit 'Tattva' draws on influences from which culture?",
+    "options": ["Japanese", "Indian", "African", "South American"],
+    "answer": "Indian",
+    "fact": "'Tattva' is a Sanskrit word meaning 'reality' or 'truth', reflecting the band's deep interest in Indian spirituality and music."
+  },
+  {
+    "id": "extra-025",
+    "question": "Space had a hit in 1996 with 'Female of the Species'. Where were they from?",
+    "options": ["London", "Glasgow", "Liverpool", "Bristol"],
+    "answer": "Liverpool",
+    "fact": "'Female of the Species' was used as the theme for the Austin Powers film in the UK."
+  },
+  {
+    "id": "extra-026",
+    "question": "Who is the lead singer of The Charlatans?",
+    "options": ["Tim Burgess", "Tim Wheeler", "Tim Booth", "Tim Booth"],
+    "answer": "Tim Burgess",
+    "fact": "Tim Burgess has become known for his 'Tim's Twitter Listening Parties' where fans listen to classic albums together online."
+  },
+  {
+    "id": "extra-027",
+    "question": "Primal Scream's 'Screamadelica' won the first ever Mercury Music Prize in which year?",
+    "options": ["1990", "1991", "1992", "1993"],
+    "answer": "1992",
+    "fact": "Screamadelica fused indie rock with acid house and dance music, creating a blueprint for the decade's genre-blending approach."
+  },
+  {
+    "id": "extra-028",
+    "question": "The Lightning Seeds' Ian Broudie co-wrote which football anthem?",
+    "options": ["World in Motion", "Three Lions", "Vindaloo", "Tubthumping"],
+    "answer": "Three Lions",
+    "fact": "'Three Lions' was written with comedians David Baddiel and Frank Skinner for Euro 96 and has been re-released for every subsequent major tournament."
+  },
+  {
+    "id": "extra-029",
+    "question": "Echo & the Bunnymen's iconic frontman is called what?",
+    "options": ["Ian Brown", "Ian McCulloch", "Ian Curtis", "Ian Broudie"],
+    "answer": "Ian McCulloch",
+    "fact": "McCulloch's dramatic vocal style and distinctive haircut made him one of the most recognisable figures in post-punk and Britpop."
+  },
+  {
+    "id": "extra-030",
+    "question": "The La's are best known for which timeless single?",
+    "options": ["There She Goes", "Timeless Melody", "Son of a Gun", "Feelin'"],
+    "answer": "There She Goes",
+    "fact": "Lead singer Lee Mavers famously disowned The La's only album, claiming the production was not good enough."
+  },
+  {
+    "id": "extra-031",
+    "question": "Gene's lead singer Martin Rossiter was often compared to which earlier frontman?",
+    "options": ["Robert Smith", "Morrissey", "Ian Curtis", "David Bowie"],
+    "answer": "Morrissey",
+    "fact": "Gene were frequently dubbed 'the new Smiths' due to Rossiter's literate, emotionally raw vocal delivery."
+  },
+  {
+    "id": "extra-032",
+    "question": "Mansun's debut album 'Attack of the Grey Lantern' was released on which label?",
+    "options": ["Creation Records", "Parlophone", "Food Records", "EMI"],
+    "answer": "Parlophone",
+    "fact": "Mansun were from Chester and their ambitious debut was a concept album that reached number one in the UK."
+  },
+  {
+    "id": "extra-033",
+    "question": "The Cranberries are from which country?",
+    "options": ["England", "Scotland", "Ireland", "Wales"],
+    "answer": "Ireland",
+    "fact": "The Cranberries hailed from Limerick and became one of the most successful Irish rock bands of all time."
+  },
+  {
+    "id": "extra-034",
+    "question": "Garbage's lead singer Shirley Manson is originally from which city?",
+    "options": ["New York", "Edinburgh", "Dublin", "Los Angeles"],
+    "answer": "Edinburgh",
+    "fact": "Shirley Manson was discovered by the American members of Garbage after they saw her performing with her band Angelfish on MTV."
+  },
+  {
+    "id": "extra-035",
+    "question": "Placebo's debut single 'Nancy Boy' was released in which year?",
+    "options": ["1995", "1996", "1997", "1998"],
+    "answer": "1997",
+    "fact": "Brian Molko's androgynous image and confrontational lyrics made Placebo one of the most distinctive bands of the era."
+  },
+  {
+    "id": "extra-036",
+    "question": "Which festival is most associated with the peak of Britpop culture?",
+    "options": ["Reading Festival", "Glastonbury", "T in the Park", "V Festival"],
+    "answer": "Glastonbury",
+    "fact": "The 1995 Glastonbury Festival is often considered the high point of Britpop, with Pulp famously replacing The Stone Roses as headliners."
+  },
+  {
+    "id": "extra-037",
+    "question": "Which music magazine was considered the 'bible' of Britpop?",
+    "options": ["Q Magazine", "Kerrang!", "NME", "Melody Maker"],
+    "answer": "NME",
+    "fact": "NME's covers and features during the mid-90s helped define and promote the Britpop movement to a massive audience."
+  },
+  {
+    "id": "extra-038",
+    "question": "Oasis were signed to which iconic record label?",
+    "options": ["Factory Records", "Rough Trade", "Creation Records", "4AD"],
+    "answer": "Creation Records",
+    "fact": "Creation Records boss Alan McGee signed Oasis after seeing them play a gig at King Tut's in Glasgow in 1993."
+  },
+  {
+    "id": "extra-039",
+    "question": "What is the name of Blur's third album?",
+    "options": ["Modern Life Is Rubbish", "Parklife", "The Great Escape", "Blur"],
+    "answer": "Parklife",
+    "fact": "Parklife won four Brit Awards in 1995 including Best British Album and cemented Blur's status as Britpop royalty."
+  },
+  {
+    "id": "extra-040",
+    "question": "Which Oasis single was their first UK number one?",
+    "options": ["Live Forever", "Cigarettes & Alcohol", "Some Might Say", "Wonderwall"],
+    "answer": "Some Might Say",
+    "fact": "'Some Might Say' reached number one in April 1995, the same week that original drummer Tony McCarroll left the band."
+  },
+  {
+    "id": "extra-041",
+    "question": "Pulp's Jarvis Cocker famously invaded the stage at the 1996 Brit Awards during whose performance?",
+    "options": ["Oasis", "Blur", "Michael Jackson", "Take That"],
+    "answer": "Michael Jackson",
+    "fact": "Cocker later said he was protesting what he saw as Jackson's 'Christ-like' staging, calling it 'quite disturbing'."
+  },
+  {
+    "id": "extra-042",
+    "question": "Which Radiohead album is often considered a departure from Britpop into experimental territory?",
+    "options": ["Pablo Honey", "The Bends", "OK Computer", "Kid A"],
+    "answer": "OK Computer",
+    "fact": "OK Computer was released in 1997 and is frequently ranked among the greatest albums ever made."
+  },
+  {
+    "id": "extra-043",
+    "question": "The Stone Roses held a legendary gig at which venue on 27 May 1990?",
+    "options": ["Wembley Arena", "Spike Island", "Knebworth", "Maine Road"],
+    "answer": "Spike Island",
+    "fact": "The Spike Island gig in Widnes attracted around 27,000 fans and is considered a landmark moment in British music history."
+  },
+  {
+    "id": "extra-044",
+    "question": "What was the name of Suede's 1994 follow-up to their debut album?",
+    "options": ["Coming Up", "Dog Man Star", "Head Music", "A New Morning"],
+    "answer": "Dog Man Star",
+    "fact": "Dog Man Star was the last Suede album to feature guitarist Bernard Butler, who left during the recording sessions."
+  },
+  {
+    "id": "extra-045",
+    "question": "Which Manic Street Preachers album was released in 1998 and became their biggest commercial success?",
+    "options": ["The Holy Bible", "Everything Must Go", "This Is My Truth Tell Me Yours", "Generation Terrorists"],
+    "answer": "This Is My Truth Tell Me Yours",
+    "fact": "The album debuted at number one and included the massive single 'If You Tolerate This Your Children Will Be Next'."
+  },
+  {
+    "id": "extra-046",
+    "question": "Noel Gallagher played a famous acoustic set at which event in 1996?",
+    "options": ["Glastonbury", "Knebworth", "Maine Road", "Earls Court"],
+    "answer": "Knebworth",
+    "fact": "Over 250,000 people attended the two Knebworth shows, with an estimated 2.5 million people applying for tickets."
+  },
+  {
+    "id": "extra-047",
+    "question": "Which Blur album featured the hit 'Song 2'?",
+    "options": ["Parklife", "The Great Escape", "Blur", "13"],
+    "answer": "Blur",
+    "fact": "The self-titled album marked a dramatic lo-fi shift influenced by American indie rock, surprising many fans."
+  },
+  {
+    "id": "extra-048",
+    "question": "Elastica's lead singer Justine Frischmann was previously in a relationship with which Britpop figure?",
+    "options": ["Liam Gallagher", "Damon Albarn", "Jarvis Cocker", "Alex James"],
+    "answer": "Damon Albarn",
+    "fact": "Frischmann was with Suede's Brett Anderson before dating Albarn, placing her at the very centre of the Britpop scene."
+  },
+  {
+    "id": "extra-049",
+    "question": "Which Catatonia single became their biggest hit in 1998?",
+    "options": ["Mulder and Scully", "Road Rage", "Strange Glue", "Dead from the Waist Down"],
+    "answer": "Mulder and Scully",
+    "fact": "Named after the X-Files characters, the song reached number three in the UK charts."
+  },
+  {
+    "id": "extra-050",
+    "question": "Supergrass formed in which English city?",
+    "options": ["London", "Manchester", "Oxford", "Bristol"],
+    "answer": "Oxford",
+    "fact": "Supergrass were part of a strong Oxford music scene that also produced Radiohead and Ride."
+  },
+  {
+    "id": "extra-051",
+    "question": "What was the title of Oasis's debut album?",
+    "options": ["Definitely Maybe", "(What's the Story) Morning Glory?", "Be Here Now", "The Masterplan"],
+    "answer": "Definitely Maybe",
+    "fact": "Definitely Maybe became the fastest-selling debut album in UK chart history at the time of its release in 1994."
+  },
+  {
+    "id": "extra-052",
+    "question": "Which actress narrates the spoken-word parts in Blur's 'Parklife'?",
+    "options": ["Julie Walters", "No actress - it's Phil Daniels", "Helena Bonham Carter", "Kathy Burke"],
+    "answer": "No actress - it's Phil Daniels",
+    "fact": "Phil Daniels, famous for his role in Quadrophenia, delivered the iconic cockney narration on the track."
+  },
+  {
+    "id": "extra-053",
+    "question": "The Verve's album 'Urban Hymns' was released in which year?",
+    "options": ["1995", "1996", "1997", "1998"],
+    "answer": "1997",
+    "fact": "Urban Hymns has sold over ten million copies worldwide and is one of the best-selling UK albums of the 1990s."
+  },
+  {
+    "id": "extra-054",
+    "question": "Which Ash album features the singles '1977' and 'Oh Yeah'?",
+    "options": ["Trailer", "1977", "Free All Angels", "Nu-Clear Sounds"],
+    "answer": "1977",
+    "fact": "The album was named after the year of Star Wars' release, reflecting the band's love of the film franchise."
+  },
+  {
+    "id": "extra-055",
+    "question": "Who produced Oasis's first two albums?",
+    "options": ["Alan McGee", "Owen Morris", "Youth", "Noel Gallagher"],
+    "answer": "Owen Morris",
+    "fact": "Owen Morris was known for his loud, compressed production style that gave Oasis their massive wall-of-sound feel."
+  },
+  {
+    "id": "extra-056",
+    "question": "Travis's breakthrough album 'The Man Who' includes which hit single?",
+    "options": ["Sing", "Why Does It Always Rain on Me?", "Closer", "Driftwood"],
+    "answer": "Why Does It Always Rain on Me?",
+    "fact": "Legend has it that it started raining at Glastonbury the moment Travis played this song, cementing its place in festival folklore."
+  },
+  {
+    "id": "extra-057",
+    "question": "The Charlatans' keyboard player Rob Collins died in what year?",
+    "options": ["1994", "1995", "1996", "1997"],
+    "answer": "1996",
+    "fact": "Rob Collins died in a car accident during the recording of their album 'Tellin' Stories', which was dedicated to his memory."
+  },
+  {
+    "id": "extra-058",
+    "question": "Which record label was home to both Oasis and Primal Scream?",
+    "options": ["Parlophone", "Food Records", "Creation Records", "Rough Trade"],
+    "answer": "Creation Records",
+    "fact": "Creation Records, founded by Alan McGee, was the most influential indie label of the Britpop era."
+  },
+  {
+    "id": "extra-059",
+    "question": "Feeder's debut album released in 1997 was called what?",
+    "options": ["Polythene", "Yesterday Went Too Soon", "Echo Park", "Comfort in Sound"],
+    "answer": "Polythene",
+    "fact": "Feeder originally formed in London after Welsh singer Grant Nicholas moved there from Newport."
+  },
+  {
+    "id": "extra-060",
+    "question": "Which 1994 Blur single features the lyrics about a house in the country?",
+    "options": ["Girls & Boys", "To the End", "End of a Century", "Parklife"],
+    "answer": "End of a Century",
+    "fact": "'End of a Century' paints a picture of mundane domestic life with typical Blur wit and observation."
+  },
+  {
+    "id": "extra-061",
+    "question": "Liam Gallagher's distinctive singing style involves standing how at the microphone?",
+    "options": ["With eyes closed", "With hands behind his back", "Leaning back from the mic", "Holding the mic stand above his head"],
+    "answer": "Leaning back from the mic",
+    "fact": "Liam's hands-behind-back stance and backward lean became one of the most imitated poses in 90s British rock."
+  },
+  {
+    "id": "extra-062",
+    "question": "The Smiths split up in which year?",
+    "options": ["1985", "1986", "1987", "1988"],
+    "answer": "1987",
+    "fact": "Despite lasting only five years, The Smiths are widely considered one of the most important bands in British music history."
+  },
+  {
+    "id": "extra-063",
+    "question": "Which Stone Roses song features the lyric 'I wanna be adored'?",
+    "options": ["She Bangs the Drums", "Waterfall", "I Wanna Be Adored", "Love Spreads"],
+    "answer": "I Wanna Be Adored",
+    "fact": "The opening track of their debut album, its slow-building intro became one of the most iconic moments in indie music."
+  },
+  {
+    "id": "extra-064",
+    "question": "Which Britpop band released an album called 'K' in 1996?",
+    "options": ["Sleeper", "Lush", "Kula Shaker", "Menswear"],
+    "answer": "Kula Shaker",
+    "fact": "Kula Shaker's debut album 'K' reached number one in the UK despite mixed reviews from critics."
+  },
+  {
+    "id": "extra-065",
+    "question": "Stereophonics frontman Kelly Jones is from which Welsh town?",
+    "options": ["Cardiff", "Swansea", "Cwmaman", "Newport"],
+    "answer": "Cwmaman",
+    "fact": "The small village of Cwmaman in the Cynon Valley had a huge influence on Kelly Jones's storytelling songwriting style."
+  },
+  {
+    "id": "extra-066",
+    "question": "What was the name of the weekly TV show that championed Britpop bands?",
+    "options": ["The Word", "Later... with Jools Holland", "TFI Friday", "Top of the Pops"],
+    "answer": "TFI Friday",
+    "fact": "Hosted by Chris Evans, TFI Friday became essential viewing for Britpop fans every Friday evening."
+  },
+  {
+    "id": "extra-067",
+    "question": "Placebo's Brian Molko was born in which country?",
+    "options": ["England", "Belgium", "France", "Luxembourg"],
+    "answer": "Belgium",
+    "fact": "Brian Molko was born in Brussels to a Scottish-American father and Italian-Colombian mother."
+  },
+  {
+    "id": "extra-068",
+    "question": "The Cranberries' hit 'Zombie' was written about which conflict?",
+    "options": ["The Gulf War", "The Troubles in Northern Ireland", "The Bosnian War", "The Falklands War"],
+    "answer": "The Troubles in Northern Ireland",
+    "fact": "The song was written in response to the 1993 Warrington bombings which killed two children."
+  },
+  {
+    "id": "extra-069",
+    "question": "Which Oasis B-side compilation was released in 1998?",
+    "options": ["Familiar to Millions", "The Masterplan", "Stop the Clocks", "Time Flies"],
+    "answer": "The Masterplan",
+    "fact": "The Masterplan is often considered one of the greatest B-sides collections ever released."
+  },
+  {
+    "id": "extra-070",
+    "question": "Blur's Damon Albarn later formed which 'virtual band'?",
+    "options": ["Gorillaz", "The Good, the Bad & the Queen", "Massive Attack", "Portishead"],
+    "answer": "Gorillaz",
+    "fact": "Gorillaz was created with comic artist Jamie Hewlett and became one of the most successful music projects of the 2000s."
+  },
+  {
+    "id": "extra-071",
+    "question": "Which Manic Street Preachers album is considered their darkest work?",
+    "options": ["Generation Terrorists", "Gold Against the Soul", "The Holy Bible", "Everything Must Go"],
+    "answer": "The Holy Bible",
+    "fact": "The Holy Bible was largely influenced by Richey Edwards' deteriorating mental health and is considered a harrowing masterpiece."
+  },
+  {
+    "id": "extra-072",
+    "question": "Ocean Colour Scene's biggest single 'The Day We Caught the Train' came from which album?",
+    "options": ["Ocean Colour Scene", "Moseley Shoals", "Marchin' Already", "One from the Modern"],
+    "answer": "Moseley Shoals",
+    "fact": "The song became an anthem of the mod revival within Britpop and was championed by Noel Gallagher."
+  },
+  {
+    "id": "extra-073",
+    "question": "Which venue in Camden was a legendary Britpop-era hangout and gig spot?",
+    "options": ["The Astoria", "The Good Mixer", "The Dublin Castle", "Barfly"],
+    "answer": "The Good Mixer",
+    "fact": "The Good Mixer pub was where members of Blur, Elastica, Menswear and other Britpop bands would regularly socialise."
+  },
+  {
+    "id": "extra-074",
+    "question": "Radiohead's second album 'The Bends' was released in which year?",
+    "options": ["1993", "1994", "1995", "1996"],
+    "answer": "1995",
+    "fact": "The Bends transformed Radiohead from one-hit wonders into critical darlings and influenced a generation of guitar bands."
+  },
+  {
+    "id": "extra-075",
+    "question": "Which Suede single contains the lyric 'We kiss in his room to a popular tune'?",
+    "options": ["Metal Mickey", "Animal Nitrate", "Stay Together", "Beautiful Ones"],
+    "answer": "Animal Nitrate",
+    "fact": "Animal Nitrate was one of the earliest Britpop anthems, released in early 1993 before the movement had a name."
+  },
+  {
+    "id": "extra-076",
+    "question": "James' album 'Laid' was produced by which legendary musician?",
+    "options": ["Brian Eno", "Daniel Lanois", "Flood", "Steve Albini"],
+    "answer": "Brian Eno",
+    "fact": "Brian Eno brought experimental production techniques to the sessions, giving the album a distinctive atmospheric quality."
+  },
+  {
+    "id": "extra-077",
+    "question": "Which Pulp song begins with Jarvis Cocker narrating a story about meeting a girl at a Greek exhibition?",
+    "options": ["Disco 2000", "Common People", "Sorted for E's & Wizz", "Babies"],
+    "answer": "Common People",
+    "fact": "The song was inspired by a real encounter Cocker had with a Greek art student at Central Saint Martins college."
+  },
+  {
+    "id": "extra-078",
+    "question": "What was the 'Battle of Britpop' in August 1995?",
+    "options": ["Oasis vs Blur chart battle", "NME vs Melody Maker rivalry", "Glastonbury vs Reading headliner clash", "Creation vs Food Records feud"],
+    "answer": "Oasis vs Blur chart battle",
+    "fact": "Both bands released singles on the same day. Blur's 'Country House' won the battle, but Oasis went on to win the war in album sales."
+  },
+  {
+    "id": "extra-079",
+    "question": "Primal Scream's Bobby Gillespie was previously the drummer in which band?",
+    "options": ["The Pastels", "The Jesus and Mary Chain", "My Bloody Valentine", "Ride"],
+    "answer": "The Jesus and Mary Chain",
+    "fact": "Gillespie played drums standing up in the Jesus and Mary Chain before focusing on Primal Scream full-time."
+  },
+  {
+    "id": "extra-080",
+    "question": "Which Sleeper single was their highest-charting release?",
+    "options": ["Inbetweener", "Sale of the Century", "What Do I Do Now?", "Nice Guy Eddie"],
+    "answer": "Sale of the Century",
+    "fact": "'Sale of the Century' reached number ten in the UK charts in 1996."
+  },
+  {
+    "id": "extra-081",
+    "question": "The Gallagher brothers grew up in which area of Manchester?",
+    "options": ["Moss Side", "Burnage", "Didsbury", "Fallowfield"],
+    "answer": "Burnage",
+    "fact": "Burnage is a suburban area of south Manchester that became famous worldwide thanks to Oasis."
+  },
+  {
+    "id": "extra-082",
+    "question": "Blur's Alex James is known for pursuing which hobby after the band's peak?",
+    "options": ["Painting", "Cheese making", "Vintage car racing", "Cricket"],
+    "answer": "Cheese making",
+    "fact": "Alex James owns a farm in the Cotswolds where he produces award-winning artisan cheeses."
+  },
+  {
+    "id": "extra-083",
+    "question": "Which band had hits with 'Sandstorm' and 'Neighbourhood' in the Britpop era?",
+    "options": ["Cast", "Dodgy", "Gene", "Shed Seven"],
+    "answer": "Cast",
+    "fact": "Cast's debut album 'All Change' became the highest-selling debut on the Polydor label at that time."
+  },
+  {
+    "id": "extra-084",
+    "question": "The Lightning Seeds' album 'Jollification' was released in which year?",
+    "options": ["1993", "1994", "1995", "1996"],
+    "answer": "1994",
+    "fact": "Jollification contained the hits 'Lucky You' and 'Change' and became the Lightning Seeds' most successful album."
+  },
+  {
+    "id": "extra-085",
+    "question": "Which Britpop-era event was held at Knebworth in August 1996?",
+    "options": ["Blur's farewell gig", "Oasis's record-breaking concerts", "The Verve reunion show", "Pulp's Different Class tour finale"],
+    "answer": "Oasis's record-breaking concerts",
+    "fact": "Over two nights, 250,000 people watched Oasis perform, with 2.5 million having applied for tickets."
+  },
+  {
+    "id": "extra-086",
+    "question": "Mansun's Paul Draper hailed from which English county?",
+    "options": ["Lancashire", "Cheshire", "Yorkshire", "Merseyside"],
+    "answer": "Cheshire",
+    "fact": "Mansun formed in Chester, Cheshire, and were known for their ambitious, progressive approach to Britpop."
+  },
+  {
+    "id": "extra-087",
+    "question": "Which Garbage album features the single 'Stupid Girl'?",
+    "options": ["Garbage", "Version 2.0", "Beautiful Garbage", "Bleed Like Me"],
+    "answer": "Garbage",
+    "fact": "Garbage's self-titled debut blended alternative rock with electronic production, thanks to producer Butch Vig's expertise."
+  },
+  {
+    "id": "extra-088",
+    "question": "Oasis's 'Be Here Now' was released on which date?",
+    "options": ["21 August 1996", "21 August 1997", "14 August 1997", "14 August 1998"],
+    "answer": "21 August 1997",
+    "fact": "Be Here Now sold 695,761 copies in its first week, setting a UK record that stood for years."
+  },
+  {
+    "id": "extra-089",
+    "question": "Which Britpop band featured Donna Matthews on guitar?",
+    "options": ["Sleeper", "Elastica", "Echobelly", "Lush"],
+    "answer": "Elastica",
+    "fact": "Donna Matthews was one of several prominent female musicians who helped shape the Britpop sound."
+  },
+  {
+    "id": "extra-090",
+    "question": "The Stone Roses' second album 'Second Coming' was released after how many years?",
+    "options": ["Three years", "Four years", "Five years", "Six years"],
+    "answer": "Five years",
+    "fact": "The five-year gap between 1989's debut and 1994's Second Coming was plagued by legal battles with their record label."
+  },
+  {
+    "id": "extra-091",
+    "question": "Which TV drama is often credited with soundtracking Britpop into people's living rooms?",
+    "options": ["Brookside", "This Life", "Our Friends in the North", "Trainspotting"],
+    "answer": "This Life",
+    "fact": "This Life featured a Britpop-heavy soundtrack and captured the lifestyle of young 90s professionals."
+  },
+  {
+    "id": "extra-092",
+    "question": "Space's Tommy Scott also performed with which other Liverpool band?",
+    "options": ["The Boo Radleys", "Cast", "The Coral", "The Australians"],
+    "answer": "The Australians",
+    "fact": "Tommy Scott juggled multiple projects alongside Space, showing his prolific creative output."
+  },
+  {
+    "id": "extra-093",
+    "question": "Which Britpop compilation series, released by NME, introduced many fans to new bands?",
+    "options": ["Shine", "Britpop Now", "NME Brat Pack", "New Wave of New Wave"],
+    "answer": "Shine",
+    "fact": "The 'Shine' compilations ran through the mid-90s and were an affordable way for fans to discover new Britpop acts."
+  },
+  {
+    "id": "extra-094",
+    "question": "Damon Albarn described Blur's 'Modern Life Is Rubbish' as a response to which musical invasion?",
+    "options": ["Europop", "American grunge", "Techno", "Hip-hop"],
+    "answer": "American grunge",
+    "fact": "Albarn deliberately set out to make a quintessentially British album as a reaction to the dominance of Nirvana and grunge."
+  },
+  {
+    "id": "extra-095",
+    "question": "Which Verve album preceded 'Urban Hymns'?",
+    "options": ["A Storm in Heaven", "A Northern Soul", "No Come Down", "Forth"],
+    "answer": "A Northern Soul",
+    "fact": "A Northern Soul received critical acclaim but the band split shortly after its release, only to reunite for Urban Hymns."
+  },
+  {
+    "id": "extra-096",
+    "question": "Echo & the Bunnymen's comeback single 'Nothing Lasts Forever' was released in which year?",
+    "options": ["1995", "1996", "1997", "1998"],
+    "answer": "1997",
+    "fact": "The single marked a successful return for the band and proved they could hold their own alongside the younger Britpop acts."
+  },
+  {
+    "id": "extra-097",
+    "question": "Which member of Oasis wrote the majority of the band's songs?",
+    "options": ["Liam Gallagher", "Noel Gallagher", "Bonehead", "Guigsy"],
+    "answer": "Noel Gallagher",
+    "fact": "Noel was the principal songwriter throughout Oasis's career, writing almost all of the band's hits."
+  },
+  {
+    "id": "extra-098",
+    "question": "Which 1996 film featured a soundtrack heavily associated with Britpop culture?",
+    "options": ["The Full Monty", "Trainspotting", "Lock, Stock and Two Smoking Barrels", "Brassed Off"],
+    "answer": "Trainspotting",
+    "fact": "Trainspotting's soundtrack featured Blur, Pulp and Elastica alongside electronic acts, perfectly capturing 90s British culture."
+  },
+  {
+    "id": "extra-099",
+    "question": "What was the name of the Smiths guitarist who went on to produce Britpop-era bands?",
+    "options": ["Johnny Marr", "Craig Gannon", "Andy Rourke", "Mike Joyce"],
+    "answer": "Johnny Marr",
+    "fact": "Johnny Marr's jangly guitar style is widely regarded as one of the biggest musical influences on the entire Britpop generation."
+  },
+  {
+    "id": "extra-100",
+    "question": "Which event in May 1997 coincided with the peak of Britpop optimism in Britain?",
+    "options": ["The Millennium Dome opening", "Tony Blair's election victory", "Princess Diana's death", "The Channel Tunnel opening"],
+    "answer": "Tony Blair's election victory",
+    "fact": "Noel Gallagher famously attended a reception at 10 Downing Street, symbolising the close ties between Britpop and New Labour's 'Cool Britannia'."
+  }
+]

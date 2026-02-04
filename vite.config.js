@@ -31,7 +31,8 @@ export default defineConfig({
         ]
       },
       workbox: {
-        // Cache images, RSS content, quotes
+        // Cache content JSON files and images
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}', 'content/*.json'],
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/images\.unsplash\.com\/.*/i,
@@ -41,6 +42,21 @@ export default defineConfig({
               expiration: {
                 maxEntries: 50,
                 maxAgeSeconds: 60 * 60 * 24 * 7 // 7 days
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          },
+          {
+            // Cache content JSON files with NetworkFirst so updates come through
+            urlPattern: /\/content\/.*\.json$/i,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'content-json',
+              expiration: {
+                maxEntries: 20,
+                maxAgeSeconds: 60 * 60 * 24 * 30 // 30 days
               },
               cacheableResponse: {
                 statuses: [0, 200]

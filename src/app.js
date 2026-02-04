@@ -1,23 +1,25 @@
-import { 
-  initDB, 
-  getRandomNotRecentlyShown, 
+import {
+  initDB,
+  getRandomNotRecentlyShown,
   getMultipleNotRecentlyShown,
-  logActivity, 
+  logActivity,
   getTodayActivity,
   getCompletedPuzzles,
   savePuzzleProgress,
   saveQuizScore,
   saveGameScore,
   getGameHighScore,
-  cleanupShownRecords
+  cleanupShownRecords,
+  getAll
 } from './db.js';
 import { initFallbackQuotes, refreshAllContent, FALLBACK_QUOTES, LONG_READS } from './content-fetchers.js';
-import { EXERCISE_CATEGORIES, getRandomExercise } from './exercises.js';
+import { EXERCISE_CATEGORIES, EXERCISES, getRandomExercise } from './exercises.js';
 import { MYSTERY_PUZZLES, getRandomMystery, checkMysteryAnswer } from './puzzles-mystery.js';
-import { getRandomCrossword, isCrosswordComplete } from './puzzles-crossword.js';
+import { MINI_CROSSWORDS, getRandomCrossword, isCrosswordComplete } from './puzzles-crossword.js';
 import { BRITPOP_QUESTIONS, getQuizQuestions } from './quiz-britpop.js';
-import { getRandomAnagram, getRandomMissingLetters, getRandomWordClue, getRandomWordSearch, checkAnagramAnswer, checkMissingLettersAnswer, checkWordClueAnswer } from './puzzles-words.js';
+import { ANAGRAMS, MISSING_LETTERS, WORD_CLUES, WORD_SEARCHES, getRandomAnagram, getRandomMissingLetters, getRandomWordClue, getRandomWordSearch, checkAnagramAnswer, checkMissingLettersAnswer, checkWordClueAnswer } from './puzzles-words.js';
 import { TetrisGame } from './game-tetris.js';
+import { getBatchedContent, getWordPuzzlesByType } from './content-batch.js';
 
 /**
  * Main App
@@ -126,14 +128,23 @@ class CarerCalmApp {
         app.innerHTML = await this.renderCrossword();
         break;
       case 'quiz':
+        if (!this.currentQuiz) {
+          await this.loadQuizAsync();
+        }
         app.innerHTML = this.renderQuiz();
         break;
       case 'anagram':
       case 'missing-letters':
       case 'word-clue':
+        if (!this.currentWordPuzzle) {
+          await this.loadWordPuzzleAsync();
+        }
         app.innerHTML = this.renderWordPuzzle();
         break;
       case 'word-search':
+        if (!this.currentWordPuzzle) {
+          await this.loadWordSearchAsync();
+        }
         app.innerHTML = this.renderWordSearch();
         break;
       case 'tetris':
@@ -355,8 +366,9 @@ class CarerCalmApp {
       });
     }
 
-    // Add multiple long reads spread through the content
-    const shuffledReads = [...LONG_READS].sort(() => Math.random() - 0.5).slice(0, 3);
+    // Add multiple long reads spread through the content (server batch + bundled fallback)
+    const batchedReads = await getBatchedContent('long-reads', LONG_READS);
+    const shuffledReads = [...batchedReads].sort(() => Math.random() - 0.5).slice(0, 3);
     shuffledReads.forEach((read, i) => {
       const pos = Math.min(2 + i * 3, content.length);
       content.splice(pos, 0, { type: 'long-read', data: read });
@@ -429,7 +441,19 @@ class CarerCalmApp {
     if (!this.currentMystery) {
       const completed = await getCompletedPuzzles('mystery');
       const completedIds = completed.map(p => p.puzzleId);
-      this.currentMystery = getRandomMystery(completedIds);
+      // Try batched mysteries first, fall back to bundled
+      const batchedMysteries = await getBatchedContent('mysteries', []);
+      const allMysteries = [...MYSTERY_PUZZLES, ...batchedMysteries];
+      // Dedupe by id
+      const seen = new Set();
+      const deduped = allMysteries.filter(m => {
+        if (seen.has(m.id)) return false;
+        seen.add(m.id);
+        return true;
+      });
+      const available = deduped.filter(p => !completedIds.includes(p.id));
+      const pool = available.length > 0 ? available : deduped;
+      this.currentMystery = pool[Math.floor(Math.random() * pool.length)];
       this.mysteryAnswer = { who: null, where: null, evidence: null };
     }
     
@@ -498,7 +522,18 @@ class CarerCalmApp {
     if (!this.currentCrossword) {
       const completed = await getCompletedPuzzles('crossword');
       const completedIds = completed.map(p => p.puzzleId);
-      this.currentCrossword = getRandomCrossword(completedIds);
+      // Try batched crosswords first, fall back to bundled
+      const batchedCrosswords = await getBatchedContent('crosswords', []);
+      const allCrosswords = [...MINI_CROSSWORDS, ...batchedCrosswords];
+      const seen = new Set();
+      const deduped = allCrosswords.filter(c => {
+        if (seen.has(c.id)) return false;
+        seen.add(c.id);
+        return true;
+      });
+      const available = deduped.filter(c => !completedIds.includes(c.id));
+      const pool = available.length > 0 ? available : deduped;
+      this.currentCrossword = pool[Math.floor(Math.random() * pool.length)];
       this.crosswordAnswers = {};
     }
     
@@ -565,12 +600,26 @@ class CarerCalmApp {
   // BRITPOP QUIZ
   // ==================
   
+  async loadQuizAsync() {
+    // Merge batched questions with bundled ones
+    const batchedQuestions = await getBatchedContent('quiz-questions', []);
+    const allQuestions = [...BRITPOP_QUESTIONS, ...batchedQuestions];
+    const seen = new Set();
+    const deduped = allQuestions.filter(q => {
+      if (seen.has(q.id)) return false;
+      seen.add(q.id);
+      return true;
+    });
+    const shuffled = deduped.sort(() => Math.random() - 0.5);
+    this.currentQuiz = shuffled.slice(0, 10);
+    this.quizAnswers = [];
+    this.quizScore = 0;
+    this.quizIndex = 0;
+  }
+
   renderQuiz() {
     if (!this.currentQuiz) {
-      this.currentQuiz = getQuizQuestions(10);
-      this.quizAnswers = [];
-      this.quizScore = 0;
-      this.quizIndex = 0;
+      return '<div class="loading"><p>Loading quiz...</p></div>';
     }
     
     // Show results if done
@@ -632,18 +681,36 @@ class CarerCalmApp {
   // WORD PUZZLES
   // ==================
 
+  async loadWordPuzzleAsync() {
+    if (this.currentView === 'anagram') {
+      const batched = await getWordPuzzlesByType('anagrams', []);
+      const all = [...ANAGRAMS, ...batched];
+      this.currentWordPuzzle = all[Math.floor(Math.random() * all.length)];
+      this.wordPuzzleType = 'anagram';
+    } else if (this.currentView === 'missing-letters') {
+      const batched = await getWordPuzzlesByType('missingLetters', []);
+      const all = [...MISSING_LETTERS, ...batched];
+      this.currentWordPuzzle = all[Math.floor(Math.random() * all.length)];
+      this.wordPuzzleType = 'missing-letters';
+    } else {
+      const batched = await getWordPuzzlesByType('wordClues', []);
+      const all = [...WORD_CLUES, ...batched];
+      this.currentWordPuzzle = all[Math.floor(Math.random() * all.length)];
+      this.wordPuzzleType = 'word-clue';
+    }
+  }
+
+  async loadWordSearchAsync() {
+    const batched = await getWordPuzzlesByType('wordSearches', []);
+    const all = [...WORD_SEARCHES, ...batched];
+    this.currentWordPuzzle = all[Math.floor(Math.random() * all.length)];
+    this.wordPuzzleType = 'word-search';
+    this.wordSearchFound = [];
+  }
+
   renderWordPuzzle() {
     if (!this.currentWordPuzzle) {
-      if (this.currentView === 'anagram') {
-        this.currentWordPuzzle = getRandomAnagram();
-        this.wordPuzzleType = 'anagram';
-      } else if (this.currentView === 'missing-letters') {
-        this.currentWordPuzzle = getRandomMissingLetters();
-        this.wordPuzzleType = 'missing-letters';
-      } else {
-        this.currentWordPuzzle = getRandomWordClue();
-        this.wordPuzzleType = 'word-clue';
-      }
+      return '<div class="loading"><p>Loading puzzle...</p></div>';
     }
 
     const p = this.currentWordPuzzle;
@@ -693,9 +760,7 @@ class CarerCalmApp {
 
   renderWordSearch() {
     if (!this.currentWordPuzzle) {
-      this.currentWordPuzzle = getRandomWordSearch();
-      this.wordPuzzleType = 'word-search';
-      this.wordSearchFound = [];
+      return '<div class="loading"><p>Loading puzzle...</p></div>';
     }
 
     const ws = this.currentWordPuzzle;
@@ -784,7 +849,13 @@ class CarerCalmApp {
     document.querySelectorAll('.category-btn').forEach(btn => {
       btn.addEventListener('click', async () => {
         const category = btn.dataset.category;
-        this.currentExercise = getRandomExercise(category);
+        // Try batched exercises + bundled
+        const batchedExercises = await getBatchedContent('exercises', []);
+        const allExercises = [...EXERCISES, ...batchedExercises];
+        const forCategory = allExercises.filter(ex => ex.category === category);
+        this.currentExercise = forCategory.length > 0
+          ? forCategory[Math.floor(Math.random() * forCategory.length)]
+          : getRandomExercise(category);
         this.currentView = 'exercise';
         history.pushState({}, '', '');
         this.render();
@@ -1029,9 +1100,7 @@ class CarerCalmApp {
         await saveQuizScore('britpop', this.quizScore, this.currentQuiz.length);
         await logActivity('quiz', { type: 'britpop', score: this.quizScore, total: this.currentQuiz.length });
         this.currentQuiz = null;
-        this.quizAnswers = [];
-        this.quizScore = 0;
-        this.quizIndex = 0;
+        await this.loadQuizAsync();
         this.render();
       });
     });
@@ -1075,8 +1144,9 @@ class CarerCalmApp {
 
     // Word puzzle again
     document.querySelectorAll('[data-action="word-puzzle-again"]').forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', async () => {
         this.currentWordPuzzle = null;
+        await this.loadWordPuzzleAsync();
         this.render();
       });
     });
@@ -1128,9 +1198,9 @@ class CarerCalmApp {
 
     // Word search again
     document.querySelectorAll('[data-action="word-search-again"]').forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', async () => {
         this.currentWordPuzzle = null;
-        this.wordSearchFound = [];
+        await this.loadWordSearchAsync();
         this.render();
       });
     });

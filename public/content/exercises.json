@@ -1,0 +1,724 @@
+[
+  {
+    "id": "ex-new-001",
+    "category": "quick",
+    "name": "Gentle Hand Squeeze",
+    "duration": 30,
+    "steps": [
+      "Hold both hands out in front of you, palms facing up.",
+      "Slowly curl your fingers into soft fists, squeezing gently.",
+      "Hold for a moment, then release and spread your fingers wide like a starfish.",
+      "Repeat this squeeze and release three more times, nice and slow.",
+      "Give your hands a gentle shake to finish. Well done."
+    ]
+  },
+  {
+    "id": "ex-new-002",
+    "category": "quick",
+    "name": "Shoulder Drop",
+    "duration": 30,
+    "steps": [
+      "Take a breath in and lift your shoulders up towards your ears.",
+      "Hold them there for just a second.",
+      "Now breathe out and let your shoulders drop completely.",
+      "Notice how much lighter that feels.",
+      "Repeat two more times. You carry a lot, so let some of it go."
+    ]
+  },
+  {
+    "id": "ex-new-003",
+    "category": "quick",
+    "name": "Ankle Circles",
+    "duration": 45,
+    "steps": [
+      "Sit comfortably or hold onto something for balance if standing.",
+      "Lift one foot slightly off the ground.",
+      "Draw five slow circles with your toes, going one direction.",
+      "Now reverse and draw five circles the other way.",
+      "Switch to the other foot and repeat both directions.",
+      "Place both feet down and feel how much more awake they are."
+    ]
+  },
+  {
+    "id": "ex-new-004",
+    "category": "quick",
+    "name": "Jaw Release",
+    "duration": 30,
+    "steps": [
+      "Let your mouth fall gently open, relaxing your jaw completely.",
+      "Place your fingertips on your cheeks and make small circles.",
+      "Let your jaw hang loose while you massage for a few seconds.",
+      "Slowly close your mouth and notice the difference.",
+      "You probably didn't realise how much tension was hiding there."
+    ]
+  },
+  {
+    "id": "ex-new-005",
+    "category": "quick",
+    "name": "Wrist Loosener",
+    "duration": 40,
+    "steps": [
+      "Stretch one arm out and gently pull your fingers back with the other hand.",
+      "Hold for a few seconds, feeling a gentle stretch in your wrist.",
+      "Now point your fingers down and gently press for a few seconds.",
+      "Switch to the other hand and repeat both stretches.",
+      "Finish by rolling both wrists in circles a few times. Lovely."
+    ]
+  },
+  {
+    "id": "ex-new-006",
+    "category": "quick",
+    "name": "Eye Rest",
+    "duration": 45,
+    "steps": [
+      "Rub your palms together until they feel warm.",
+      "Close your eyes and gently cup your warm palms over them.",
+      "Don't press on your eyes, just let the warmth sink in.",
+      "Breathe slowly and enjoy the darkness for a few breaths.",
+      "When you're ready, slowly remove your hands and blink softly.",
+      "Your eyes do so much for you. That was a little thank you to them."
+    ]
+  },
+  {
+    "id": "ex-new-007",
+    "category": "quick",
+    "name": "Toe Scrunch",
+    "duration": 30,
+    "steps": [
+      "With your feet on the floor, scrunch your toes up tight.",
+      "Hold for three seconds.",
+      "Release and spread your toes as wide as you can.",
+      "Repeat this three more times.",
+      "It's a tiny movement, but your whole body will thank you."
+    ]
+  },
+  {
+    "id": "ex-new-008",
+    "category": "back",
+    "name": "Seated Cat-Cow",
+    "duration": 60,
+    "steps": [
+      "Sit on the edge of your chair with your feet flat on the floor.",
+      "Place your hands on your knees.",
+      "Breathe in and gently arch your back, lifting your chest and looking slightly up.",
+      "Breathe out and round your back, tucking your chin towards your chest.",
+      "Move slowly between these two positions, following your breath.",
+      "Repeat five or six times, letting your spine wake up gently.",
+      "Come back to a neutral sitting position when you're done."
+    ]
+  },
+  {
+    "id": "ex-new-009",
+    "category": "back",
+    "name": "Gentle Seated Twist",
+    "duration": 60,
+    "steps": [
+      "Sit up tall and place your right hand on your left knee.",
+      "Place your left hand behind you on the chair or your lower back.",
+      "Breathe in to lengthen your spine upwards.",
+      "Breathe out and gently twist to the left, looking over your shoulder.",
+      "Hold for three slow breaths, going a tiny bit further with each exhale.",
+      "Slowly return to centre and repeat on the other side.",
+      "Your back has been working hard. This is its moment."
+    ]
+  },
+  {
+    "id": "ex-new-010",
+    "category": "back",
+    "name": "Standing Forward Fold",
+    "duration": 60,
+    "steps": [
+      "Stand with your feet hip-width apart, knees slightly bent.",
+      "Take a deep breath in and reach your arms up overhead.",
+      "As you breathe out, slowly fold forward from your hips, letting your arms hang.",
+      "Don't worry about touching the floor. Just let gravity do the work.",
+      "Nod your head gently yes and no to release your neck.",
+      "Stay here for a few breaths, swaying gently if that feels nice.",
+      "Slowly roll back up to standing, one vertebra at a time.",
+      "Stand tall and notice how your back feels. A little kinder, hopefully."
+    ]
+  },
+  {
+    "id": "ex-new-011",
+    "category": "back",
+    "name": "Knee-to-Chest Hug",
+    "duration": 60,
+    "steps": [
+      "Sit comfortably and lift one knee towards your chest.",
+      "Wrap your hands around your shin and give it a gentle hug.",
+      "Breathe deeply and feel the stretch in your lower back.",
+      "Hold for four slow breaths.",
+      "Lower that leg and switch to the other side.",
+      "Hold for four slow breaths again.",
+      "Sometimes your back just needs a hug from the other direction."
+    ]
+  },
+  {
+    "id": "ex-new-012",
+    "category": "back",
+    "name": "Shoulder Blade Squeeze",
+    "duration": 45,
+    "steps": [
+      "Sit or stand tall with your arms by your sides.",
+      "Imagine you're trying to hold a pencil between your shoulder blades.",
+      "Gently squeeze your shoulder blades together and hold for five seconds.",
+      "Release slowly and let your shoulders relax forward slightly.",
+      "Repeat five times, breathing steadily throughout.",
+      "This helps undo all that forward-leaning we do without thinking."
+    ]
+  },
+  {
+    "id": "ex-new-013",
+    "category": "back",
+    "name": "Pelvic Tilt",
+    "duration": 60,
+    "steps": [
+      "Sit on the edge of your chair with feet flat on the floor.",
+      "Gently tilt your pelvis forward so your lower back arches slightly.",
+      "Then tilt it backward so your lower back rounds.",
+      "Rock slowly between these two positions, like a gentle wave.",
+      "Do this eight times, keeping the movement small and soft.",
+      "This is one of the kindest things you can do for a tired lower back."
+    ]
+  },
+  {
+    "id": "ex-new-014",
+    "category": "back",
+    "name": "Side Reach Stretch",
+    "duration": 60,
+    "steps": [
+      "Sit or stand tall and reach your right arm overhead.",
+      "Gently lean to the left, feeling a stretch along your right side.",
+      "Keep both hips grounded and don't push into any pain.",
+      "Hold for three slow breaths.",
+      "Come back to centre and switch sides.",
+      "Hold the left stretch for three slow breaths too.",
+      "Return to centre. Your spine just got a little more space."
+    ]
+  },
+  {
+    "id": "ex-new-015",
+    "category": "energy",
+    "name": "Finger Tap Wake-Up",
+    "duration": 45,
+    "steps": [
+      "Hold your hands in front of you.",
+      "Start tapping each fingertip to your thumb, one at a time, going quickly.",
+      "Speed up as you get into a rhythm. Pinky, ring, middle, index, and back again.",
+      "Now tap all your fingertips on the table or your thighs like rain.",
+      "Do this for about fifteen seconds, letting the rhythm energise you.",
+      "Stop and notice the tingling in your fingers. Hello, energy."
+    ]
+  },
+  {
+    "id": "ex-new-016",
+    "category": "energy",
+    "name": "Big Yawn Stretch",
+    "duration": 30,
+    "steps": [
+      "Open your mouth wide and fake a big yawn, stretching your arms overhead.",
+      "Even if the yawn is fake, your body will respond as if it's real.",
+      "Stretch your fingers wide at the top.",
+      "Let the stretch ripple all the way down to your toes.",
+      "Do it twice more. Real yawns might sneak in, and that's perfect."
+    ]
+  },
+  {
+    "id": "ex-new-017",
+    "category": "energy",
+    "name": "March in Place",
+    "duration": 60,
+    "steps": [
+      "Stand up if you can and begin lifting your knees gently, one at a time.",
+      "Keep it slow and quiet, like a gentle march.",
+      "Swing your arms softly as you go.",
+      "After about twenty seconds, add a little twist at the waist with each step.",
+      "Keep going for another twenty seconds.",
+      "Slow down gradually and come to a stop.",
+      "Even a quiet march can wake up your whole body."
+    ]
+  },
+  {
+    "id": "ex-new-018",
+    "category": "energy",
+    "name": "Scalp Massage",
+    "duration": 45,
+    "steps": [
+      "Place all ten fingertips on your scalp.",
+      "Make small circles, pressing gently but firmly.",
+      "Work your way from your forehead to the back of your head.",
+      "Spend a little extra time on any spots that feel particularly good.",
+      "Now move to your temples and make soft circles there.",
+      "Finish by running your fingers through your hair (if you have some) a few times.",
+      "A little scalp attention goes a long way for waking up a tired brain."
+    ]
+  },
+  {
+    "id": "ex-new-019",
+    "category": "energy",
+    "name": "Sunrise Arms",
+    "duration": 45,
+    "steps": [
+      "Start with your arms hanging by your sides.",
+      "Breathe in slowly and raise your arms out to the sides and up overhead, like the sun rising.",
+      "Touch your palms together at the top if you can.",
+      "Breathe out and slowly lower them back down.",
+      "Repeat this four more times, making each one a little bigger.",
+      "Imagine you're filling yourself with morning light, even if it's the afternoon."
+    ]
+  },
+  {
+    "id": "ex-new-020",
+    "category": "energy",
+    "name": "Calf Raises",
+    "duration": 60,
+    "steps": [
+      "Stand behind your chair and lightly rest your hands on the back for balance.",
+      "Slowly rise up onto your toes, lifting your heels off the ground.",
+      "Hold at the top for two seconds.",
+      "Lower back down gently.",
+      "Repeat ten times, keeping it smooth and steady.",
+      "This quietly pumps blood back up through your legs and wakes everything up."
+    ]
+  },
+  {
+    "id": "ex-new-021",
+    "category": "energy",
+    "name": "Face Scrunch and Release",
+    "duration": 30,
+    "steps": [
+      "Scrunch up every part of your face as tightly as you can. Go on, really go for it.",
+      "Hold that silly face for five seconds.",
+      "Now release everything and let your face go completely soft.",
+      "Open your eyes wide and raise your eyebrows high.",
+      "Repeat twice more. It might make you laugh, and that's extra energy right there."
+    ]
+  },
+  {
+    "id": "ex-new-022",
+    "category": "energy",
+    "name": "Cross-Body Taps",
+    "duration": 60,
+    "steps": [
+      "Stand or sit comfortably.",
+      "Tap your right hand to your left knee, then your left hand to your right knee.",
+      "Keep alternating in a steady rhythm.",
+      "Do this about fifteen times on each side.",
+      "Now try tapping your right hand to your left shoulder, then switch.",
+      "Repeat fifteen times on each side.",
+      "This cross-body movement wakes up both sides of your brain. Clever, right?"
+    ]
+  },
+  {
+    "id": "ex-new-023",
+    "category": "tension",
+    "name": "Neck Release",
+    "duration": 60,
+    "steps": [
+      "Sit or stand comfortably and let your shoulders drop.",
+      "Slowly tilt your head to the right, bringing your ear towards your shoulder.",
+      "Hold for three slow breaths, feeling the gentle stretch.",
+      "Bring your head back to centre.",
+      "Now tilt to the left and hold for three slow breaths.",
+      "Gently drop your chin to your chest and hold for two breaths.",
+      "Slowly roll your head in a half-circle from one side to the other.",
+      "Return to centre. Your neck works so hard. It deserves that kindness."
+    ]
+  },
+  {
+    "id": "ex-new-024",
+    "category": "tension",
+    "name": "Progressive Fist Clench",
+    "duration": 60,
+    "steps": [
+      "Make tight fists with both hands and hold for five seconds.",
+      "Release and notice the feeling of letting go.",
+      "Now tense your forearms and fists together. Hold for five seconds.",
+      "Release. Feel the tension drain away.",
+      "Add your upper arms to the tension. Hold for five seconds.",
+      "Release everything at once and let your arms hang loose.",
+      "Sometimes you need to tense up on purpose to truly let go."
+    ]
+  },
+  {
+    "id": "ex-new-025",
+    "category": "tension",
+    "name": "Ear Pull",
+    "duration": 45,
+    "steps": [
+      "Gently take hold of both your earlobes between your thumbs and forefingers.",
+      "Pull them softly downward and hold for a few seconds.",
+      "Move your fingers to the middle of your ears and pull gently outward.",
+      "Now move to the top of your ears and pull gently upward.",
+      "Finish by rubbing your whole ear between your fingers.",
+      "Ears hold a surprising amount of tension. Doesn't that feel better?"
+    ]
+  },
+  {
+    "id": "ex-new-026",
+    "category": "tension",
+    "name": "Butterfly Hug",
+    "duration": 45,
+    "steps": [
+      "Cross your arms over your chest, hands resting on opposite shoulders.",
+      "Close your eyes if that feels comfortable.",
+      "Gently tap your right hand, then your left, alternating slowly.",
+      "Keep this gentle rhythm going, like butterfly wings.",
+      "Continue for about thirty seconds, breathing naturally.",
+      "This simple movement tells your nervous system it's safe to relax."
+    ]
+  },
+  {
+    "id": "ex-new-027",
+    "category": "tension",
+    "name": "Hand Massage",
+    "duration": 60,
+    "steps": [
+      "Take your right hand and press your left thumb into the palm of it.",
+      "Make slow circles, working from the centre outward.",
+      "Gently squeeze and pull each finger, one at a time.",
+      "Press into the fleshy part between your thumb and index finger.",
+      "Now switch and give your other hand the same treatment.",
+      "Your hands do so much. They deserve a little attention back."
+    ]
+  },
+  {
+    "id": "ex-new-028",
+    "category": "tension",
+    "name": "Whole Body Squeeze",
+    "duration": 45,
+    "steps": [
+      "Take a deep breath in.",
+      "As you breathe in, tense every muscle you can think of. Fists, arms, shoulders, face, legs, toes.",
+      "Hold everything tight for five seconds.",
+      "Now breathe out and release absolutely everything at once.",
+      "Let yourself go completely floppy, like a ragdoll.",
+      "Repeat twice more. Each time you release, you let go of a little more tension."
+    ]
+  },
+  {
+    "id": "ex-new-029",
+    "category": "tension",
+    "name": "Tongue and Jaw Release",
+    "duration": 45,
+    "steps": [
+      "Press your tongue firmly against the roof of your mouth for five seconds.",
+      "Release and let your tongue rest heavily in the bottom of your mouth.",
+      "Open your mouth wide and move your jaw gently side to side.",
+      "Close your mouth and let your teeth part slightly so your jaw hangs loose.",
+      "Take three breaths with your jaw completely relaxed.",
+      "We hold so much tension here without realising. Not anymore."
+    ]
+  },
+  {
+    "id": "ex-new-030",
+    "category": "sad",
+    "name": "Self-Hug",
+    "duration": 45,
+    "steps": [
+      "Wrap your arms around yourself and give yourself a proper hug.",
+      "Squeeze gently and hold it.",
+      "Take a slow, deep breath in through your nose.",
+      "Breathe out slowly through your mouth.",
+      "Stay here for a few more breaths. You deserve kindness, especially from yourself.",
+      "When you're ready, gently release and place your hands in your lap."
+    ]
+  },
+  {
+    "id": "ex-new-031",
+    "category": "sad",
+    "name": "Warm Hands on Heart",
+    "duration": 60,
+    "steps": [
+      "Rub your palms together until they feel warm.",
+      "Place one hand over your heart and the other on top of it.",
+      "Close your eyes and feel the warmth spreading into your chest.",
+      "Notice your heartbeat beneath your hands. It's been beating for you all day.",
+      "Take five slow, deep breaths while keeping your hands here.",
+      "Whisper or think something kind to yourself. Anything at all.",
+      "When you're ready, gently lower your hands. That warmth stays with you."
+    ]
+  },
+  {
+    "id": "ex-new-032",
+    "category": "sad",
+    "name": "Grounding Touch",
+    "duration": 60,
+    "steps": [
+      "Place both feet flat on the floor and press down gently.",
+      "Feel the ground supporting you. It's solid and it's here.",
+      "Run your hands slowly along your thighs, noticing the texture.",
+      "Touch something nearby: a table, a cushion, your sleeve. Notice how it feels.",
+      "Name three things you can feel right now, quietly in your mind.",
+      "Take a deep breath. You are here. You are real. That is enough."
+    ]
+  },
+  {
+    "id": "ex-new-033",
+    "category": "sad",
+    "name": "Gentle Rocking",
+    "duration": 60,
+    "steps": [
+      "Sit comfortably and let your body begin to rock very gently, side to side.",
+      "Keep the movement small and slow, like a boat on calm water.",
+      "Let your arms and hands rest wherever feels natural.",
+      "Close your eyes if you'd like. There's nowhere you need to be right now.",
+      "Continue rocking gently for about forty seconds.",
+      "Slowly come to stillness when you're ready.",
+      "Rocking is how we've been comforted since we were small. It still works."
+    ]
+  },
+  {
+    "id": "ex-new-034",
+    "category": "sad",
+    "name": "Kind Hands",
+    "duration": 60,
+    "steps": [
+      "Hold one of your hands gently in the other, as if it belongs to someone you love.",
+      "Stroke the back of your hand slowly with your thumb.",
+      "Notice the texture of your skin, the shape of your fingers.",
+      "Take a slow breath and think of one thing you did today that was kind.",
+      "It doesn't have to be big. It counts because you did it.",
+      "Give your hand a gentle squeeze. You are doing your best, and that is plenty."
+    ]
+  },
+  {
+    "id": "ex-new-035",
+    "category": "sad",
+    "name": "Comfort Breathing",
+    "duration": 90,
+    "steps": [
+      "Place one hand on your belly and one on your chest.",
+      "Breathe in slowly for four counts, feeling your belly rise first, then your chest.",
+      "Hold gently for two counts.",
+      "Breathe out for six counts, letting your chest fall, then your belly.",
+      "Repeat this four more times.",
+      "With each exhale, imagine breathing out some of the heaviness you're carrying.",
+      "It's okay to feel what you're feeling. This breath is here to help you through it."
+    ]
+  },
+  {
+    "id": "ex-new-036",
+    "category": "sad",
+    "name": "Warm Face Hold",
+    "duration": 45,
+    "steps": [
+      "Rub your hands together to warm them up.",
+      "Gently cup your face in your warm hands, covering your cheeks.",
+      "Close your eyes and let the warmth settle in.",
+      "Take three slow, deep breaths.",
+      "On each exhale, soften your face a little more under your hands.",
+      "You are held. Even if it's just by your own two hands, it counts."
+    ]
+  },
+  {
+    "id": "ex-new-037",
+    "category": "break",
+    "name": "Five-Minute Full Reset",
+    "duration": 300,
+    "steps": [
+      "Find a comfortable position, sitting or standing, wherever you are.",
+      "For the first minute, close your eyes and take ten slow, deep breaths. Count each one.",
+      "For the second minute, gently roll your head, shoulders, and wrists in slow circles.",
+      "For the third minute, stand and stretch gently in any way that feels good. Reach up, fold forward, twist softly.",
+      "For the fourth minute, sit back down and place your hands on your knees. Breathe naturally and listen to whatever sounds are around you.",
+      "For the final minute, think of one thing you're looking forward to, even something small like a cup of tea.",
+      "Open your eyes and return gently. You just gave yourself a real break. That matters."
+    ]
+  },
+  {
+    "id": "ex-new-038",
+    "category": "break",
+    "name": "Body Scan",
+    "duration": 300,
+    "steps": [
+      "Settle into a comfortable position and close your eyes.",
+      "Start at the top of your head. Notice any sensations there. No need to change anything, just notice.",
+      "Move your attention slowly down through your face, jaw, neck, and shoulders. Breathe into any tight spots.",
+      "Continue down through your arms, hands, and fingers. Let them soften.",
+      "Bring your attention to your chest and belly. Feel them rise and fall.",
+      "Move through your hips, thighs, knees, and calves. Let each part feel heavy and relaxed.",
+      "Finish at your feet and toes. Wiggle them gently.",
+      "Take three deep breaths and open your eyes when you're ready. You just checked in with your whole self."
+    ]
+  },
+  {
+    "id": "ex-new-039",
+    "category": "break",
+    "name": "Seated Yoga Flow",
+    "duration": 300,
+    "steps": [
+      "Sit comfortably and close your eyes. Take five deep breaths to settle in.",
+      "Reach your arms overhead on an inhale, then fold forward on an exhale, hands reaching for the floor. Hold for three breaths.",
+      "Sit back up and do five rounds of seated cat-cow: arch your back as you inhale, round it as you exhale.",
+      "Place your right hand on your left knee and twist gently to the left. Hold for three breaths. Switch sides.",
+      "Reach your right arm overhead and lean to the left for a side stretch. Hold for three breaths. Switch sides.",
+      "Interlace your fingers behind your back and lift your chest, opening your shoulders. Hold for three breaths.",
+      "Return to sitting tall. Place your hands on your knees and take ten slow breaths.",
+      "Open your eyes. You just did yoga in a chair, and it was beautiful."
+    ]
+  },
+  {
+    "id": "ex-new-040",
+    "category": "break",
+    "name": "Mindful Senses",
+    "duration": 300,
+    "steps": [
+      "Sit or stand comfortably and take three settling breaths.",
+      "For one minute, look around and notice five things you can see. Really look at their colours, shapes, and textures.",
+      "For the next minute, close your eyes and listen. Notice four different sounds, near or far.",
+      "Now notice three things you can feel: the chair beneath you, air on your skin, fabric on your body.",
+      "Notice two things you can smell. If nothing stands out, notice the absence of smell.",
+      "Finally, notice one taste in your mouth, even if it's just neutral.",
+      "Take a few deep breaths. You just brought yourself completely into the present moment.",
+      "The present moment is the only one where rest is possible. Well done for arriving here."
+    ]
+  },
+  {
+    "id": "ex-new-041",
+    "category": "break",
+    "name": "Gentle Standing Sequence",
+    "duration": 300,
+    "steps": [
+      "Stand comfortably with feet hip-width apart. Close your eyes and take five deep breaths.",
+      "Slowly raise your arms overhead, reaching as high as feels good. Hold for three breaths, then lower.",
+      "Fold gently forward, bending your knees as much as you need. Let your head hang heavy. Sway gently for thirty seconds.",
+      "Roll up slowly. Then do ten slow calf raises, lifting and lowering your heels.",
+      "Place your hands on your hips and make five slow circles with your hips in each direction.",
+      "Finish with one minute of standing still, eyes closed, hands by your sides, breathing naturally.",
+      "Open your eyes. You just gave your whole body five minutes of care."
+    ]
+  },
+  {
+    "id": "ex-new-042",
+    "category": "break",
+    "name": "Compassion Pause",
+    "duration": 300,
+    "steps": [
+      "Find a quiet spot and sit comfortably. Place both hands over your heart.",
+      "For the first minute, breathe slowly and feel your heartbeat. You've been going all day, so just be still.",
+      "For the second minute, think of someone you care for. Picture their face and silently wish them peace.",
+      "For the third minute, turn that same kindness towards yourself. You are doing something important and difficult.",
+      "For the fourth minute, gently stretch your neck, shoulders, and hands while continuing to breathe deeply.",
+      "For the final minute, sit with your hands in your lap, palms up, and simply breathe.",
+      "When you're ready, open your eyes. Caring for others starts with moments like this one."
+    ]
+  },
+  {
+    "id": "ex-new-043",
+    "category": "break",
+    "name": "Stretch and Breathe Flow",
+    "duration": 300,
+    "steps": [
+      "Begin seated. Take five deep breaths to arrive in this moment.",
+      "Interlace your fingers and push your palms towards the ceiling. Stretch tall for three breaths.",
+      "Release and do gentle neck circles: three in one direction, three in the other.",
+      "Extend one leg at a time and flex and point your foot five times each. Circle your ankles too.",
+      "Stand up slowly. Shake out your hands, arms, and legs for about thirty seconds. Be playful with it.",
+      "Do five slow shoulder rolls forward, then five backward.",
+      "Place your hand on a wall and do a gentle calf stretch on each side for thirty seconds.",
+      "Return to sitting and rest quietly for the final minute, breathing naturally. This break was well earned."
+    ]
+  },
+  {
+    "id": "ex-new-044",
+    "category": "breathe",
+    "name": "Box Breathing",
+    "duration": 60,
+    "steps": [
+      "Sit comfortably and let your shoulders relax.",
+      "Breathe in slowly through your nose for four counts.",
+      "Hold your breath gently for four counts. No straining.",
+      "Breathe out slowly through your mouth for four counts.",
+      "Hold the empty breath for four counts.",
+      "Repeat this box pattern three more times.",
+      "Each side of the box brings a little more calm. You've just drawn four of them."
+    ]
+  },
+  {
+    "id": "ex-new-045",
+    "category": "breathe",
+    "name": "Extended Exhale",
+    "duration": 60,
+    "steps": [
+      "Sit comfortably and close your eyes if you'd like.",
+      "Breathe in through your nose for a count of three.",
+      "Now breathe out through your mouth for a count of six.",
+      "The longer exhale tells your body it's time to calm down.",
+      "Repeat this five more times, keeping the rhythm gentle.",
+      "If six feels too long, try breathing out for four or five. Find what works for you."
+    ]
+  },
+  {
+    "id": "ex-new-046",
+    "category": "breathe",
+    "name": "Bee Breath",
+    "duration": 60,
+    "steps": [
+      "Sit comfortably and gently close your eyes.",
+      "Take a deep breath in through your nose.",
+      "As you breathe out, hum softly, like a bee. Keep it quiet and gentle.",
+      "Feel the vibration in your throat and chest.",
+      "Take another breath in and hum again on the exhale.",
+      "Repeat four more times. The humming is surprisingly soothing.",
+      "When you stop, sit quietly and notice the calm that hum has created."
+    ]
+  },
+  {
+    "id": "ex-new-047",
+    "category": "breathe",
+    "name": "Counting Breath",
+    "duration": 90,
+    "steps": [
+      "Sit comfortably and close your eyes.",
+      "Breathe naturally and begin counting each exhale. One, two, three...",
+      "If your mind wanders (and it will, that's completely normal), gently start back at one.",
+      "Try to reach ten without losing count.",
+      "If you reach ten, start again from one.",
+      "Continue for about a minute. There's no failing here, only returning.",
+      "Open your eyes. Every time you came back to counting, you practised being present."
+    ]
+  },
+  {
+    "id": "ex-new-048",
+    "category": "breathe",
+    "name": "Balloon Breath",
+    "duration": 60,
+    "steps": [
+      "Place your hands on your belly.",
+      "Imagine your belly is a balloon. Breathe in slowly and fill the balloon up.",
+      "Feel your hands rise as your belly expands.",
+      "Now breathe out slowly and feel the balloon deflate, hands moving inward.",
+      "Repeat this five times, making the balloon a little bigger each time.",
+      "This is a lovely one to do anytime you need to slow things down."
+    ]
+  },
+  {
+    "id": "ex-new-049",
+    "category": "breathe",
+    "name": "Cooling Breath",
+    "duration": 60,
+    "steps": [
+      "Sit comfortably and relax your shoulders.",
+      "Curl your tongue slightly, or if you can't do that, make a small O shape with your lips.",
+      "Breathe in slowly through your curled tongue or lips, feeling the cool air.",
+      "Close your mouth and breathe out through your nose.",
+      "Repeat five more times.",
+      "This gently cools and calms your whole system. A mini reset for a busy mind."
+    ]
+  },
+  {
+    "id": "ex-new-050",
+    "category": "breathe",
+    "name": "Sigh It Out",
+    "duration": 45,
+    "steps": [
+      "Take a deep breath in through your nose, filling your lungs completely.",
+      "Open your mouth and let it all out with a big, audible sigh. Ahhhhh.",
+      "Don't hold back. Let the sigh be as dramatic as it wants to be.",
+      "Take another deep breath in.",
+      "Sigh it out again, even bigger this time.",
+      "Do this three more times. Sighing is your body's natural way of releasing stress. Let it do its thing."
+    ]
+  }
+]

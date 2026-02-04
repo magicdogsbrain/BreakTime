@@ -1,72 +1,83 @@
 import { openDB } from 'idb';
 
 const DB_NAME = 'carer-calm';
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 
 let dbPromise;
 
 export async function initDB() {
   dbPromise = openDB(DB_NAME, DB_VERSION, {
-    upgrade(db) {
-      // Store for images
-      if (!db.objectStoreNames.contains('images')) {
+    upgrade(db, oldVersion) {
+      // === Version 1 stores ===
+      if (oldVersion < 1) {
+        // Store for images
         const imageStore = db.createObjectStore('images', { keyPath: 'id' });
         imageStore.createIndex('fetchedAt', 'fetchedAt');
-      }
-      
-      // Store for news/stories
-      if (!db.objectStoreNames.contains('stories')) {
+
+        // Store for news/stories
         const storyStore = db.createObjectStore('stories', { keyPath: 'id' });
         storyStore.createIndex('fetchedAt', 'fetchedAt');
-      }
-      
-      // Store for quotes
-      if (!db.objectStoreNames.contains('quotes')) {
-        const quoteStore = db.createObjectStore('quotes', { keyPath: 'id' });
-      }
-      
-      // Store for exercises (bundled, but could be updated)
-      if (!db.objectStoreNames.contains('exercises')) {
+
+        // Store for quotes
+        db.createObjectStore('quotes', { keyPath: 'id' });
+
+        // Store for exercises
         db.createObjectStore('exercises', { keyPath: 'id' });
-      }
-      
-      // Store for her activity (what she's done, no sync needed)
-      if (!db.objectStoreNames.contains('activity')) {
+
+        // Activity log
         const activityStore = db.createObjectStore('activity', { keyPath: 'id', autoIncrement: true });
         activityStore.createIndex('date', 'date');
         activityStore.createIndex('type', 'type');
-      }
-      
-      // Simple key-value for app state
-      if (!db.objectStoreNames.contains('state')) {
+
+        // App state key-value
         db.createObjectStore('state', { keyPath: 'key' });
-      }
-      
-      // Track when content was last shown (for 10-day rotation)
-      if (!db.objectStoreNames.contains('shown')) {
+
+        // Content rotation tracking
         const shownStore = db.createObjectStore('shown', { keyPath: 'id' });
         shownStore.createIndex('shownAt', 'shownAt');
-      }
-      
-      // Puzzle progress
-      if (!db.objectStoreNames.contains('puzzleProgress')) {
+
+        // Puzzle progress
         db.createObjectStore('puzzleProgress', { keyPath: 'id' });
-      }
-      
-      // Quiz scores
-      if (!db.objectStoreNames.contains('quizScores')) {
+
+        // Quiz scores
         const quizStore = db.createObjectStore('quizScores', { keyPath: 'id', autoIncrement: true });
         quizStore.createIndex('quizType', 'quizType');
         quizStore.createIndex('date', 'date');
+
+        // Game high scores
+        db.createObjectStore('gameScores', { keyPath: 'game' });
       }
-      
-      // Game high scores
-      if (!db.objectStoreNames.contains('gameScores')) {
-        const gameStore = db.createObjectStore('gameScores', { keyPath: 'game' });
+
+      // === Version 2: Server content batch stores ===
+      if (oldVersion < 2) {
+        // Long-form stories from server
+        if (!db.objectStoreNames.contains('long-reads')) {
+          db.createObjectStore('long-reads', { keyPath: 'id' });
+        }
+
+        // Mystery puzzles from server
+        if (!db.objectStoreNames.contains('mysteries')) {
+          db.createObjectStore('mysteries', { keyPath: 'id' });
+        }
+
+        // Crossword puzzles from server
+        if (!db.objectStoreNames.contains('crosswords')) {
+          db.createObjectStore('crosswords', { keyPath: 'id' });
+        }
+
+        // Quiz questions from server
+        if (!db.objectStoreNames.contains('quiz-questions')) {
+          db.createObjectStore('quiz-questions', { keyPath: 'id' });
+        }
+
+        // Word puzzles from server (anagrams, missing letters, etc.)
+        if (!db.objectStoreNames.contains('word-puzzles')) {
+          db.createObjectStore('word-puzzles', { keyPath: 'id' });
+        }
       }
     }
   });
-  
+
   return dbPromise;
 }
 

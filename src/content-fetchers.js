@@ -1,4 +1,5 @@
 import { putMany, getAll, getState, setState } from './db.js';
+import { refreshAllBatches } from './content-batch.js';
 
 // ===========================================
 // CONFIGURATION - Change these to your own!
@@ -917,4 +918,7 @@ export async function refreshAllContent() {
   fetchImages().catch(() => {});
   fetchStories().catch(() => {});
   fetchQuotes().catch(() => {});
+
+  // Also refresh server-side content batches
+  refreshAllBatches().catch(() => {});
 }
