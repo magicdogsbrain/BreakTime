@@ -6,7 +6,7 @@ import { putMany, getAll, getState, setState } from './db.js';
 
 // Unsplash API: Free at https://unsplash.com/developers (50 req/hour free tier)
 // Leave empty to use only bundled content
-const UNSPLASH_ACCESS_KEY = '';
+const UNSPLASH_ACCESS_KEY = 'TBWdenR8_wINHnbRfCtcXoYQBRkTLEO0GJt7-cld23Y';
 
 // CORS Proxy: needed to fetch RSS feeds from the browser
 // Default uses allorigins.win (free, no key needed)
