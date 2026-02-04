@@ -158,7 +158,7 @@ class CarerCalmApp {
     
     const imageStyle = image 
       ? `background-image: url('${image.thumbUrl}'); background-size: cover; background-position: center;`
-      : `background: linear-gradient(135deg, #f5d5e0 0%, #e8c5d4 25%, #d4b8d0 50%, #c9b8d9 75%, #b8c5e2 100%);`;
+      : `background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 25%, #e1bee7 50%, #d1c4e9 75%, #bbdefb 100%); background-size: 200% 200%;`;
 
     const todayParts = [];
     if (exerciseCount > 0) todayParts.push(`${exerciseCount} movement${exerciseCount > 1 ? 's' : ''}`);
@@ -355,9 +355,12 @@ class CarerCalmApp {
       });
     }
 
-    // Add a random long read
-    const longRead = LONG_READS[Math.floor(Math.random() * LONG_READS.length)];
-    content.splice(2, 0, { type: 'long-read', data: longRead });
+    // Add multiple long reads spread through the content
+    const shuffledReads = [...LONG_READS].sort(() => Math.random() - 0.5).slice(0, 3);
+    shuffledReads.forEach((read, i) => {
+      const pos = Math.min(2 + i * 3, content.length);
+      content.splice(pos, 0, { type: 'long-read', data: read });
+    });
 
     return `
       <div class="scroll-view">
@@ -1004,7 +1007,7 @@ class CarerCalmApp {
           <div class="quiz-feedback ${correct ? 'correct' : 'wrong'}" style="text-align: center; padding: 1rem;">
             <p class="feedback-result" style="font-size: 1.5rem; margin-bottom: 0.5rem;">${correct ? '✓ Correct!' : '✗ Not quite!'}</p>
             ${!correct ? `<p style="margin-bottom: 0.5rem;">The answer was: <strong>${q.answer}</strong></p>` : ''}
-            <p class="feedback-fact" style="font-style: italic; color: #666; margin-bottom: 1rem;">${q.fact}</p>
+            <p class="feedback-fact" style="font-style: italic; color: var(--text-soft); margin-bottom: 1rem;">${q.fact}</p>
             <button class="submit-btn" data-action="quiz-next">Next question</button>
           </div>
         `;

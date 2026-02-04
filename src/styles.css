@@ -16,16 +16,19 @@
 }
 
 :root {
-  /* Feminine, floaty palette */
-  --bg: #faf5f7;
+  /* Feminine, poppy palette */
+  --bg: #fdf5f8;
   --bg-card: #ffffff;
-  --text: #4a3f47;
-  --text-soft: #7d6f77;
-  --text-faint: #a99ba3;
-  --accent: #c7899e;
-  --accent-soft: #dbb0c1;
-  --accent-warm: #e8c5a0;
-  --border: #efe4e8;
+  --text: #3d2e36;
+  --text-soft: #6e5566;
+  --text-faint: #a08898;
+  --accent: #e06b8d;
+  --accent-soft: #f2a5bb;
+  --accent-warm: #f0b87a;
+  --accent-pop: #b068d6;
+  --border: #f3dfe5;
+  --gradient-primary: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 25%, #e1bee7 50%, #d1c4e9 75%, #bbdefb 100%);
+  --gradient-card: linear-gradient(135deg, #fff0f5 0%, #fff5fb 100%);
   
   /* Spacing */
   --space-xs: 0.5rem;
@@ -68,7 +71,17 @@ html, body {
   height: 30vh;
   min-height: 180px;
   position: relative;
-  background: linear-gradient(135deg, #f5d5e0 0%, #e8c5d4 25%, #d4b8d0 50%, #c9b8d9 75%, #b8c5e2 100%);
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 25%, #e1bee7 50%, #d1c4e9 75%, #bbdefb 100%);
+  animation: shimmer 8s ease-in-out infinite alternate;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.hero {
+  background-size: 200% 200%;
 }
 
 .hero-overlay {
@@ -141,20 +154,22 @@ html, body {
   gap: var(--space-md);
   width: 100%;
   padding: var(--space-md) var(--space-lg);
-  background: var(--bg-card);
+  background: var(--gradient-card);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 16px;
   font-size: 1rem;
   color: var(--text);
   cursor: pointer;
   transition: all 0.2s ease;
   text-align: left;
+  box-shadow: 0 2px 8px rgba(224, 107, 141, 0.08);
 }
 
 .category-btn:hover,
 .category-btn:focus {
   border-color: var(--accent-soft);
-  box-shadow: 0 2px 12px rgba(199, 137, 158, 0.15);
+  box-shadow: 0 4px 16px rgba(224, 107, 141, 0.2);
+  transform: translateY(-1px);
 }
 
 .category-btn:active {
@@ -282,19 +297,21 @@ html, body {
 
 .done-btn {
   padding: var(--space-md) var(--space-xl);
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-pop) 100%);
   color: white;
   border: none;
   border-radius: 30px;
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
   margin-bottom: var(--space-md);
+  box-shadow: 0 3px 12px rgba(224, 107, 141, 0.3);
 }
 
 .done-btn:hover {
-  background: var(--accent-soft);
+  box-shadow: 0 5px 18px rgba(224, 107, 141, 0.4);
+  transform: translateY(-1px);
 }
 
 .done-btn:active {
@@ -385,20 +402,22 @@ html, body {
 
 .long-read-badge {
   display: inline-block;
-  padding: 2px var(--space-sm);
-  background: var(--accent-soft);
+  padding: 4px var(--space-md);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-pop) 100%);
   color: white;
-  border-radius: 12px;
+  border-radius: 16px;
   font-size: 0.75rem;
-  font-weight: 600;
-  margin-bottom: var(--space-sm);
-  letter-spacing: 0.03em;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .scroll-quote {
   padding: var(--space-xl) var(--space-lg);
   text-align: center;
-  background: linear-gradient(135deg, #fdf0f4 0%, #f0e8f5 100%);
+  background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #e8eaf6 100%);
+  border: none;
 }
 
 .scroll-quote .quote {
@@ -507,17 +526,19 @@ html, body {
   gap: var(--space-md);
   width: 100%;
   padding: var(--space-lg);
-  background: var(--bg-card);
+  background: var(--gradient-card);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 16px;
   cursor: pointer;
   text-align: left;
   transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(224, 107, 141, 0.06);
 }
 
 .game-btn:hover {
   border-color: var(--accent-soft);
-  box-shadow: 0 2px 12px rgba(199, 137, 158, 0.15);
+  box-shadow: 0 4px 16px rgba(224, 107, 141, 0.18);
+  transform: translateY(-1px);
 }
 
 .game-icon {
@@ -642,18 +663,20 @@ html, body {
 .submit-btn {
   width: 100%;
   padding: var(--space-md);
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-pop) 100%);
   color: white;
   border: none;
   border-radius: 12px;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+  box-shadow: 0 3px 12px rgba(224, 107, 141, 0.3);
 }
 
 .submit-btn:hover {
-  background: var(--accent-soft);
+  box-shadow: 0 5px 18px rgba(224, 107, 141, 0.4);
+  transform: translateY(-1px);
 }
 
 .submit-btn:disabled {
@@ -774,18 +797,20 @@ html, body {
 
 .quiz-option {
   padding: var(--space-md) var(--space-lg);
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: var(--bg-card);
+  border: 2px solid var(--border);
   border-radius: 12px;
   font-size: 1rem;
+  color: var(--text);
   text-align: left;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .quiz-option:hover {
-  border-color: var(--accent-soft);
-  background: var(--bg-card);
+  border-color: var(--accent);
+  background: rgba(224, 107, 141, 0.06);
+  box-shadow: 0 2px 8px rgba(224, 107, 141, 0.12);
 }
 
 .quiz-results {
@@ -1041,19 +1066,22 @@ html, body {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #1c1820;
-    --bg-card: #262030;
-    --text: #e8e0e5;
-    --text-soft: #a898a5;
-    --text-faint: #6e5f6a;
-    --accent: #c7899e;
-    --accent-soft: #9b6b80;
-    --accent-warm: #c4a070;
-    --border: #3a2e38;
+    --bg: #1a1520;
+    --bg-card: #2a2030;
+    --text: #f0e5eb;
+    --text-soft: #b8a5b2;
+    --text-faint: #7a6875;
+    --accent: #e8799f;
+    --accent-soft: #a8607a;
+    --accent-warm: #d4a870;
+    --accent-pop: #b878d0;
+    --border: #3d2e3a;
+    --gradient-card: linear-gradient(135deg, #2a2030 0%, #2e2238 100%);
   }
 
   .hero {
-    background: linear-gradient(135deg, #3a2040 0%, #2d2045 50%, #1e2a4a 100%);
+    background: linear-gradient(135deg, #3d1845 0%, #2d1850 50%, #1a2545 100%);
+    background-size: 200% 200%;
   }
 
   .hero-overlay {
@@ -1061,6 +1089,18 @@ html, body {
   }
 
   .scroll-quote {
-    background: linear-gradient(135deg, #2a1e28 0%, #221e2e 100%);
+    background: linear-gradient(135deg, #2d1a2a 0%, #251a30 100%);
+    border: 1px solid var(--border);
+  }
+
+  .quiz-option {
+    color: var(--text);
+    background: var(--bg-card);
+    border-color: var(--border);
+  }
+
+  .quiz-option:hover {
+    background: rgba(232, 121, 159, 0.1);
+    border-color: var(--accent);
   }
 }
