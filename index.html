@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#faf5f7">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="description" content="A quiet space for carers - gentle content when you need it">
+  
+  <title>BreakTime!</title>
+  
+  <!-- Prevent any caching issues during development -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  
+  <link rel="icon" type="image/png" href="/icon-192.png">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  
+  <style>
+    /* Critical CSS - show something immediately */
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #faf5f7;
+      color: #4a3f47;
+    }
+    
+    #app {
+      min-height: 100vh;
+    }
+    
+    /* Simple loading state (rarely seen) */
+    .loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #9a9a9a;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="loading">
+      <p>A moment of calm...</p>
+    </div>
+  </div>
+  
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
