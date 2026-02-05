@@ -1,7 +1,7 @@
 import { openDB } from 'idb';
 
 const DB_NAME = 'carer-calm';
-const DB_VERSION = 2;
+const DB_VERSION = 3;
 
 let dbPromise;
 
@@ -73,6 +73,13 @@ export async function initDB() {
         // Word puzzles from server (anagrams, missing letters, etc.)
         if (!db.objectStoreNames.contains('word-puzzles')) {
           db.createObjectStore('word-puzzles', { keyPath: 'id' });
+        }
+      }
+
+      // === Version 3: Achievements store ===
+      if (oldVersion < 3) {
+        if (!db.objectStoreNames.contains('achievements')) {
+          db.createObjectStore('achievements', { keyPath: 'id' });
         }
       }
     }
@@ -347,4 +354,90 @@ export async function getGameHighScore(game) {
   const db = await dbPromise;
   const record = await db.get('gameScores', game);
   return record?.highScore || 0;
+}
+
+// ==================
+// QUIZ STATS
+// ==================
+
+export async function getAllQuizStats() {
+  const db = await dbPromise;
+  const scores = await db.getAll('quizScores');
+  if (!scores.length) {
+    return { totalQuizzes: 0, totalCorrect: 0, totalQuestions: 0, averagePercent: 0, bestScore: 0 };
+  }
+  return {
+    totalQuizzes: scores.length,
+    totalCorrect: scores.reduce((sum, s) => sum + s.score, 0),
+    totalQuestions: scores.reduce((sum, s) => sum + s.total, 0),
+    averagePercent: Math.round(scores.reduce((sum, s) => sum + s.percentage, 0) / scores.length),
+    bestScore: Math.max(...scores.map(s => s.percentage)),
+    hasPerfect: scores.some(s => s.percentage === 100)
+  };
+}
+
+// ==================
+// WEEKLY STATS
+// ==================
+
+export async function getActivityForWeek() {
+  const db = await dbPromise;
+  const all = await db.getAll('activity');
+  const weekAgo = Date.now() - (7 * 24 * 60 * 60 * 1000);
+  return all.filter(a => a.timestamp >= weekAgo);
+}
+
+export async function getWeeklyStats() {
+  const activity = await getActivityForWeek();
+  const quizStats = await getAllQuizStats();
+  const tetrisHigh = await getGameHighScore('tetris');
+
+  // Check for early bird (before 9am) and night owl (after 10pm)
+  let earlyBird = false;
+  let nightOwl = false;
+  activity.forEach(a => {
+    const hour = new Date(a.timestamp).getHours();
+    if (hour < 9) earlyBird = true;
+    if (hour >= 22) nightOwl = true;
+  });
+
+  return {
+    exercises: activity.filter(a => a.type === 'exercise').length,
+    breaths: activity.filter(a => a.type === 'breathe').length,
+    puzzles: activity.filter(a => a.type === 'puzzle').length,
+    quizzes: activity.filter(a => a.type === 'quiz').length,
+    games: activity.filter(a => a.type === 'game').length,
+    daysActive: new Set(activity.map(a => a.date)).size,
+    totalBreaks: activity.length,
+    perfectQuiz: quizStats.hasPerfect,
+    tetrisHigh,
+    earlyBird,
+    nightOwl
+  };
+}
+
+// ==================
+// ACHIEVEMENTS
+// ==================
+
+export async function getUnlockedAchievements() {
+  const db = await dbPromise;
+  if (!db.objectStoreNames.contains('achievements')) {
+    return [];
+  }
+  return db.getAll('achievements');
+}
+
+export async function unlockAchievement(achievement) {
+  const db = await dbPromise;
+  if (!db.objectStoreNames.contains('achievements')) {
+    return;
+  }
+  const existing = await db.get('achievements', achievement.id);
+  if (!existing) {
+    await db.put('achievements', {
+      ...achievement,
+      unlockedAt: Date.now()
+    });
+  }
 }

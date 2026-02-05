@@ -57,10 +57,10 @@
   },
   {
     "id": "extra-009",
-    "question": "Which Morrissey solo single reached number one in the UK in 1988?",
-    "options": ["Suedehead", "Every Day Is Like Sunday", "The Last of the Famous International Playboys", "None of these"],
-    "answer": "None of these",
-    "fact": "Despite his huge popularity, Morrissey never achieved a solo UK number one single during the 1980s or 1990s."
+    "question": "How many UK number one solo singles did Morrissey achieve in the 1980s and 1990s?",
+    "options": ["None", "One", "Two", "Three or more"],
+    "answer": "None",
+    "fact": "Despite his huge popularity, Morrissey never achieved a solo UK number one single during the 1980s or 1990s. His highest charting solo single 'Suedehead' reached number 5 in 1988."
   },
   {
     "id": "extra-010",

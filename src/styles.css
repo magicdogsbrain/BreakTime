@@ -1195,6 +1195,190 @@ h1, h2, h3, .games-title, .exercise-name, .mystery-title, .crossword-title, .wor
 }
 
 /* ==================
+   WRONG ANSWER FEEDBACK
+   ================== */
+
+.wrong-shake {
+  animation: wrongShake 0.4s ease-in-out;
+}
+
+@keyframes wrongShake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
+}
+
+.wrong-x-icon {
+  display: inline-block;
+  font-size: 2.5rem;
+  color: #e74c3c;
+  animation: wrongPop 0.4s ease-out;
+  margin-right: 0.5rem;
+}
+
+@keyframes wrongPop {
+  0% { transform: scale(0) rotate(-45deg); opacity: 0; }
+  50% { transform: scale(1.4) rotate(10deg); }
+  70% { transform: scale(0.9) rotate(-5deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.correct-tick-icon {
+  display: inline-block;
+  font-size: 2.5rem;
+  color: #4caf50;
+  animation: correctBounce 0.5s ease-out;
+  margin-right: 0.5rem;
+}
+
+@keyframes correctBounce {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.3); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+/* ==================
+   WEEKLY ROUNDUP
+   ================== */
+
+.weekly-btn {
+  background: linear-gradient(135deg, var(--accent-soft) 0%, var(--accent) 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.weekly-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--shadow-pink);
+}
+
+.weekly-view {
+  padding: var(--space-md);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.weekly-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.weekly-header h1 {
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.weekly-encouragement {
+  font-size: 1.1rem;
+  color: var(--text-soft);
+  font-style: italic;
+}
+
+.weekly-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  border: 1px solid var(--border);
+}
+
+.stat-emoji {
+  font-size: 1.5rem;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.achievements-section {
+  margin-top: var(--space-lg);
+}
+
+.achievements-section h2 {
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: var(--space-md);
+}
+
+.achievements-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.achievement-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.achievement-card.unlocked {
+  background: linear-gradient(135deg, rgba(255, 107, 157, 0.1) 0%, rgba(224, 64, 251, 0.1) 100%);
+  border-color: var(--accent);
+}
+
+.achievement-card.locked {
+  opacity: 0.6;
+}
+
+.achievement-emoji {
+  font-size: 2rem;
+  min-width: 2.5rem;
+  text-align: center;
+}
+
+.achievement-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.achievement-name {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.achievement-desc {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+/* ==================
    REDUCED MOTION
    ================== */
 

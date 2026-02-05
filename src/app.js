@@ -10,7 +10,11 @@ import {
   saveGameScore,
   getGameHighScore,
   cleanupShownRecords,
-  getAll
+  getAll,
+  getAllQuizStats,
+  getWeeklyStats,
+  getUnlockedAchievements,
+  unlockAchievement
 } from './db.js';
 import { initFallbackQuotes, refreshAllContent, FALLBACK_QUOTES, LONG_READS } from './content-fetchers.js';
 import { EXERCISE_CATEGORIES, EXERCISES, getRandomExercise } from './exercises.js';
@@ -21,6 +25,7 @@ import { ANAGRAMS, MISSING_LETTERS, WORD_CLUES, WORD_SEARCHES, getRandomAnagram,
 import { TetrisGame } from './game-tetris.js';
 import { getBatchedContent, getWordPuzzlesByType } from './content-batch.js';
 import { createExerciseAnimation } from './stick-figure.js';
+import { ACHIEVEMENTS, checkAchievements } from './achievements.js';
 
 /**
  * Play a celebration sound using Web Audio API
@@ -62,6 +67,55 @@ function playCelebrationSound() {
     setTimeout(() => ctx.close(), 1000);
   } catch (e) {
     // Silently fail - sound is not critical
+    console.log('Sound not available:', e.message);
+  }
+}
+
+/**
+ * Play a raspberry/buzzer sound for wrong answers
+ * Creates a fun descending "wah-wah" effect
+ */
+function playWrongSound() {
+  try {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContext) return;
+
+    const ctx = new AudioContext();
+    const now = ctx.currentTime;
+
+    // Create two oscillators for a "wah-wah" effect
+    const osc1 = ctx.createOscillator();
+    const osc2 = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc1.connect(gain);
+    osc2.connect(gain);
+    gain.connect(ctx.destination);
+
+    // Low buzzy sound with descending pitch
+    osc1.type = 'sawtooth';
+    osc1.frequency.setValueAtTime(200, now);
+    osc1.frequency.exponentialRampToValueAtTime(100, now + 0.15);
+    osc1.frequency.exponentialRampToValueAtTime(80, now + 0.3);
+
+    // Second oscillator slightly detuned for thickness
+    osc2.type = 'square';
+    osc2.frequency.setValueAtTime(198, now);
+    osc2.frequency.exponentialRampToValueAtTime(98, now + 0.15);
+    osc2.frequency.exponentialRampToValueAtTime(78, now + 0.3);
+
+    // Volume envelope
+    gain.gain.setValueAtTime(0.12, now);
+    gain.gain.linearRampToValueAtTime(0.08, now + 0.15);
+    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.35);
+
+    osc1.start(now);
+    osc2.start(now);
+    osc1.stop(now + 0.35);
+    osc2.stop(now + 0.35);
+
+    setTimeout(() => ctx.close(), 500);
+  } catch (e) {
     console.log('Sound not available:', e.message);
   }
 }
@@ -211,8 +265,11 @@ class CarerCalmApp {
         app.innerHTML = this.renderTetris();
         this.initTetris();
         break;
+      case 'weekly':
+        app.innerHTML = await this.renderWeekly();
+        break;
     }
-    
+
     this.attachEventHandlers();
   }
 
@@ -272,6 +329,12 @@ class CarerCalmApp {
             </button>
             <button class="secondary-btn" data-action="scroll">
               📖 Something to read
+            </button>
+          </div>
+
+          <div class="weekly-button-container" style="margin-top: 1.5rem; text-align: center;">
+            <button class="weekly-btn" data-action="weekly">
+              📊 Your Week
             </button>
           </div>
         </div>
@@ -678,6 +741,9 @@ class CarerCalmApp {
   // ==================
   
   async loadQuizAsync() {
+    // Load quiz stats for display
+    this.quizStats = await getAllQuizStats();
+
     // Merge batched questions with bundled ones
     const batchedQuestions = await getBatchedContent('quiz-questions', []);
     const allQuestions = [...BRITPOP_QUESTIONS, ...batchedQuestions];
@@ -698,26 +764,33 @@ class CarerCalmApp {
     if (!this.currentQuiz) {
       return '<div class="loading"><p>Loading quiz...</p></div>';
     }
-    
+
     // Show results if done
     if (this.quizIndex >= this.currentQuiz.length) {
       return this.renderQuizResults();
     }
-    
+
     const q = this.currentQuiz[this.quizIndex];
-    
+    const stats = this.quizStats || { totalQuizzes: 0, averagePercent: 0 };
+
     return `
       <div class="quiz-view">
         <button class="back-btn" data-action="back">← Back</button>
-        
+
         <div class="quiz-header">
           <span class="quiz-progress">Question ${this.quizIndex + 1} of ${this.currentQuiz.length}</span>
           <span class="quiz-score">Score: ${this.quizScore}</span>
         </div>
-        
+
+        ${stats.totalQuizzes > 0 ? `
+          <div class="quiz-all-time-stats" style="text-align: center; font-size: 0.85rem; color: var(--text-soft); margin-bottom: 1rem;">
+            All-time: ${stats.totalQuizzes} quizzes · ${stats.averagePercent}% avg${stats.bestScore === 100 ? ' · 🏆' : ''}
+          </div>
+        ` : ''}
+
         <div class="quiz-question">
           <p class="question-text">${q.question}</p>
-          
+
           <div class="quiz-options">
             ${q.options.map(opt => `
               <button class="quiz-option" data-answer="${opt}">${opt}</button>
@@ -904,7 +977,7 @@ class CarerCalmApp {
     if (canvas) {
       this.tetrisGame = new TetrisGame(canvas);
       this.tetrisGame.start();
-      
+
       // Handle game over tap to restart
       canvas.addEventListener('click', async () => {
         if (this.tetrisGame && this.tetrisGame.gameOver) {
@@ -915,6 +988,105 @@ class CarerCalmApp {
         }
       });
     }
+  }
+
+  // ==================
+  // WEEKLY ROUNDUP
+  // ==================
+
+  async renderWeekly() {
+    const stats = await getWeeklyStats();
+    const earnedAchievements = checkAchievements(stats);
+    const unlockedBefore = await getUnlockedAchievements();
+    const unlockedIds = new Set(unlockedBefore.map(a => a.id));
+
+    // Check for newly earned achievements and unlock them
+    for (const achievement of earnedAchievements) {
+      if (!unlockedIds.has(achievement.id)) {
+        await unlockAchievement(achievement);
+        unlockedIds.add(achievement.id);
+      }
+    }
+
+    // Encouraging message based on activity
+    let encouragement = '';
+    if (stats.daysActive >= 7) {
+      encouragement = '🌟 Incredible! You showed up every single day!';
+    } else if (stats.daysActive >= 5) {
+      encouragement = '💪 Fantastic week! You are building great habits!';
+    } else if (stats.daysActive >= 3) {
+      encouragement = '🌸 Lovely progress! Keep nurturing yourself!';
+    } else if (stats.totalBreaks > 0) {
+      encouragement = '🌱 Every break counts! You are doing great!';
+    } else {
+      encouragement = '☕ Ready for some self-care? Let us start!';
+    }
+
+    return `
+      <div class="weekly-view">
+        <button class="back-btn" data-action="back">← Back</button>
+
+        <div class="weekly-header">
+          <h1>📊 Your Week</h1>
+          <p class="weekly-encouragement">${encouragement}</p>
+        </div>
+
+        <div class="weekly-stats-grid">
+          <div class="stat-card">
+            <span class="stat-emoji">🏃‍♀️</span>
+            <span class="stat-value">${stats.exercises}</span>
+            <span class="stat-label">Exercises</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-emoji">🧘</span>
+            <span class="stat-value">${stats.breaths}</span>
+            <span class="stat-label">Breathing</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-emoji">🧩</span>
+            <span class="stat-value">${stats.puzzles}</span>
+            <span class="stat-label">Puzzles</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-emoji">🎓</span>
+            <span class="stat-value">${stats.quizzes}</span>
+            <span class="stat-label">Quizzes</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-emoji">🎮</span>
+            <span class="stat-value">${stats.games}</span>
+            <span class="stat-label">Games</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-emoji">📅</span>
+            <span class="stat-value">${stats.daysActive}/7</span>
+            <span class="stat-label">Days Active</span>
+          </div>
+        </div>
+
+        <div class="achievements-section">
+          <h2>🏆 Achievements</h2>
+          <div class="achievements-grid">
+            ${ACHIEVEMENTS.map(a => {
+              const unlocked = unlockedIds.has(a.id);
+              return `
+                <div class="achievement-card ${unlocked ? 'unlocked' : 'locked'}">
+                  <span class="achievement-emoji">${unlocked ? a.emoji : '🔒'}</span>
+                  <div class="achievement-info">
+                    <span class="achievement-name">${a.name}</span>
+                    <span class="achievement-desc">${a.desc}</span>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <button class="submit-btn" data-action="back">Back to home</button>
+        </div>
+      </div>
+    `;
   }
 
   // ==================
@@ -990,6 +1162,15 @@ class CarerCalmApp {
       });
     });
 
+    // Weekly roundup
+    document.querySelectorAll('[data-action="weekly"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        this.currentView = 'weekly';
+        history.pushState({}, '', '');
+        this.render();
+      });
+    });
+
     // Home button
     document.querySelectorAll('[data-action="home"]').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -1055,7 +1236,7 @@ class CarerCalmApp {
     document.querySelectorAll('[data-action="check-mystery"]').forEach(btn => {
       btn.addEventListener('click', async () => {
         const correct = checkMysteryAnswer(this.currentMystery, this.mysteryAnswer);
-        
+
         if (correct) {
           playCelebrationSound();
           await savePuzzleProgress(this.currentMystery.id, {
@@ -1065,19 +1246,24 @@ class CarerCalmApp {
             completedAt: Date.now()
           });
           await logActivity('puzzle', { type: 'mystery', puzzleId: this.currentMystery.id });
+        } else {
+          playWrongSound();
         }
 
-        // Show result
+        // Show result with animated icons
         const resultHtml = `
-          <div class="mystery-result ${correct ? 'correct' : 'wrong'}">
-            <h2>${correct ? '🎉 Solved!' : '🤔 Not quite...'}</h2>
+          <div class="mystery-result ${correct ? 'correct' : 'wrong'} ${!correct ? 'wrong-shake' : ''}">
+            <h2>
+              <span class="${correct ? 'correct-tick-icon' : 'wrong-x-icon'}">${correct ? '✓' : '✗'}</span>
+              ${correct ? 'Solved!' : 'Not quite...'}
+            </h2>
             <p>${correct ? '' : `The answer was: ${this.currentMystery.solution.who} in the ${this.currentMystery.solution.where} - ${this.currentMystery.solution.evidence}`}</p>
             <p class="mystery-explanation">${this.currentMystery.explanation}</p>
             <button class="submit-btn" data-action="mystery-again">Another mystery</button>
             <button class="secondary-btn" data-action="back" style="margin-top: 1rem; display: block; width: 100%;">Back to games</button>
           </div>
         `;
-        
+
         document.querySelector('.mystery-answer').innerHTML = resultHtml;
         this.attachEventHandlers();
       });
@@ -1196,15 +1382,23 @@ class CarerCalmApp {
         const answer = btn.dataset.answer;
         const q = this.currentQuiz[this.quizIndex];
         const correct = answer === q.answer;
-        
-        if (correct) this.quizScore++;
+
+        if (correct) {
+          this.quizScore++;
+          playCelebrationSound();
+        } else {
+          playWrongSound();
+        }
         this.quizAnswers.push({ questionId: q.id, answer, correct });
-        
-        // Show feedback
+
+        // Show feedback with animated icon
         const questionDiv = document.querySelector('.quiz-question');
         questionDiv.innerHTML = `
-          <div class="quiz-feedback ${correct ? 'correct' : 'wrong'}" style="text-align: center; padding: 1rem;">
-            <p class="feedback-result" style="font-size: 1.5rem; margin-bottom: 0.5rem;">${correct ? '✓ Correct!' : '✗ Not quite!'}</p>
+          <div class="quiz-feedback ${correct ? 'correct' : 'wrong'} ${!correct ? 'wrong-shake' : ''}" style="text-align: center; padding: 1rem;">
+            <p class="feedback-result" style="font-size: 1.5rem; margin-bottom: 0.5rem;">
+              <span class="${correct ? 'correct-tick-icon' : 'wrong-x-icon'}">${correct ? '✓' : '✗'}</span>
+              ${correct ? 'Correct!' : 'Not quite!'}
+            </p>
             ${!correct ? `<p style="margin-bottom: 0.5rem;">The answer was: <strong>${q.answer}</strong></p>` : ''}
             <p class="feedback-fact" style="font-style: italic; color: var(--text-soft); margin-bottom: 1rem;">${q.fact}</p>
             <button class="submit-btn" data-action="quiz-next">Next question</button>
@@ -1258,12 +1452,17 @@ class CarerCalmApp {
         if (correct) {
           playCelebrationSound();
           await logActivity('puzzle', { type: this.wordPuzzleType });
+        } else {
+          playWrongSound();
         }
 
         const contentDiv = document.querySelector('.word-puzzle-content');
         contentDiv.innerHTML = `
-          <div class="puzzle-result ${correct ? 'correct' : 'wrong'}">
-            <h2>${correct ? '✓ Correct!' : '✗ Not quite'}</h2>
+          <div class="puzzle-result ${correct ? 'correct' : 'wrong'} ${!correct ? 'wrong-shake' : ''}">
+            <h2>
+              <span class="${correct ? 'correct-tick-icon' : 'wrong-x-icon'}">${correct ? '✓' : '✗'}</span>
+              ${correct ? 'Correct!' : 'Not quite'}
+            </h2>
             <p>${correct ? 'Well done!' : `The answer was: <strong>${p.answer}</strong>`}</p>
             <div class="puzzle-actions">
               <button class="submit-btn" data-action="word-puzzle-again">Another one</button>
