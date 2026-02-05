@@ -95,6 +95,8 @@ class CarerCalmApp {
     this.wordPuzzleType = null;
     this.wordSearchFound = [];
     this.currentAnimator = null;
+    // Track shown exercises per category to prevent repeats
+    this.shownExercisesThisSession = new Map(); // category -> Set of exercise IDs
   }
 
   async init() {
@@ -928,9 +930,32 @@ class CarerCalmApp {
         const batchedExercises = await getBatchedContent('exercises', []);
         const allExercises = [...EXERCISES, ...batchedExercises];
         const forCategory = allExercises.filter(ex => ex.category === category);
-        this.currentExercise = forCategory.length > 0
-          ? forCategory[Math.floor(Math.random() * forCategory.length)]
+
+        // Get or create the shown set for this category
+        if (!this.shownExercisesThisSession.has(category)) {
+          this.shownExercisesThisSession.set(category, new Set());
+        }
+        const shownIds = this.shownExercisesThisSession.get(category);
+
+        // Filter to exercises not yet shown this session
+        let available = forCategory.filter(ex => !shownIds.has(ex.id));
+
+        // If all have been shown, reset the tracking for this category
+        if (available.length === 0) {
+          shownIds.clear();
+          available = forCategory;
+        }
+
+        // Pick a random exercise from available pool
+        this.currentExercise = available.length > 0
+          ? available[Math.floor(Math.random() * available.length)]
           : getRandomExercise(category);
+
+        // Mark this exercise as shown
+        if (this.currentExercise) {
+          shownIds.add(this.currentExercise.id);
+        }
+
         this.currentView = 'exercise';
         history.pushState({}, '', '');
         this.render();
