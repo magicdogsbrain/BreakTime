@@ -14,8 +14,13 @@ import {
   getAllQuizStats,
   getWeeklyStats,
   getUnlockedAchievements,
-  unlockAchievement
+  unlockAchievement,
+  getState,
+  setState
 } from './db.js';
+
+// App version from build config
+const APP_VERSION = typeof __APP_VERSION__ !== 'undefined' ? __APP_VERSION__ : '1.0.0';
 import { initFallbackQuotes, refreshAllContent, FALLBACK_QUOTES, LONG_READS } from './content-fetchers.js';
 import { EXERCISE_CATEGORIES, EXERCISES, getRandomExercise } from './exercises.js';
 import { MYSTERY_PUZZLES, getRandomMystery, checkMysteryAnswer } from './puzzles-mystery.js';
@@ -157,23 +162,56 @@ class CarerCalmApp {
     this.newsItems = [];
     this.newsLoading = false;
     this.selectedArticle = null;
+    // Update banner
+    this.showUpdateBanner = false;
   }
 
   async init() {
     await initDB();
     await initFallbackQuotes();
-    
+
     // Clean up old shown records
     cleanupShownRecords();
-    
+
     // Refresh content in background (won't block)
     refreshAllContent();
-    
+
+    // Check for app updates
+    await this.checkForUpdates();
+
     // Render initial view
     this.render();
-    
+
     // Set up navigation
     this.setupEventListeners();
+  }
+
+  async checkForUpdates() {
+    const storedVersion = await getState('appVersion', null);
+
+    if (storedVersion && storedVersion !== APP_VERSION) {
+      // New version detected - show update banner
+      this.showUpdateBanner = true;
+    }
+
+    // Store current version
+    await setState('appVersion', APP_VERSION);
+  }
+
+  renderUpdateBanner() {
+    if (!this.showUpdateBanner) return '';
+    return `
+      <div class="update-banner" onclick="app.dismissUpdateBanner()">
+        <span>✨ App updated to v${APP_VERSION}</span>
+        <span class="update-dismiss">Tap to dismiss</span>
+      </div>
+    `;
+  }
+
+  dismissUpdateBanner() {
+    this.showUpdateBanner = false;
+    const banner = document.querySelector('.update-banner');
+    if (banner) banner.remove();
   }
 
   setupEventListeners() {
@@ -221,15 +259,15 @@ class CarerCalmApp {
 
   async render() {
     const app = document.getElementById('app');
-    
+
     // Stop tetris if leaving that view
     if (this.currentView !== 'tetris') {
       this.stopTetris();
     }
-    
+
     switch (this.currentView) {
       case 'home':
-        app.innerHTML = await this.renderHome();
+        app.innerHTML = this.renderUpdateBanner() + await this.renderHome();
         break;
       case 'exercise':
         app.innerHTML = this.renderExercise();

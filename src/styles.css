@@ -1400,6 +1400,45 @@ h1, h2, h3, .games-title, .exercise-name, .mystery-title, .crossword-title, .wor
 }
 
 /* ==================
+   UPDATE BANNER
+   ================== */
+
+.update-banner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: var(--space-sm) var(--space-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  animation: slideDown 0.3s ease-out;
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+}
+
+.update-banner:hover {
+  background: linear-gradient(135deg, #5a6fd6 0%, #6a4190 100%);
+}
+
+.update-dismiss {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ==================
    NEWS READER
    ================== */
 
