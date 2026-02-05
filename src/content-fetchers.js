@@ -10,9 +10,9 @@ import { refreshAllBatches } from './content-batch.js';
 const UNSPLASH_ACCESS_KEY = 'TBWdenR8_wINHnbRfCtcXoYQBRkTLEO0GJt7-cld23Y';
 
 // CORS Proxy: needed to fetch RSS feeds from the browser
-// Default uses allorigins.win (free, no key needed)
-// Alternatives: 'https://corsproxy.io/?url=' or your own Cloudflare Worker
-const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
+// Using corsproxy.io (free, more reliable than allorigins)
+// Alternatives: your own Cloudflare Worker for production
+const CORS_PROXY = 'https://corsproxy.io/?';
 
 // RSS feeds for positive/uplifting news stories
 const RSS_FEEDS = [
