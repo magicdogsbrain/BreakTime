@@ -36,11 +36,35 @@ const DEFAULT_POSE = {
 function interpolatePose(poseA, poseB, t) {
   const result = {};
   for (const joint in poseA) {
-    result[joint] = {
-      x: poseA[joint].x + (poseB[joint].x - poseA[joint].x) * t,
-      y: poseA[joint].y + (poseB[joint].y - poseA[joint].y) * t
-    };
+    // Handle face property specially - it's not a coordinate
+    if (joint === 'face') {
+      // For face features, use the source pose's face if we're less than halfway,
+      // otherwise use the target pose's face (snap transition)
+      // But if target has face features, prefer those as we approach the target
+      if (t < 0.5) {
+        result.face = poseA.face ? { ...poseA.face } : null;
+      } else {
+        result.face = poseB.face ? { ...poseB.face } : (poseA.face ? { ...poseA.face } : null);
+      }
+      continue;
+    }
+
+    // Regular joint interpolation
+    if (poseA[joint] && poseA[joint].x !== undefined && poseB[joint]) {
+      result[joint] = {
+        x: poseA[joint].x + (poseB[joint].x - poseA[joint].x) * t,
+        y: poseA[joint].y + (poseB[joint].y - poseA[joint].y) * t
+      };
+    } else if (poseA[joint]) {
+      result[joint] = { ...poseA[joint] };
+    }
   }
+
+  // Also check if poseB has face that poseA doesn't
+  if (!result.face && poseB.face && t >= 0.5) {
+    result.face = { ...poseB.face };
+  }
+
   return result;
 }
 
