@@ -398,6 +398,7 @@ class CarerCalmApp {
             </button>
           </div>
         </div>
+        <div class="version-badge">v${APP_VERSION}</div>
       </div>
     `;
   }

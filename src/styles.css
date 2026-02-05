@@ -1820,3 +1820,17 @@ h1, h2, h3, .games-title, .exercise-name, .mystery-title, .crossword-title, .wor
     background: var(--accent-soft);
   }
 }
+
+/* ==================
+   VERSION BADGE
+   ================== */
+
+.version-badge {
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+  font-size: 0.7rem;
+  color: rgba(128, 128, 128, 0.5);
+  pointer-events: none;
+  z-index: 1;
+}
