@@ -1280,6 +1280,65 @@ export const POSES = {
     rightShoulder: { x: 58, y: 30 }
   },
 
+  // Seated breathing poses
+  seatedBreatheIn: {
+    ...DEFAULT_POSE,
+    head: { x: 45, y: 26 }, // lifted slightly
+    neck: { x: 45, y: 33 },
+    torso: { x: 43, y: 50 },
+    leftShoulder: { x: 34, y: 35 }, // shoulders back
+    rightShoulder: { x: 52, y: 35 },
+    leftElbow: { x: 28, y: 46 },
+    rightElbow: { x: 58, y: 46 },
+    leftWrist: { x: 33, y: 56 },
+    rightWrist: { x: 57, y: 56 },
+    leftHip: { x: 38, y: 58 },
+    rightHip: { x: 50, y: 58 },
+    leftKnee: { x: 50, y: 70 },
+    rightKnee: { x: 62, y: 70 },
+    leftAnkle: { x: 50, y: 85 },
+    rightAnkle: { x: 62, y: 85 }
+  },
+
+  seatedBreatheOut: {
+    ...DEFAULT_POSE,
+    head: { x: 45, y: 30 }, // relaxed down
+    neck: { x: 45, y: 37 },
+    torso: { x: 43, y: 54 },
+    leftShoulder: { x: 38, y: 39 }, // shoulders forward
+    rightShoulder: { x: 48, y: 39 },
+    leftElbow: { x: 32, y: 50 },
+    rightElbow: { x: 54, y: 50 },
+    leftWrist: { x: 37, y: 60 },
+    rightWrist: { x: 53, y: 60 },
+    leftHip: { x: 38, y: 58 },
+    rightHip: { x: 50, y: 58 },
+    leftKnee: { x: 50, y: 70 },
+    rightKnee: { x: 62, y: 70 },
+    leftAnkle: { x: 50, y: 85 },
+    rightAnkle: { x: 62, y: 85 }
+  },
+
+  // Seated with hands on chest for breathing exercises
+  seatedComfortTouch: {
+    ...DEFAULT_POSE,
+    head: { x: 45, y: 28 },
+    neck: { x: 45, y: 35 },
+    torso: { x: 43, y: 52 },
+    leftShoulder: { x: 36, y: 37 },
+    rightShoulder: { x: 50, y: 37 },
+    leftElbow: { x: 35, y: 42 },
+    rightElbow: { x: 52, y: 50 },
+    leftWrist: { x: 42, y: 38 }, // hand on chest
+    rightWrist: { x: 46, y: 52 }, // hand on belly
+    leftHip: { x: 38, y: 58 },
+    rightHip: { x: 50, y: 58 },
+    leftKnee: { x: 50, y: 70 },
+    rightKnee: { x: 62, y: 70 },
+    leftAnkle: { x: 50, y: 85 },
+    rightAnkle: { x: 62, y: 85 }
+  },
+
   // Knee to chest (right leg) - seated
   kneeToChestRight: {
     ...DEFAULT_POSE,
@@ -2135,13 +2194,14 @@ export const EXERCISE_ANIMATIONS = {
       { pose: POSES.standing, duration: 400 }
     ]
   },
-  'ex-new-042': { // Compassion Pause
+  'ex-new-042': { // Compassion Pause - "sit comfortably"
+    props: ['chair'],
     keyframes: [
-      { pose: POSES.standing, duration: 500 },
-      { pose: POSES.handOnChest, duration: 1000 },
-      { pose: { ...POSES.handOnChest, ...POSES.breatheIn }, duration: 800 },
-      { pose: POSES.handOnChest, duration: 800 },
-      { pose: POSES.standing, duration: 400 }
+      { pose: POSES.seated, duration: 500 },
+      { pose: POSES.seatedComfortTouch, duration: 1000 },
+      { pose: { ...POSES.seatedComfortTouch, ...POSES.seatedBreatheIn }, duration: 800 },
+      { pose: POSES.seatedComfortTouch, duration: 800 },
+      { pose: POSES.seated, duration: 400 }
     ]
   },
   'ex-new-043': { // Stretch and Breathe Flow
@@ -2159,57 +2219,63 @@ export const EXERCISE_ANIMATIONS = {
     ]
   },
 
-  // Breathe exercises
-  'ex-new-044': { // Box Breathing
+  // Breathe exercises - all seated as per instructions
+  'ex-new-044': { // Box Breathing - "Sit comfortably"
+    props: ['chair'],
     keyframes: [
-      { pose: POSES.standing, duration: 300 },
-      { pose: POSES.breatheIn, duration: 1500 },
-      { pose: POSES.breatheIn, duration: 1500 },
-      { pose: POSES.breatheOut, duration: 1500 },
-      { pose: POSES.breatheOut, duration: 1500 }
+      { pose: POSES.seated, duration: 300 },
+      { pose: POSES.seatedBreatheIn, duration: 1500 },
+      { pose: POSES.seatedBreatheIn, duration: 1500 },
+      { pose: POSES.seatedBreatheOut, duration: 1500 },
+      { pose: POSES.seatedBreatheOut, duration: 1500 }
     ]
   },
-  'ex-new-045': { // Extended Exhale
+  'ex-new-045': { // Extended Exhale - "Sit comfortably"
+    props: ['chair'],
     keyframes: [
-      { pose: POSES.standing, duration: 300 },
-      { pose: POSES.breatheIn, duration: 1000 },
-      { pose: POSES.breatheOut, duration: 2000 },
-      { pose: POSES.standing, duration: 300 }
+      { pose: POSES.seated, duration: 300 },
+      { pose: POSES.seatedBreatheIn, duration: 1000 },
+      { pose: POSES.seatedBreatheOut, duration: 2000 },
+      { pose: POSES.seated, duration: 300 }
     ]
   },
-  'ex-new-046': { // Bee Breath
+  'ex-new-046': { // Bee Breath - "Sit comfortably"
+    props: ['chair'],
     keyframes: [
-      { pose: { ...POSES.standing, face: { showEyes: true } }, duration: 400 },
-      { pose: { ...POSES.breatheIn, face: { showEyes: true } }, duration: 1000 },
-      { pose: { ...POSES.breatheOut, face: { showEyes: true, mouthOpen: 1 } }, duration: 1500 },
-      { pose: { ...POSES.standing, face: { showEyes: true } }, duration: 400 }
+      { pose: { ...POSES.seated, face: { showEyes: true } }, duration: 400 },
+      { pose: { ...POSES.seatedBreatheIn, face: { showEyes: true } }, duration: 1000 },
+      { pose: { ...POSES.seatedBreatheOut, face: { showEyes: true, mouthOpen: 1 } }, duration: 1500 },
+      { pose: { ...POSES.seated, face: { showEyes: true } }, duration: 400 }
     ]
   },
-  'ex-new-047': { // Counting Breath
+  'ex-new-047': { // Counting Breath - "Sit comfortably"
+    props: ['chair'],
     keyframes: [
-      { pose: POSES.standing, duration: 500 },
-      { pose: POSES.breatheIn, duration: 1500 },
-      { pose: POSES.breatheOut, duration: 1500 }
+      { pose: POSES.seated, duration: 500 },
+      { pose: POSES.seatedBreatheIn, duration: 1500 },
+      { pose: POSES.seatedBreatheOut, duration: 1500 }
     ]
   },
-  'ex-new-048': { // Balloon Breath
+  'ex-new-048': { // Balloon Breath - hands on belly, seated
+    props: ['chair'],
     keyframes: [
-      { pose: POSES.standing, duration: 400 },
-      { pose: POSES.comfortTouch, duration: 400 },
-      { pose: { ...POSES.comfortTouch, ...POSES.breatheIn }, duration: 1500 },
-      { pose: POSES.comfortTouch, duration: 1500 },
-      { pose: POSES.standing, duration: 400 }
+      { pose: POSES.seated, duration: 400 },
+      { pose: POSES.seatedComfortTouch, duration: 400 },
+      { pose: { ...POSES.seatedComfortTouch, ...POSES.seatedBreatheIn }, duration: 1500 },
+      { pose: POSES.seatedComfortTouch, duration: 1500 },
+      { pose: POSES.seated, duration: 400 }
     ]
   },
-  'ex-new-049': { // Cooling Breath
+  'ex-new-049': { // Cooling Breath - "Sit comfortably"
+    props: ['chair'],
     keyframes: [
-      { pose: { ...POSES.standing, face: { showEyes: true } }, duration: 400 },
-      { pose: { ...POSES.breatheIn, face: { showEyes: true, mouthOpen: 1 } }, duration: 1500 },
-      { pose: { ...POSES.breatheOut, face: { showEyes: true } }, duration: 1200 },
-      { pose: { ...POSES.standing, face: { showEyes: true } }, duration: 400 }
+      { pose: { ...POSES.seated, face: { showEyes: true } }, duration: 400 },
+      { pose: { ...POSES.seatedBreatheIn, face: { showEyes: true, mouthOpen: 1 } }, duration: 1500 },
+      { pose: { ...POSES.seatedBreatheOut, face: { showEyes: true } }, duration: 1200 },
+      { pose: { ...POSES.seated, face: { showEyes: true } }, duration: 400 }
     ]
   },
-  'ex-new-050': { // Sigh It Out
+  'ex-new-050': { // Sigh It Out - standing is fine for this one (more dramatic)
     keyframes: [
       { pose: { ...POSES.standing, face: { showEyes: true } }, duration: 400 },
       { pose: { ...POSES.breatheIn, face: { showEyes: true } }, duration: 1000 },
