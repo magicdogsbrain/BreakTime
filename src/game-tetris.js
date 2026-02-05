@@ -2,8 +2,9 @@
  * Enhanced Tetris - Full Screen Edition
  *
  * Features:
- * - Full screen gameplay with in-game back button
- * - Next piece preview
+ * - Full screen edge-to-edge gameplay
+ * - Semi-transparent overlay UI (back button, score, next piece)
+ * - Next piece preview inside play area
  * - Level-up fanfare with sparkles
  * - High score persistence
  * - Dark neon aesthetic
@@ -14,8 +15,6 @@
 class TetrisSounds {
   constructor() {
     this.ctx = null;
-    this.musicOsc = null;
-    this.musicGain = null;
     this.musicPlaying = false;
     this.enabled = true;
   }
@@ -119,8 +118,7 @@ class TetrisSounds {
 
   playLevelUp() {
     if (!this.enabled || !this.ctx) return;
-    // Fanfare - ascending arpeggio with cheer
-    const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+    const notes = [523.25, 659.25, 783.99, 1046.50];
     notes.forEach((freq, i) => {
       const osc = this.ctx.createOscillator();
       const gain = this.ctx.createGain();
@@ -134,7 +132,6 @@ class TetrisSounds {
       osc.stop(this.ctx.currentTime + i * 0.1 + 0.3);
     });
 
-    // Add a triumphant chord at the end
     setTimeout(() => {
       if (!this.ctx) return;
       const chordNotes = [523.25, 659.25, 783.99];
@@ -152,7 +149,6 @@ class TetrisSounds {
       });
     }, 400);
 
-    // Cheer sound - noise burst
     setTimeout(() => {
       if (!this.ctx) return;
       const bufferSize = this.ctx.sampleRate * 0.3;
@@ -252,31 +248,32 @@ export class TetrisGame {
   constructor(canvas, onBack) {
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d');
-    this.onBack = onBack; // Callback to exit game
+    this.onBack = onBack;
 
-    // Game dimensions - FULL SCREEN
+    // Game dimensions
     this.cols = 10;
     this.rows = 20;
 
-    // Calculate maximum block size to fill screen
-    // Reserve space for: back button (50px top), next preview (right side), controls hint (bottom 30px)
-    const availableHeight = canvas.height - 80; // Top bar + bottom hint
-    const availableWidth = canvas.width - 100; // Space for next piece preview on right
+    // FULL WIDTH - calculate block size to fill entire width
+    // Leave small margin for controls hint at bottom (25px)
+    const bottomMargin = 25;
+    const availableHeight = canvas.height - bottomMargin;
+    const availableWidth = canvas.width;
 
-    this.blockSize = Math.floor(Math.min(
-      availableWidth / this.cols,
-      availableHeight / this.rows
-    ));
+    // Calculate block size - prioritize filling width
+    this.blockSize = Math.floor(availableWidth / this.cols);
 
-    // Center the grid (shifted left to make room for next piece)
+    // Check if height would overflow, adjust if needed
+    const requiredHeight = this.blockSize * this.rows;
+    if (requiredHeight > availableHeight) {
+      this.blockSize = Math.floor(availableHeight / this.rows);
+    }
+
+    // Grid fills from top, centered horizontally
     const gridWidth = this.cols * this.blockSize;
     const gridHeight = this.rows * this.blockSize;
-    this.offsetX = Math.floor((canvas.width - gridWidth - 80) / 2);
-    this.offsetY = Math.floor((canvas.height - gridHeight - 30) / 2) + 40;
-
-    // Next piece preview position (top right)
-    this.nextPreviewX = this.offsetX + gridWidth + 15;
-    this.nextPreviewY = this.offsetY;
+    this.offsetX = Math.floor((canvas.width - gridWidth) / 2);
+    this.offsetY = 0; // Start at very top
 
     // Game state
     this.grid = this.createGrid();
@@ -308,8 +305,8 @@ export class TetrisGame {
     this.levelUpProgress = 0;
     this.levelSparkles = [];
 
-    // Back button area
-    this.backButtonArea = { x: 10, y: 10, width: 70, height: 35 };
+    // Back button area (top left, semi-transparent overlay)
+    this.backButtonArea = { x: 8, y: 8, width: 60, height: 30 };
 
     // Dark neon colour palette
     this.colors = {
@@ -371,7 +368,6 @@ export class TetrisGame {
       const x = (touch.clientX - rect.left) * (this.canvas.width / rect.width);
       const y = (touch.clientY - rect.top) * (this.canvas.height / rect.height);
 
-      // Check if tapping back button
       if (this.isInBackButton(x, y)) {
         if (this.onBack) {
           this.stop();
@@ -380,7 +376,6 @@ export class TetrisGame {
         return;
       }
 
-      // Init audio on first touch
       if (!this.sounds.ctx) {
         this.sounds.init();
         this.sounds.startMusic();
@@ -394,14 +389,12 @@ export class TetrisGame {
     this.canvas.addEventListener('touchend', (e) => {
       e.preventDefault();
 
-      // If game over, tap to restart
       if (this.gameOver) {
         const rect = this.canvas.getBoundingClientRect();
         const touch = e.changedTouches[0];
         const x = (touch.clientX - rect.left) * (this.canvas.width / rect.width);
         const y = (touch.clientY - rect.top) * (this.canvas.height / rect.height);
 
-        // Don't restart if tapping back button
         if (!this.isInBackButton(x, y)) {
           this.reset();
         }
@@ -413,13 +406,11 @@ export class TetrisGame {
       const dy = touch.clientY - this.touchStartY;
       const dt = Date.now() - touchStartTime;
 
-      // Tap to rotate
       if (Math.abs(dx) < 30 && Math.abs(dy) < 30 && dt < 200) {
         this.rotate();
         return;
       }
 
-      // Swipe left/right to move
       if (Math.abs(dx) > Math.abs(dy)) {
         if (dx > 30) {
           this.move(1);
@@ -428,13 +419,11 @@ export class TetrisGame {
         }
       }
 
-      // Swipe down to drop
       if (dy > 50) {
         this.hardDrop();
       }
     }, { passive: false });
 
-    // Keyboard controls
     this.keyHandler = (e) => {
       if (this.gameOver || this.paused) return;
 
@@ -479,7 +468,6 @@ export class TetrisGame {
   }
 
   spawnPiece() {
-    // Use next piece if available, otherwise get new one
     if (this.nextPiece) {
       this.currentPiece = this.nextPiece;
     } else {
@@ -490,7 +478,6 @@ export class TetrisGame {
       };
     }
 
-    // Always prepare next piece
     const nextType = this.getRandomPiece();
     this.nextPiece = {
       type: nextType,
@@ -502,7 +489,6 @@ export class TetrisGame {
 
     if (this.collision(this.currentX, this.currentY, this.currentPiece.shape)) {
       this.gameOver = true;
-      // Check for new high score
       if (this.score > this.highScore) {
         this.highScore = this.score;
         setHighScore(this.score);
@@ -625,7 +611,6 @@ export class TetrisGame {
       this.clearAnimationProgress = 0;
       this.sounds.playClear(this.clearingLines.length);
 
-      // Create explosion particles
       this.clearingLines.forEach(row => {
         for (let col = 0; col < this.cols; col++) {
           const color = this.colors[this.grid[row][col]];
@@ -651,7 +636,6 @@ export class TetrisGame {
     const linesCleared = this.clearingLines.length;
     const oldLevel = this.level;
 
-    // Store blocks that need to fall
     this.fallingBlocks = [];
     const lowestClearedRow = Math.max(...this.clearingLines);
 
@@ -674,7 +658,6 @@ export class TetrisGame {
       }
     }
 
-    // Remove cleared lines
     this.clearingLines.sort((a, b) => b - a).forEach(row => {
       this.grid.splice(row, 1);
       this.grid.unshift(Array(this.cols).fill(null));
@@ -686,7 +669,6 @@ export class TetrisGame {
     this.level = Math.floor(this.lines / 10) + 1;
     this.dropInterval = Math.max(100, 1000 - (this.level - 1) * 100);
 
-    // Check for level up!
     if (this.level > oldLevel) {
       this.triggerLevelUpCelebration();
     }
@@ -703,9 +685,8 @@ export class TetrisGame {
     this.levelUpProgress = 0;
     this.sounds.playLevelUp();
 
-    // Create sparkles around the level display
-    const centerX = this.canvas.width - 50;
-    const centerY = 25;
+    const centerX = this.canvas.width - 60;
+    const centerY = 20;
     for (let i = 0; i < 30; i++) {
       const angle = (Math.PI * 2 * i) / 30;
       this.levelSparkles.push({
@@ -723,7 +704,6 @@ export class TetrisGame {
   update(timestamp) {
     if (this.gameOver || this.paused) return;
 
-    // Update particles
     this.particles = this.particles.filter(p => {
       p.x += p.vx;
       p.y += p.vy;
@@ -732,7 +712,6 @@ export class TetrisGame {
       return p.life > 0;
     });
 
-    // Update level sparkles
     this.levelSparkles = this.levelSparkles.filter(s => {
       s.x += s.vx;
       s.y += s.vy;
@@ -741,7 +720,6 @@ export class TetrisGame {
       return s.life > 0;
     });
 
-    // Update level up celebration
     if (this.levelUpCelebration) {
       this.levelUpProgress += 0.02;
       if (this.levelUpProgress >= 1) {
@@ -749,7 +727,6 @@ export class TetrisGame {
       }
     }
 
-    // Update falling blocks animation
     if (this.fallingBlocks.length > 0) {
       let allDone = true;
       this.fallingBlocks.forEach(block => {
@@ -763,7 +740,6 @@ export class TetrisGame {
       return;
     }
 
-    // Update line clear animation
     if (this.clearingLines.length > 0) {
       this.clearAnimationProgress += 0.05;
       if (this.clearAnimationProgress >= 1) {
@@ -776,7 +752,6 @@ export class TetrisGame {
       this.spawnPiece();
     }
 
-    // Auto drop
     if (timestamp - this.lastDrop > this.dropInterval) {
       if (!this.collision(this.currentX, this.currentY + 1, this.currentPiece.shape)) {
         this.currentY++;
@@ -794,20 +769,14 @@ export class TetrisGame {
     ctx.fillStyle = this.colors.background;
     ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
-    // Draw back button
-    this.drawBackButton();
-
-    // Grid background with subtle glow
+    // Grid background (subtle, no glow to reduce visual noise)
     ctx.fillStyle = this.colors.grid;
-    ctx.shadowColor = this.colors.glow;
-    ctx.shadowBlur = 20;
     ctx.fillRect(
-      this.offsetX - 2,
-      this.offsetY - 2,
-      this.cols * this.blockSize + 4,
-      this.rows * this.blockSize + 4
+      this.offsetX,
+      this.offsetY,
+      this.cols * this.blockSize,
+      this.rows * this.blockSize
     );
-    ctx.shadowBlur = 0;
 
     // Grid lines
     ctx.strokeStyle = this.colors.gridLine;
@@ -877,9 +846,6 @@ export class TetrisGame {
       }
     }
 
-    // Draw next piece preview
-    this.drawNextPiecePreview();
-
     // Draw particles
     this.particles.forEach(p => {
       ctx.fillStyle = p.color;
@@ -904,43 +870,28 @@ export class TetrisGame {
     });
     ctx.globalAlpha = 1;
 
-    // Draw score
-    ctx.fillStyle = this.colors.text;
-    ctx.font = 'bold 16px -apple-system, BlinkMacSystemFont, sans-serif';
-    ctx.textAlign = 'left';
-    ctx.fillText(`SCORE: ${this.score}`, this.offsetX, this.offsetY - 15);
+    // === OVERLAY UI (semi-transparent, on top of play area) ===
 
-    // Draw high score
-    ctx.fillStyle = 'rgba(255,255,255,0.6)';
-    ctx.font = '12px -apple-system, BlinkMacSystemFont, sans-serif';
-    ctx.fillText(`BEST: ${this.highScore}`, this.offsetX, this.offsetY - 35);
+    // Draw next piece preview (top right, inside play area, semi-transparent)
+    this.drawNextPiecePreview();
 
-    // Draw level with celebration effect
-    ctx.textAlign = 'right';
-    if (this.levelUpCelebration) {
-      // Pulsing, sparkling level text
-      const pulse = 1 + Math.sin(this.levelUpProgress * Math.PI * 6) * 0.3;
-      const hue = (this.levelUpProgress * 360) % 360;
-      ctx.fillStyle = `hsl(${hue}, 100%, 70%)`;
-      ctx.shadowColor = `hsl(${hue}, 100%, 70%)`;
-      ctx.shadowBlur = 20;
-      ctx.font = `bold ${Math.floor(20 * pulse)}px -apple-system, BlinkMacSystemFont, sans-serif`;
-      ctx.fillText(`LEVEL ${this.level}!`, this.canvas.width - 15, 30);
-      ctx.shadowBlur = 0;
-    } else {
-      ctx.fillStyle = this.colors.text;
-      ctx.shadowColor = this.colors.glow;
-      ctx.shadowBlur = 10;
-      ctx.font = 'bold 16px -apple-system, BlinkMacSystemFont, sans-serif';
-      ctx.fillText(`LVL ${this.level}`, this.canvas.width - 15, 30);
-      ctx.shadowBlur = 0;
+    // Draw back button (top left, semi-transparent)
+    this.drawBackButton();
+
+    // Draw score/level overlay (top, semi-transparent background)
+    this.drawScoreOverlay();
+
+    // Controls hint at bottom (just below the grid)
+    const gridBottom = this.offsetY + this.rows * this.blockSize;
+    if (!this.gameOver) {
+      ctx.fillStyle = 'rgba(255,255,255,0.5)';
+      ctx.font = '11px -apple-system, BlinkMacSystemFont, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('Tap: rotate | Swipe: move | Swipe down: drop',
+        this.canvas.width / 2,
+        gridBottom + 18
+      );
     }
-
-    // Draw lines count
-    ctx.font = '12px -apple-system, BlinkMacSystemFont, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillStyle = 'rgba(255,255,255,0.7)';
-    ctx.fillText(`LINES: ${this.lines}`, this.canvas.width / 2, 30);
 
     // Game over overlay
     if (this.gameOver) {
@@ -959,7 +910,6 @@ export class TetrisGame {
       ctx.font = '24px -apple-system, BlinkMacSystemFont, sans-serif';
       ctx.fillText(`Score: ${this.score}`, this.canvas.width / 2, this.canvas.height / 2 - 10);
 
-      // Show if new high score
       if (this.score >= this.highScore && this.score > 0) {
         ctx.fillStyle = '#ffee00';
         ctx.shadowColor = '#ffee00';
@@ -976,19 +926,7 @@ export class TetrisGame {
       ctx.fillText('Tap to play again', this.canvas.width / 2, this.canvas.height / 2 + 65);
       ctx.shadowBlur = 0;
 
-      // Still show back button in game over
       this.drawBackButton();
-    }
-
-    // Controls hint
-    if (!this.gameOver) {
-      ctx.fillStyle = 'rgba(255,255,255,0.5)';
-      ctx.font = '11px -apple-system, BlinkMacSystemFont, sans-serif';
-      ctx.textAlign = 'center';
-      ctx.fillText('Tap: rotate | Swipe: move | Swipe down: drop',
-        this.canvas.width / 2,
-        this.canvas.height - 8
-      );
     }
   }
 
@@ -996,77 +934,122 @@ export class TetrisGame {
     const ctx = this.ctx;
     const b = this.backButtonArea;
 
-    // Button background
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+    // Semi-transparent background
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
     ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
     ctx.lineWidth = 1;
     ctx.beginPath();
-    ctx.roundRect(b.x, b.y, b.width, b.height, 8);
+    ctx.roundRect(b.x, b.y, b.width, b.height, 6);
     ctx.fill();
     ctx.stroke();
 
     // Arrow and text
     ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-    ctx.font = '14px -apple-system, BlinkMacSystemFont, sans-serif';
+    ctx.font = '12px -apple-system, BlinkMacSystemFont, sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText('← Back', b.x + b.width / 2, b.y + b.height / 2);
     ctx.textBaseline = 'alphabetic';
   }
 
+  drawScoreOverlay() {
+    const ctx = this.ctx;
+
+    // Semi-transparent bar at top center (between back button and next preview)
+    const barX = 75;
+    const barWidth = this.canvas.width - 150;
+    const barY = 8;
+    const barHeight = 30;
+
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+    ctx.beginPath();
+    ctx.roundRect(barX, barY, barWidth, barHeight, 6);
+    ctx.fill();
+
+    // Score on left
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+    ctx.font = 'bold 14px -apple-system, BlinkMacSystemFont, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText(`${this.score}`, barX + 10, barY + 20);
+
+    // Best score smaller
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+    ctx.font = '10px -apple-system, BlinkMacSystemFont, sans-serif';
+    ctx.fillText(`BEST: ${this.highScore}`, barX + 10, barY + 10);
+
+    // Lines in center
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+    ctx.font = '12px -apple-system, BlinkMacSystemFont, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(`LINES: ${this.lines}`, barX + barWidth / 2, barY + 20);
+
+    // Level on right with celebration effect
+    ctx.textAlign = 'right';
+    if (this.levelUpCelebration) {
+      const pulse = 1 + Math.sin(this.levelUpProgress * Math.PI * 6) * 0.2;
+      const hue = (this.levelUpProgress * 360) % 360;
+      ctx.fillStyle = `hsl(${hue}, 100%, 70%)`;
+      ctx.shadowColor = `hsl(${hue}, 100%, 70%)`;
+      ctx.shadowBlur = 10;
+      ctx.font = `bold ${Math.floor(14 * pulse)}px -apple-system, BlinkMacSystemFont, sans-serif`;
+      ctx.fillText(`LVL ${this.level}!`, barX + barWidth - 10, barY + 20);
+      ctx.shadowBlur = 0;
+    } else {
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+      ctx.font = 'bold 14px -apple-system, BlinkMacSystemFont, sans-serif';
+      ctx.fillText(`LVL ${this.level}`, barX + barWidth - 10, barY + 20);
+    }
+  }
+
   drawNextPiecePreview() {
     if (!this.nextPiece) return;
 
     const ctx = this.ctx;
-    const previewBlockSize = Math.floor(this.blockSize * 0.7);
+    const previewBlockSize = Math.floor(this.blockSize * 0.5);
 
-    // Label
-    ctx.fillStyle = 'rgba(255,255,255,0.7)';
-    ctx.font = '12px -apple-system, BlinkMacSystemFont, sans-serif';
-    ctx.textAlign = 'left';
-    ctx.fillText('NEXT', this.nextPreviewX, this.nextPreviewY - 8);
+    // Position in top right corner
+    const boxWidth = previewBlockSize * 4 + 8;
+    const boxHeight = previewBlockSize * 2 + 8;
+    const previewX = this.canvas.width - boxWidth - 8;
+    const previewY = 8;
 
-    // Preview box background
-    const boxWidth = previewBlockSize * 4 + 10;
-    const boxHeight = previewBlockSize * 4 + 10;
-    ctx.fillStyle = 'rgba(26, 26, 46, 0.8)';
-    ctx.strokeStyle = this.colors.gridLine;
+    // Semi-transparent background
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
     ctx.lineWidth = 1;
     ctx.beginPath();
-    ctx.roundRect(this.nextPreviewX, this.nextPreviewY, boxWidth, boxHeight, 5);
+    ctx.roundRect(previewX, previewY, boxWidth, boxHeight, 6);
     ctx.fill();
     ctx.stroke();
+
+    // "NEXT" label
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+    ctx.font = '9px -apple-system, BlinkMacSystemFont, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText('NEXT', previewX + 4, previewY + 10);
 
     // Draw next piece centered in preview box
     const shape = this.nextPiece.shape;
     const pieceWidth = shape[0].length * previewBlockSize;
     const pieceHeight = shape.length * previewBlockSize;
-    const startX = this.nextPreviewX + (boxWidth - pieceWidth) / 2;
-    const startY = this.nextPreviewY + (boxHeight - pieceHeight) / 2;
+    const startX = previewX + (boxWidth - pieceWidth) / 2;
+    const startY = previewY + 12 + (boxHeight - 12 - pieceHeight) / 2;
 
     for (let row = 0; row < shape.length; row++) {
       for (let col = 0; col < shape[row].length; col++) {
         if (shape[row][col]) {
           const px = startX + col * previewBlockSize;
           const py = startY + row * previewBlockSize;
-          const size = previewBlockSize - 2;
+          const size = previewBlockSize - 1;
           const color = this.colors[this.nextPiece.type];
 
+          ctx.globalAlpha = 0.8;
           ctx.shadowColor = color;
-          ctx.shadowBlur = 6;
+          ctx.shadowBlur = 4;
           ctx.fillStyle = color;
-          ctx.fillRect(px + 1, py + 1, size, size);
+          ctx.fillRect(px, py, size, size);
           ctx.shadowBlur = 0;
-
-          // Highlight
-          ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
-          ctx.fillRect(px + 1, py + 1, size, 2);
-          ctx.fillRect(px + 1, py + 1, 2, size);
-
-          // Shadow
-          ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
-          ctx.fillRect(px + 1, py + size - 1, size, 2);
-          ctx.fillRect(px + size - 1, py + 1, 2, size);
+          ctx.globalAlpha = 1;
         }
       }
     }
@@ -1130,7 +1113,7 @@ export class TetrisGame {
     this.fallingBlocks = [];
     this.levelUpCelebration = false;
     this.levelSparkles = [];
-    this.highScore = getHighScore(); // Refresh high score
+    this.highScore = getHighScore();
     if (this.sounds.ctx) {
       this.sounds.startMusic();
     }
