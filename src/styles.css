@@ -853,6 +853,11 @@ h1, h2, h3, .games-title, .exercise-name, .mystery-title, .crossword-title, .wor
   border-radius: 4px;
 }
 
+.cell-input {
+  color: var(--text-primary);
+  background: transparent;
+}
+
 .cell-input:focus {
   outline: 3px solid var(--accent);
   outline-offset: -3px;
