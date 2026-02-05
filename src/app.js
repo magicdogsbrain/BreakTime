@@ -165,7 +165,8 @@ class CarerCalmApp {
     // Update banner
     this.showUpdateBanner = false;
     // Word search selection state
-    this.wsSelectedCells = []; // [{row, col}, ...]
+    this.wsStartCell = null; // {row, col} - first tap
+    this.wsEndCell = null;   // {row, col} - second tap
     this.wsFoundCells = new Set(); // "row-col" strings for found words
   }
 
@@ -240,7 +241,8 @@ class CarerCalmApp {
     this.currentWordPuzzle = null;
     this.wordPuzzleType = null;
     this.wordSearchFound = [];
-    this.wsSelectedCells = [];
+    this.wsStartCell = null;
+    this.wsEndCell = null;
     this.wsFoundCells = new Set();
     if (this.currentAnimator) {
       this.currentAnimator.stop();
@@ -973,7 +975,18 @@ class CarerCalmApp {
 
     const ws = this.currentWordPuzzle;
     const allFound = this.wordSearchFound.length === ws.words.length;
-    const selectedWord = this.wsSelectedCells.map(c => ws.grid[c.row][c.col]).join('');
+
+    // Get cells in the current selection line
+    const selectedCells = this.getSelectedLineCells();
+    const selectedWord = selectedCells.map(c => ws.grid[c.row][c.col]).join('');
+
+    // Determine instruction text
+    let instruction = 'Tap start of word';
+    if (this.wsStartCell && !this.wsEndCell) {
+      instruction = 'Tap end of word';
+    } else if (selectedWord) {
+      instruction = selectedWord;
+    }
 
     return `
       <div class="word-puzzle-view">
@@ -982,7 +995,7 @@ class CarerCalmApp {
         <div class="word-puzzle-header">
           <span class="word-puzzle-icon">🔎</span>
           <h1 class="word-puzzle-title">${ws.title}</h1>
-          <p class="word-puzzle-subtitle">Tap letters to spell words</p>
+          <p class="word-puzzle-subtitle">Find words: horizontal, vertical & diagonal</p>
         </div>
 
         <div class="word-puzzle-content">
@@ -995,19 +1008,22 @@ class CarerCalmApp {
           <div class="word-search-grid" style="grid-template-columns: repeat(${ws.grid[0].length}, 1fr);">
             ${ws.grid.map((row, r) =>
               row.map((cell, c) => {
-                const isSelected = this.wsSelectedCells.some(s => s.row === r && s.col === c);
+                const isStart = this.wsStartCell && this.wsStartCell.row === r && this.wsStartCell.col === c;
+                const isInLine = selectedCells.some(s => s.row === r && s.col === c);
                 const isFound = this.wsFoundCells.has(`${r}-${c}`);
-                const cellClass = isFound ? 'ws-cell found' : isSelected ? 'ws-cell selected' : 'ws-cell';
+                let cellClass = 'ws-cell';
+                if (isFound) cellClass = 'ws-cell found';
+                else if (isStart) cellClass = 'ws-cell start';
+                else if (isInLine) cellClass = 'ws-cell selected';
                 return `<div class="${cellClass}" data-row="${r}" data-col="${c}">${cell}</div>`;
               }).join('')
             ).join('')}
           </div>
 
           <div class="ws-selection-area">
-            <div class="ws-current-word">${selectedWord || 'Tap letters...'}</div>
+            <div class="ws-current-word">${instruction}</div>
             <div class="ws-buttons">
-              <button class="ws-btn clear" data-action="ws-clear" ${this.wsSelectedCells.length === 0 ? 'disabled' : ''}>Clear</button>
-              <button class="ws-btn check" data-action="ws-check" ${this.wsSelectedCells.length < 2 ? 'disabled' : ''}>Check ✓</button>
+              <button class="ws-btn clear" data-action="ws-clear" ${!this.wsStartCell ? 'disabled' : ''}>Clear</button>
             </div>
           </div>
 
@@ -1020,6 +1036,44 @@ class CarerCalmApp {
         </div>
       </div>
     `;
+  }
+
+  // Get all cells in a straight line between start and end
+  getSelectedLineCells() {
+    if (!this.wsStartCell) return [];
+    if (!this.wsEndCell) return [this.wsStartCell];
+
+    const { row: r1, col: c1 } = this.wsStartCell;
+    const { row: r2, col: c2 } = this.wsEndCell;
+
+    const cells = [];
+    const dr = Math.sign(r2 - r1);
+    const dc = Math.sign(c2 - c1);
+
+    let r = r1, c = c1;
+    while (true) {
+      cells.push({ row: r, col: c });
+      if (r === r2 && c === c2) break;
+      r += dr;
+      c += dc;
+    }
+
+    return cells;
+  }
+
+  // Check if two cells form a valid straight line (horizontal, vertical, or diagonal)
+  isValidLine(start, end) {
+    const dr = Math.abs(end.row - start.row);
+    const dc = Math.abs(end.col - start.col);
+
+    // Horizontal: same row
+    if (dr === 0 && dc > 0) return true;
+    // Vertical: same column
+    if (dc === 0 && dr > 0) return true;
+    // Diagonal: equal change in both directions
+    if (dr === dc && dr > 0) return true;
+
+    return false;
   }
 
   // ==================
@@ -1765,65 +1819,83 @@ class CarerCalmApp {
       });
     }
 
-    // Word search cell tap
+    // Word search cell tap - two-tap selection (start then end)
     document.querySelectorAll('.ws-cell').forEach(cell => {
       cell.addEventListener('click', () => {
         const row = parseInt(cell.dataset.row);
         const col = parseInt(cell.dataset.col);
+        const ws = this.currentWordPuzzle;
 
-        // Don't allow selecting already-found cells
-        if (this.wsFoundCells.has(`${row}-${col}`)) return;
+        // Don't allow selecting already-found cells as start
+        if (this.wsFoundCells.has(`${row}-${col}`) && !this.wsStartCell) return;
 
-        // Check if already selected - if so, deselect it (and all after it)
-        const existingIndex = this.wsSelectedCells.findIndex(s => s.row === row && s.col === col);
-        if (existingIndex !== -1) {
-          this.wsSelectedCells = this.wsSelectedCells.slice(0, existingIndex);
-        } else {
-          // Add to selection
-          this.wsSelectedCells.push({ row, col });
+        if (!this.wsStartCell) {
+          // First tap - set start cell
+          this.wsStartCell = { row, col };
+          this.wsEndCell = null;
+          this.render();
+        } else if (!this.wsEndCell) {
+          // Second tap - set end cell and check if valid line
+          const endCell = { row, col };
+
+          // Tapping same cell clears selection
+          if (row === this.wsStartCell.row && col === this.wsStartCell.col) {
+            this.wsStartCell = null;
+            this.render();
+            return;
+          }
+
+          // Check if it forms a valid straight line
+          if (!this.isValidLine(this.wsStartCell, endCell)) {
+            // Invalid line - play wrong sound and clear
+            playWrongSound();
+            this.wsStartCell = null;
+            this.wsEndCell = null;
+            this.render();
+            return;
+          }
+
+          this.wsEndCell = endCell;
+
+          // Now check if this selection is a valid word
+          const selectedCells = this.getSelectedLineCells();
+          const selectedWord = selectedCells.map(c => ws.grid[c.row][c.col]).join('');
+          const reversedWord = selectedWord.split('').reverse().join('');
+
+          // Check if word matches (forward or backward)
+          const matchedWord = ws.words.find(w =>
+            (w === selectedWord || w === reversedWord) && !this.wordSearchFound.includes(w)
+          );
+
+          if (matchedWord) {
+            // Found a word!
+            this.wordSearchFound.push(matchedWord);
+            // Mark cells as found
+            selectedCells.forEach(c => this.wsFoundCells.add(`${c.row}-${c.col}`));
+            playCelebrationSound();
+
+            if (this.wordSearchFound.length === ws.words.length) {
+              logActivity('puzzle', { type: 'word-search', puzzleId: ws.id });
+            }
+          } else {
+            // Wrong - play wrong sound
+            playWrongSound();
+          }
+
+          // Clear selection either way
+          this.wsStartCell = null;
+          this.wsEndCell = null;
+          this.render();
         }
-        this.render();
       });
     });
 
     // Word search clear button
     document.querySelectorAll('[data-action="ws-clear"]').forEach(btn => {
       btn.addEventListener('click', () => {
-        this.wsSelectedCells = [];
+        this.wsStartCell = null;
+        this.wsEndCell = null;
         this.render();
-      });
-    });
-
-    // Word search check button
-    document.querySelectorAll('[data-action="ws-check"]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const ws = this.currentWordPuzzle;
-        const selectedWord = this.wsSelectedCells.map(c => ws.grid[c.row][c.col]).join('');
-        const reversedWord = selectedWord.split('').reverse().join('');
-
-        // Check if word matches (forward or backward)
-        const matchedWord = ws.words.find(w =>
-          (w === selectedWord || w === reversedWord) && !this.wordSearchFound.includes(w)
-        );
-
-        if (matchedWord) {
-          // Found a word!
-          this.wordSearchFound.push(matchedWord);
-          // Mark cells as found
-          this.wsSelectedCells.forEach(c => this.wsFoundCells.add(`${c.row}-${c.col}`));
-          this.wsSelectedCells = [];
-          playCelebrationSound();
-
-          if (this.wordSearchFound.length === ws.words.length) {
-            logActivity('puzzle', { type: 'word-search', puzzleId: ws.id });
-          }
-          this.render();
-        } else {
-          // Wrong - play wrong sound and clear selection
-          playWrongSound();
-          this.wsSelectedCells = [];
-          this.render();
-        }
       });
     });
 
@@ -1831,7 +1903,8 @@ class CarerCalmApp {
     document.querySelectorAll('[data-action="word-search-again"]').forEach(btn => {
       btn.addEventListener('click', async () => {
         this.currentWordPuzzle = null;
-        this.wsSelectedCells = [];
+        this.wsStartCell = null;
+        this.wsEndCell = null;
         this.wsFoundCells = new Set();
         await this.loadWordSearchAsync();
         this.render();

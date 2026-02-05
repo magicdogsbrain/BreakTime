@@ -1185,8 +1185,16 @@ h1, h2, h3, .games-title, .exercise-name, .mystery-title, .crossword-title, .wor
   border-color: var(--accent);
 }
 
+.ws-cell.start {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent-bright);
+  transform: scale(1.1);
+  box-shadow: 0 0 10px var(--shadow-glow);
+}
+
 .ws-cell.selected {
-  background: rgba(255, 107, 157, 0.25);
+  background: rgba(255, 107, 157, 0.35);
   border-color: var(--accent);
   transform: scale(1.05);
 }
