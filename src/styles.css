@@ -1188,6 +1188,68 @@ h1, h2, h3, .games-title, .exercise-name, .mystery-title, .crossword-title, .wor
 .ws-cell.selected {
   background: rgba(255, 107, 157, 0.25);
   border-color: var(--accent);
+  transform: scale(1.05);
+}
+
+.ws-cell:active {
+  transform: scale(0.95);
+}
+
+/* Word search selection UI */
+.ws-selection-area {
+  margin-top: var(--space-md);
+  text-align: center;
+}
+
+.ws-current-word {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  min-height: 2.5rem;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--space-sm);
+}
+
+.ws-buttons {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+.ws-btn {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ws-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.ws-btn.clear {
+  background: var(--bg-card);
+  color: var(--text-soft);
+  border: 2px solid var(--border);
+}
+
+.ws-btn.clear:hover:not(:disabled) {
+  background: var(--border);
+}
+
+.ws-btn.check {
+  background: var(--gradient-button);
+  color: white;
+  box-shadow: 0 4px 15px var(--shadow-pink);
+}
+
+.ws-btn.check:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--shadow-pink);
 }
 
 .word-list {

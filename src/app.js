@@ -164,6 +164,9 @@ class CarerCalmApp {
     this.selectedArticle = null;
     // Update banner
     this.showUpdateBanner = false;
+    // Word search selection state
+    this.wsSelectedCells = []; // [{row, col}, ...]
+    this.wsFoundCells = new Set(); // "row-col" strings for found words
   }
 
   async init() {
@@ -237,6 +240,8 @@ class CarerCalmApp {
     this.currentWordPuzzle = null;
     this.wordPuzzleType = null;
     this.wordSearchFound = [];
+    this.wsSelectedCells = [];
+    this.wsFoundCells = new Set();
     if (this.currentAnimator) {
       this.currentAnimator.stop();
       this.currentAnimator = null;
@@ -968,6 +973,7 @@ class CarerCalmApp {
 
     const ws = this.currentWordPuzzle;
     const allFound = this.wordSearchFound.length === ws.words.length;
+    const selectedWord = this.wsSelectedCells.map(c => ws.grid[c.row][c.col]).join('');
 
     return `
       <div class="word-puzzle-view">
@@ -976,7 +982,7 @@ class CarerCalmApp {
         <div class="word-puzzle-header">
           <span class="word-puzzle-icon">🔎</span>
           <h1 class="word-puzzle-title">${ws.title}</h1>
-          <p class="word-puzzle-subtitle">Find all the words in the grid</p>
+          <p class="word-puzzle-subtitle">Tap letters to spell words</p>
         </div>
 
         <div class="word-puzzle-content">
@@ -988,16 +994,21 @@ class CarerCalmApp {
 
           <div class="word-search-grid" style="grid-template-columns: repeat(${ws.grid[0].length}, 1fr);">
             ${ws.grid.map((row, r) =>
-              row.map((cell, c) => `
-                <div class="ws-cell" data-row="${r}" data-col="${c}">${cell}</div>
-              `).join('')
+              row.map((cell, c) => {
+                const isSelected = this.wsSelectedCells.some(s => s.row === r && s.col === c);
+                const isFound = this.wsFoundCells.has(`${r}-${c}`);
+                const cellClass = isFound ? 'ws-cell found' : isSelected ? 'ws-cell selected' : 'ws-cell';
+                return `<div class="${cellClass}" data-row="${r}" data-col="${c}">${cell}</div>`;
+              }).join('')
             ).join('')}
           </div>
 
-          <div style="margin-top: var(--space-md);">
-            <input type="text" class="puzzle-input" id="ws-guess" placeholder="Type a word you found..." autocomplete="off" autocapitalize="characters">
-            <br>
-            <button class="submit-btn" data-action="check-word-search">Check word</button>
+          <div class="ws-selection-area">
+            <div class="ws-current-word">${selectedWord || 'Tap letters...'}</div>
+            <div class="ws-buttons">
+              <button class="ws-btn clear" data-action="ws-clear" ${this.wsSelectedCells.length === 0 ? 'disabled' : ''}>Clear</button>
+              <button class="ws-btn check" data-action="ws-check" ${this.wsSelectedCells.length < 2 ? 'disabled' : ''}>Check ✓</button>
+            </div>
           </div>
 
           ${allFound ? `
@@ -1754,46 +1765,74 @@ class CarerCalmApp {
       });
     }
 
-    // Word search check
-    document.querySelectorAll('[data-action="check-word-search"]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const input = document.getElementById('ws-guess');
-        if (!input || !input.value.trim()) return;
+    // Word search cell tap
+    document.querySelectorAll('.ws-cell').forEach(cell => {
+      cell.addEventListener('click', () => {
+        const row = parseInt(cell.dataset.row);
+        const col = parseInt(cell.dataset.col);
 
-        const guess = input.value.trim().toUpperCase();
-        const ws = this.currentWordPuzzle;
+        // Don't allow selecting already-found cells
+        if (this.wsFoundCells.has(`${row}-${col}`)) return;
 
-        if (ws.words.includes(guess) && !this.wordSearchFound.includes(guess)) {
-          this.wordSearchFound.push(guess);
-          input.value = '';
-          this.render();
-
-          if (this.wordSearchFound.length === ws.words.length) {
-            playCelebrationSound();
-            logActivity('puzzle', { type: 'word-search', puzzleId: ws.id });
-          }
+        // Check if already selected - if so, deselect it (and all after it)
+        const existingIndex = this.wsSelectedCells.findIndex(s => s.row === row && s.col === col);
+        if (existingIndex !== -1) {
+          this.wsSelectedCells = this.wsSelectedCells.slice(0, existingIndex);
         } else {
-          input.value = '';
-          input.placeholder = ws.words.includes(guess) ? 'Already found!' : 'Not in the list...';
-          setTimeout(() => { input.placeholder = 'Type a word you found...'; }, 1500);
+          // Add to selection
+          this.wsSelectedCells.push({ row, col });
         }
+        this.render();
       });
     });
 
-    // Word search enter key
-    const wsInput = document.getElementById('ws-guess');
-    if (wsInput) {
-      wsInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-          document.querySelector('[data-action="check-word-search"]')?.click();
+    // Word search clear button
+    document.querySelectorAll('[data-action="ws-clear"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        this.wsSelectedCells = [];
+        this.render();
+      });
+    });
+
+    // Word search check button
+    document.querySelectorAll('[data-action="ws-check"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const ws = this.currentWordPuzzle;
+        const selectedWord = this.wsSelectedCells.map(c => ws.grid[c.row][c.col]).join('');
+        const reversedWord = selectedWord.split('').reverse().join('');
+
+        // Check if word matches (forward or backward)
+        const matchedWord = ws.words.find(w =>
+          (w === selectedWord || w === reversedWord) && !this.wordSearchFound.includes(w)
+        );
+
+        if (matchedWord) {
+          // Found a word!
+          this.wordSearchFound.push(matchedWord);
+          // Mark cells as found
+          this.wsSelectedCells.forEach(c => this.wsFoundCells.add(`${c.row}-${c.col}`));
+          this.wsSelectedCells = [];
+          playCelebrationSound();
+
+          if (this.wordSearchFound.length === ws.words.length) {
+            logActivity('puzzle', { type: 'word-search', puzzleId: ws.id });
+          }
+          this.render();
+        } else {
+          // Wrong - play wrong sound and clear selection
+          playWrongSound();
+          this.wsSelectedCells = [];
+          this.render();
         }
       });
-    }
+    });
 
     // Word search again
     document.querySelectorAll('[data-action="word-search-again"]').forEach(btn => {
       btn.addEventListener('click', async () => {
         this.currentWordPuzzle = null;
+        this.wsSelectedCells = [];
+        this.wsFoundCells = new Set();
         await this.loadWordSearchAsync();
         this.render();
       });
