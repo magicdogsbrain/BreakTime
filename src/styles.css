@@ -985,6 +985,27 @@ h1, h2, h3, .games-title, .exercise-name, .mystery-title, .crossword-title, .wor
   align-items: center;
 }
 
+.tetris-view.tetris-fullscreen {
+  padding: 0;
+  padding-top: var(--safe-top);
+  padding-bottom: var(--safe-bottom);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0d0d1a;
+}
+
+.tetris-fullscreen #tetris-canvas {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
+
 #tetris-canvas {
   margin-top: var(--space-lg);
   border-radius: 16px;

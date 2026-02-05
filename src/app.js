@@ -963,19 +963,38 @@ class CarerCalmApp {
   // ==================
 
   renderTetris() {
+    // Full screen tetris - back button is in the game itself
     return `
-      <div class="tetris-view">
-        <button class="back-btn" data-action="back">← Back</button>
-        <canvas id="tetris-canvas" width="300" height="520"></canvas>
+      <div class="tetris-view tetris-fullscreen">
+        <canvas id="tetris-canvas"></canvas>
       </div>
     `;
   }
-  
+
   async initTetris() {
     await new Promise(r => setTimeout(r, 50)); // Wait for canvas to be in DOM
     const canvas = document.getElementById('tetris-canvas');
     if (canvas) {
-      this.tetrisGame = new TetrisGame(canvas);
+      // Size canvas to fill the container
+      const container = canvas.parentElement;
+      const rect = container.getBoundingClientRect();
+      canvas.width = Math.floor(rect.width);
+      canvas.height = Math.floor(rect.height);
+
+      // onBack callback to return to home
+      const onBack = async () => {
+        if (this.tetrisGame) {
+          const score = this.tetrisGame.score;
+          if (score > 0) {
+            await saveGameScore('tetris', score);
+            await logActivity('game', { game: 'tetris', score });
+          }
+        }
+        this.currentView = 'home';
+        this.render();
+      };
+
+      this.tetrisGame = new TetrisGame(canvas, onBack);
       this.tetrisGame.start();
 
       // Handle game over tap to restart
