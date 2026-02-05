@@ -9,13 +9,10 @@ import { refreshAllBatches } from './content-batch.js';
 // Leave empty to use only bundled content
 const UNSPLASH_ACCESS_KEY = 'TBWdenR8_wINHnbRfCtcXoYQBRkTLEO0GJt7-cld23Y';
 
-// CORS Proxy: needed to fetch RSS feeds from the browser
-// Using corsproxy.io (free, more reliable than allorigins)
-// Alternatives: your own Cloudflare Worker for production
-const CORS_PROXY = 'https://corsproxy.io/?';
+// RSS2JSON API - CORS-friendly RSS feed fetcher (no proxy needed)
+const RSS2JSON_API = 'https://api.rss2json.com/v1/api.json';
 
 // RSS feeds for positive/uplifting news stories
-// Using BBC feeds that work reliably (other feeds get blocked)
 const RSS_FEEDS = [
   'https://feeds.bbci.co.uk/news/stories/rss.xml',
   'https://feeds.bbci.co.uk/news/magazine/rss.xml',
@@ -78,10 +75,10 @@ export async function fetchImages(count = 10) {
 }
 
 /**
- * Fetch positive news from RSS feeds
+ * Fetch positive news from RSS feeds using RSS2JSON API
  */
 export async function fetchStories() {
-  if (!navigator.onLine || !CORS_PROXY) return false;
+  if (!navigator.onLine) return false;
 
   const lastFetch = await getState('lastStoryFetch', 0);
   const sixHours = 6 * 60 * 60 * 1000;
@@ -92,13 +89,23 @@ export async function fetchStories() {
 
     for (const feedUrl of RSS_FEEDS) {
       try {
-        const response = await fetch(CORS_PROXY + encodeURIComponent(feedUrl), {
+        const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(feedUrl)}`;
+        const response = await fetch(url, {
           signal: AbortSignal.timeout(8000)
         });
         if (!response.ok) continue;
-        const text = await response.text();
-        const parsed = parseRSS(text);
-        stories.push(...parsed);
+        const data = await response.json();
+        if (data.status === 'ok' && data.items) {
+          const parsed = data.items.map(item => ({
+            id: item.guid || item.link,
+            title: item.title,
+            description: item.description?.replace(/<[^>]*>/g, '').slice(0, 200) || '',
+            link: item.link,
+            pubDate: item.pubDate,
+            source: data.feed?.title || 'BBC'
+          }));
+          stories.push(...parsed);
+        }
       } catch (e) {
         // Silently continue if a feed fails
       }
