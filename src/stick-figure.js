@@ -731,6 +731,46 @@ export const POSES = {
     rightAnkle: { x: 62, y: 85 }
   },
 
+  // Seated head tilted left (for neck circles while seated)
+  seatedHeadLeft: {
+    ...DEFAULT_POSE,
+    head: { x: 40, y: 28 },
+    neck: { x: 43, y: 35 },
+    torso: { x: 43, y: 52 },
+    leftShoulder: { x: 36, y: 37 },
+    rightShoulder: { x: 50, y: 37 },
+    leftElbow: { x: 30, y: 48 },
+    rightElbow: { x: 56, y: 48 },
+    leftWrist: { x: 35, y: 58 },
+    rightWrist: { x: 55, y: 58 },
+    leftHip: { x: 38, y: 58 },
+    rightHip: { x: 50, y: 58 },
+    leftKnee: { x: 50, y: 70 },
+    rightKnee: { x: 62, y: 70 },
+    leftAnkle: { x: 50, y: 85 },
+    rightAnkle: { x: 62, y: 85 }
+  },
+
+  // Seated head tilted right (for neck circles while seated)
+  seatedHeadRight: {
+    ...DEFAULT_POSE,
+    head: { x: 50, y: 28 },
+    neck: { x: 47, y: 35 },
+    torso: { x: 43, y: 52 },
+    leftShoulder: { x: 36, y: 37 },
+    rightShoulder: { x: 50, y: 37 },
+    leftElbow: { x: 30, y: 48 },
+    rightElbow: { x: 56, y: 48 },
+    leftWrist: { x: 35, y: 58 },
+    rightWrist: { x: 55, y: 58 },
+    leftHip: { x: 38, y: 58 },
+    rightHip: { x: 50, y: 58 },
+    leftKnee: { x: 50, y: 70 },
+    rightKnee: { x: 62, y: 70 },
+    leftAnkle: { x: 50, y: 85 },
+    rightAnkle: { x: 62, y: 85 }
+  },
+
   seatedKneeUp: {
     ...DEFAULT_POSE,
     head: { x: 45, y: 28 },
@@ -1278,30 +1318,44 @@ export const POSES = {
     rightWrist: { x: 52, y: 48 }
   },
 
-  // Seated arch (cat-cow on chair - arching back)
+  // Seated arch (cat-cow on chair - arching back, chest lifted)
   seatedArch: {
     ...DEFAULT_POSE,
-    hips: { x: 42, y: 58 },
-    leftKnee: { x: 38, y: 70 },
-    rightKnee: { x: 58, y: 70 },
-    leftAnkle: { x: 35, y: 85 },
-    rightAnkle: { x: 55, y: 85 },
-    head: { x: 50, y: 10 }, // looking up
-    leftShoulder: { x: 38, y: 26 },
-    rightShoulder: { x: 62, y: 26 }
+    head: { x: 48, y: 22 }, // looking up
+    neck: { x: 46, y: 30 },
+    torso: { x: 44, y: 48 }, // slightly forward, arched
+    leftShoulder: { x: 36, y: 32 },
+    rightShoulder: { x: 52, y: 32 },
+    leftElbow: { x: 30, y: 44 },
+    rightElbow: { x: 58, y: 44 },
+    leftWrist: { x: 35, y: 56 },
+    rightWrist: { x: 55, y: 56 },
+    leftHip: { x: 38, y: 58 },
+    rightHip: { x: 50, y: 58 },
+    leftKnee: { x: 50, y: 70 },
+    rightKnee: { x: 62, y: 70 },
+    leftAnkle: { x: 50, y: 85 },
+    rightAnkle: { x: 62, y: 85 }
   },
 
-  // Seated curl (cat-cow on chair - rounding back)
+  // Seated curl (cat-cow on chair - rounding back, chin tucked)
   seatedCurl: {
     ...DEFAULT_POSE,
-    hips: { x: 42, y: 58 },
-    leftKnee: { x: 38, y: 70 },
-    rightKnee: { x: 58, y: 70 },
-    leftAnkle: { x: 35, y: 85 },
-    rightAnkle: { x: 55, y: 85 },
-    head: { x: 50, y: 18 }, // chin tucked
-    leftShoulder: { x: 42, y: 30 },
-    rightShoulder: { x: 58, y: 30 }
+    head: { x: 44, y: 38 }, // chin tucked, looking down
+    neck: { x: 44, y: 40 },
+    torso: { x: 42, y: 54 }, // rounded back
+    leftShoulder: { x: 38, y: 42 },
+    rightShoulder: { x: 48, y: 42 },
+    leftElbow: { x: 34, y: 52 },
+    rightElbow: { x: 52, y: 52 },
+    leftWrist: { x: 38, y: 60 },
+    rightWrist: { x: 52, y: 60 },
+    leftHip: { x: 38, y: 58 },
+    rightHip: { x: 50, y: 58 },
+    leftKnee: { x: 50, y: 70 },
+    rightKnee: { x: 62, y: 70 },
+    leftAnkle: { x: 50, y: 85 },
+    rightAnkle: { x: 62, y: 85 }
   },
 
   // Seated breathing poses
@@ -1366,15 +1420,21 @@ export const POSES = {
   // Knee to chest (right leg) - seated
   kneeToChestRight: {
     ...DEFAULT_POSE,
-    hips: { x: 42, y: 58 },
-    leftKnee: { x: 38, y: 70 },
-    leftAnkle: { x: 35, y: 85 },
-    rightKnee: { x: 55, y: 48 }, // knee lifted
-    rightAnkle: { x: 52, y: 55 }, // foot up
-    leftElbow: { x: 30, y: 40 },
-    leftWrist: { x: 45, y: 50 }, // hands around knee
-    rightElbow: { x: 70, y: 40 },
-    rightWrist: { x: 55, y: 50 }
+    head: { x: 45, y: 30 },
+    neck: { x: 45, y: 36 },
+    torso: { x: 43, y: 52 },
+    leftShoulder: { x: 36, y: 38 },
+    rightShoulder: { x: 50, y: 38 },
+    leftElbow: { x: 38, y: 48 },
+    rightElbow: { x: 56, y: 48 },
+    leftWrist: { x: 48, y: 52 }, // hands around knee
+    rightWrist: { x: 52, y: 52 },
+    leftHip: { x: 38, y: 58 },
+    rightHip: { x: 50, y: 58 },
+    leftKnee: { x: 50, y: 70 },
+    leftAnkle: { x: 50, y: 85 },
+    rightKnee: { x: 52, y: 50 }, // knee lifted to chest
+    rightAnkle: { x: 50, y: 58 } // foot up
   },
 
   // Shoulder blade squeeze
@@ -2228,15 +2288,16 @@ export const EXERCISE_ANIMATIONS = {
       { pose: POSES.seated, duration: 400 }
     ]
   },
-  'ex-new-043': { // Stretch and Breathe Flow
+  'ex-new-043': { // Stretch and Breathe Flow - starts seated, then stands
     props: ['chair'],
     keyframes: [
       { pose: POSES.seated, duration: 400 },
       { pose: POSES.seatedArmsUp, duration: 800 },
       { pose: POSES.seated, duration: 300 },
-      { pose: POSES.headLeft, duration: 500 },
-      { pose: POSES.headRight, duration: 500 },
-      { pose: POSES.standing, duration: 400 },
+      { pose: POSES.seatedHeadLeft, duration: 500 },
+      { pose: POSES.seatedHeadRight, duration: 500 },
+      { pose: POSES.seated, duration: 300 },
+      { pose: POSES.standing, duration: 400 }, // Stand up
       { pose: POSES.armsOut, duration: 500 },
       { pose: POSES.shouldersUp, duration: 500 },
       { pose: POSES.standing, duration: 400 }
