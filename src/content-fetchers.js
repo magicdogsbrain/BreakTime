@@ -6,8 +6,8 @@ import { refreshAllBatches } from './content-batch.js';
 // ===========================================
 
 // Unsplash API: Free at https://unsplash.com/developers (50 req/hour free tier)
-// Leave empty to use only bundled content
-const UNSPLASH_ACCESS_KEY = 'TBWdenR8_wINHnbRfCtcXoYQBRkTLEO0GJt7-cld23Y';
+// Set VITE_UNSPLASH_ACCESS_KEY in .env file. Leave empty to use only bundled content
+const UNSPLASH_ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY || '';
 
 // RSS2JSON API - CORS-friendly RSS feed fetcher (no proxy needed)
 const RSS2JSON_API = 'https://api.rss2json.com/v1/api.json';
