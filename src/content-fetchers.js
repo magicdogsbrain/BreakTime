@@ -15,11 +15,11 @@ const UNSPLASH_ACCESS_KEY = 'TBWdenR8_wINHnbRfCtcXoYQBRkTLEO0GJt7-cld23Y';
 const CORS_PROXY = 'https://corsproxy.io/?';
 
 // RSS feeds for positive/uplifting news stories
+// Using BBC feeds that work reliably (other feeds get blocked)
 const RSS_FEEDS = [
-  'https://www.goodnewsnetwork.org/feed/',
-  'https://www.positive.news/feed/',
-  'https://www.sunnyskyz.com/feed',
-  'https://dailygood.org/rss.php'
+  'https://feeds.bbci.co.uk/news/stories/rss.xml',
+  'https://feeds.bbci.co.uk/news/magazine/rss.xml',
+  'https://feeds.bbci.co.uk/news/in_pictures/rss.xml'
 ];
 
 // Calm search terms for Unsplash images
