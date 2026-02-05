@@ -26,6 +26,7 @@ import { TetrisGame } from './game-tetris.js';
 import { getBatchedContent, getWordPuzzlesByType } from './content-batch.js';
 import { createExerciseAnimation } from './stick-figure.js';
 import { ACHIEVEMENTS, checkAchievements } from './achievements.js';
+import { fetchNews, getCategories, formatTimeAgo, clearCache as clearNewsCache } from './news.js';
 
 /**
  * Play a celebration sound using Web Audio API
@@ -151,6 +152,11 @@ class CarerCalmApp {
     this.currentAnimator = null;
     // Track shown exercises per category to prevent repeats
     this.shownExercisesThisSession = new Map(); // category -> Set of exercise IDs
+    // News state
+    this.newsCategory = 'headlines';
+    this.newsItems = [];
+    this.newsLoading = false;
+    this.selectedArticle = null;
   }
 
   async init() {
@@ -268,6 +274,12 @@ class CarerCalmApp {
       case 'weekly':
         app.innerHTML = await this.renderWeekly();
         break;
+      case 'news':
+        app.innerHTML = await this.renderNews();
+        break;
+      case 'news-article':
+        app.innerHTML = this.renderNewsArticle();
+        break;
     }
 
     this.attachEventHandlers();
@@ -329,6 +341,9 @@ class CarerCalmApp {
             </button>
             <button class="secondary-btn" data-action="scroll">
               📖 Something to read
+            </button>
+            <button class="secondary-btn" data-action="news">
+              📰 News
             </button>
           </div>
 
@@ -1109,6 +1124,145 @@ class CarerCalmApp {
   }
 
   // ==================
+  // NEWS READER
+  // ==================
+
+  async renderNews() {
+    const categories = getCategories();
+
+    // Show loading state initially
+    if (this.newsItems.length === 0 && !this.newsLoading) {
+      this.newsLoading = true;
+      // Fetch will happen after render, triggered by loading state
+      setTimeout(() => this.loadNewsCategory(this.newsCategory), 50);
+    }
+
+    const categoryTabs = categories.map(cat => `
+      <button class="news-tab ${this.newsCategory === cat.id ? 'active' : ''}"
+              data-news-category="${cat.id}">
+        <span class="news-tab-icon">${cat.icon}</span>
+        <span class="news-tab-label">${cat.name}</span>
+      </button>
+    `).join('');
+
+    let contentHtml = '';
+
+    if (this.newsLoading) {
+      contentHtml = `
+        <div class="news-loading">
+          <div class="news-spinner"></div>
+          <p>Loading news...</p>
+        </div>
+      `;
+    } else if (this.newsItems.length === 0) {
+      contentHtml = `
+        <div class="news-empty">
+          <p>📭 No news available right now</p>
+          <button class="secondary-btn" data-action="refresh-news">Try again</button>
+        </div>
+      `;
+    } else {
+      contentHtml = `
+        <div class="news-list">
+          ${this.newsItems.map((item, index) => `
+            <article class="news-card" data-news-index="${index}">
+              ${item.image ? `<div class="news-image" style="background-image: url('${item.image}')"></div>` : ''}
+              <div class="news-content">
+                <h3 class="news-title">${item.title}</h3>
+                <p class="news-description">${item.description}</p>
+                <div class="news-meta">
+                  <span class="news-source">${item.source}</span>
+                  <span class="news-time">${formatTimeAgo(item.pubDate)}</span>
+                </div>
+              </div>
+            </article>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    return `
+      <div class="news-view">
+        <div class="news-header">
+          <button class="back-btn" data-action="back">← Back</button>
+          <h1>📰 News</h1>
+        </div>
+
+        <div class="news-tabs">
+          ${categoryTabs}
+        </div>
+
+        <div class="news-content-area">
+          ${contentHtml}
+        </div>
+      </div>
+    `;
+  }
+
+  async loadNewsCategory(category) {
+    this.newsCategory = category;
+    this.newsLoading = true;
+    this.newsItems = [];
+    this.render();
+
+    try {
+      this.newsItems = await fetchNews(category);
+    } catch (error) {
+      console.error('Failed to load news:', error);
+      this.newsItems = [];
+    }
+
+    this.newsLoading = false;
+    this.render();
+  }
+
+  renderNewsArticle() {
+    const article = this.selectedArticle;
+    if (!article) {
+      this.currentView = 'news';
+      return this.renderNews();
+    }
+
+    // Clean up content - remove scripts, styles, etc
+    let content = article.content || article.description;
+    content = content.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '');
+    content = content.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '');
+    // Keep basic formatting tags
+    content = content.replace(/<(?!\/?(p|br|strong|em|b|i|h[1-6]|ul|ol|li|a|blockquote)[ >])[^>]+>/gi, '');
+
+    return `
+      <div class="news-article-view">
+        <div class="news-article-header">
+          <button class="back-btn" data-action="back-to-news">← Back</button>
+        </div>
+
+        ${article.image ? `
+          <div class="news-article-image" style="background-image: url('${article.image}')"></div>
+        ` : ''}
+
+        <div class="news-article-content">
+          <h1 class="news-article-title">${article.title}</h1>
+
+          <div class="news-article-meta">
+            <span class="news-source">${article.source}</span>
+            <span class="news-time">${formatTimeAgo(article.pubDate)}</span>
+          </div>
+
+          <div class="news-article-body">
+            ${content}
+          </div>
+
+          <div class="news-article-footer">
+            <a href="${article.link}" target="_blank" rel="noopener noreferrer" class="news-read-more">
+              Read full article on ${article.source} →
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // ==================
   // EVENT HANDLERS
   // ==================
 
@@ -1178,6 +1332,56 @@ class CarerCalmApp {
         this.currentView = 'scroll';
         history.pushState({}, '', '');
         this.render();
+      });
+    });
+
+    // News
+    document.querySelectorAll('[data-action="news"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        this.newsItems = [];
+        this.newsLoading = false;
+        this.selectedArticle = null;
+        this.currentView = 'news';
+        history.pushState({}, '', '');
+        this.render();
+      });
+    });
+
+    // News category tabs
+    document.querySelectorAll('.news-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const category = btn.dataset.newsCategory;
+        if (category !== this.newsCategory) {
+          this.loadNewsCategory(category);
+        }
+      });
+    });
+
+    // News card click (open article)
+    document.querySelectorAll('.news-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const index = parseInt(card.dataset.newsIndex);
+        this.selectedArticle = this.newsItems[index];
+        this.currentView = 'news-article';
+        history.pushState({}, '', '');
+        this.render();
+      });
+    });
+
+    // Back to news list from article
+    document.querySelectorAll('[data-action="back-to-news"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        this.selectedArticle = null;
+        this.currentView = 'news';
+        this.render();
+      });
+    });
+
+    // Refresh news
+    document.querySelectorAll('[data-action="refresh-news"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        clearNewsCache(this.newsCategory);
+        this.loadNewsCategory(this.newsCategory);
       });
     });
 
