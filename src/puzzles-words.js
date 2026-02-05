@@ -114,36 +114,38 @@ export const WORD_CLUES = [
   // 3 letters
   { clue: 'Feline pet', answer: 'CAT', length: 3 },
   { clue: 'Beverage from leaves', answer: 'TEA', length: 3 },
-  { clue: 'Wag it if happy', answer: 'DOG', length: 3 },
+  { clue: 'Loyal four-legged friend', answer: 'DOG', length: 3 },
   { clue: 'Rises in the east', answer: 'SUN', length: 3 },
   { clue: 'Opposite of cold', answer: 'HOT', length: 3 },
-  
+  { clue: 'Where you sleep', answer: 'BED', length: 3 },
+
   // 4 letters
   { clue: 'Rain protection', answer: 'COAT', length: 4 },
-  { clue: 'Telling stories while asleep', answer: 'DREAM', length: 5 },
-  { clue: 'Where you sleep', answer: 'BED', length: 3 },
   { clue: 'Baked comfort food', answer: 'CAKE', length: 4 },
   { clue: 'Worn on feet', answer: 'SHOE', length: 4 },
-  
+  { clue: 'England\'s national flower', answer: 'ROSE', length: 4 },
+
   // 5 letters
-  { clue: 'Morning meal', answer: 'BREAKFAST', length: 9 },
-  { clue: 'Comes after rain', answer: 'RAINBOW', length: 7 },
-  { clue: 'British flower', answer: 'ROSE', length: 4 },
-  { clue: 'Written message', answer: 'LETTER', length: 6 },
+  { clue: 'Telling stories while asleep', answer: 'DREAM', length: 5 },
   { clue: 'Daily news source', answer: 'PAPER', length: 5 },
-  
-  // Comfort/cosy theme
-  { clue: 'Knitted warmth', answer: 'JUMPER', length: 6 },
-  { clue: 'Fireside seat', answer: 'ARMCHAIR', length: 8 },
-  { clue: 'Evening meal', answer: 'DINNER', length: 6 },
-  { clue: 'Weekend rest', answer: 'SLEEP', length: 5 },
+  { clue: 'Nightly rest', answer: 'SLEEP', length: 5 },
   { clue: 'Garden visitor', answer: 'ROBIN', length: 5 },
 
-  // More clues
-  { clue: 'Sunday roast meat', answer: 'CHICKEN', length: 7 },
+  // 6 letters
+  { clue: 'Written message', answer: 'LETTER', length: 6 },
+  { clue: 'Knitted warmth', answer: 'JUMPER', length: 6 },
+  { clue: 'Evening meal', answer: 'DINNER', length: 6 },
   { clue: 'Orange root vegetable', answer: 'CARROT', length: 6 },
+
+  // 7+ letters
+  { clue: 'Colourful arc after rain', answer: 'RAINBOW', length: 7 },
+  { clue: 'Sunday roast meat', answer: 'CHICKEN', length: 7 },
+  { clue: 'Fireside seat', answer: 'ARMCHAIR', length: 8 },
   { clue: 'Keeps the rain off', answer: 'UMBRELLA', length: 8 },
-  { clue: 'Stripy buzzing insect', answer: 'BEE', length: 3 },
+  { clue: 'First meal of the day', answer: 'BREAKFAST', length: 9 },
+
+  // More clues
+  { clue: 'Black and yellow buzzer', answer: 'BEE', length: 3 },
   { clue: 'Bedtime drink', answer: 'COCOA', length: 5 },
   { clue: 'Garden climbing flower', answer: 'IVY', length: 3 },
   { clue: 'Put the kettle on for this', answer: 'TEA', length: 3 },
