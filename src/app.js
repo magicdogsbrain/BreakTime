@@ -20,6 +20,7 @@ import { BRITPOP_QUESTIONS, getQuizQuestions } from './quiz-britpop.js';
 import { ANAGRAMS, MISSING_LETTERS, WORD_CLUES, WORD_SEARCHES, getRandomAnagram, getRandomMissingLetters, getRandomWordClue, getRandomWordSearch, checkAnagramAnswer, checkMissingLettersAnswer, checkWordClueAnswer } from './puzzles-words.js';
 import { TetrisGame } from './game-tetris.js';
 import { getBatchedContent, getWordPuzzlesByType } from './content-batch.js';
+import { createExerciseAnimation } from './stick-figure.js';
 
 /**
  * Play a celebration sound using Web Audio API
@@ -93,6 +94,7 @@ class CarerCalmApp {
     this.currentWordPuzzle = null;
     this.wordPuzzleType = null;
     this.wordSearchFound = [];
+    this.currentAnimator = null;
   }
 
   async init() {
@@ -135,8 +137,19 @@ class CarerCalmApp {
     this.currentWordPuzzle = null;
     this.wordPuzzleType = null;
     this.wordSearchFound = [];
+    if (this.currentAnimator) {
+      this.currentAnimator.stop();
+      this.currentAnimator = null;
+    }
   }
-  
+
+  stopAnimator() {
+    if (this.currentAnimator) {
+      this.currentAnimator.stop();
+      this.currentAnimator = null;
+    }
+  }
+
   stopTetris() {
     if (this.tetrisGame) {
       this.tetrisGame.stop();
@@ -158,6 +171,7 @@ class CarerCalmApp {
         break;
       case 'exercise':
         app.innerHTML = this.renderExercise();
+        this.initExerciseAnimation();
         break;
       case 'scroll':
         app.innerHTML = await this.renderScrollContent();
@@ -270,20 +284,23 @@ class CarerCalmApp {
     const category = EXERCISE_CATEGORIES[ex.category];
     const minutes = Math.floor(ex.duration / 60);
     const seconds = ex.duration % 60;
-    const durationText = minutes > 0 
+    const durationText = minutes > 0
       ? `${minutes}:${seconds.toString().padStart(2, '0')}`
       : `${seconds} seconds`;
+
+    // Stop any existing animator before creating new one
+    this.stopAnimator();
 
     return `
       <div class="exercise-view">
         <button class="back-btn" data-action="back">← Back</button>
-        
+
         <div class="exercise-header">
-          <span class="exercise-icon">${category.icon}</span>
+          <div class="stick-figure-placeholder" id="exercise-animation"></div>
           <h1 class="exercise-name">${ex.name}</h1>
           <p class="exercise-duration">${durationText}</p>
         </div>
-        
+
         <div class="exercise-steps">
           ${ex.steps.map((step, i) => `
             <div class="step">
@@ -292,13 +309,24 @@ class CarerCalmApp {
             </div>
           `).join('')}
         </div>
-        
+
         <div class="exercise-footer">
           <button class="done-btn" data-action="done">Done</button>
           <p class="stop-note">Stop whenever you need to. There's no wrong way to do this.</p>
         </div>
       </div>
     `;
+  }
+
+  initExerciseAnimation() {
+    if (!this.currentExercise) return;
+
+    const placeholder = document.getElementById('exercise-animation');
+    if (!placeholder) return;
+
+    const { container, animator } = createExerciseAnimation(this.currentExercise);
+    placeholder.appendChild(container);
+    this.currentAnimator = animator;
   }
 
   renderGamesMenu() {

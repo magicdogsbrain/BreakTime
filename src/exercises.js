@@ -61,6 +61,12 @@ export const EXERCISES = [
       'Let them drop heavily',
       'Feel the release',
       'Repeat 5 times'
+    ],
+    // Animation keyframes: pose name (from ANIMATION_POSES) + duration in ms
+    animation: [
+      { pose: 'standing', duration: 400 },
+      { pose: 'shouldersUp', duration: 800 },
+      { pose: 'standing', duration: 500 }
     ]
   },
   {
@@ -101,6 +107,14 @@ export const EXERCISES = [
       'Roll to the left',
       'Hold for a breath',
       'Repeat 3 times'
+    ],
+    animation: [
+      { pose: 'standing', duration: 400 },
+      { pose: 'neckForward', duration: 600 },
+      { pose: 'headRight', duration: 1200 },
+      { pose: 'neckForward', duration: 400 },
+      { pose: 'headLeft', duration: 1200 },
+      { pose: 'standing', duration: 400 }
     ]
   },
   {
@@ -293,6 +307,11 @@ export const EXERCISES = [
       'Only go as low as comfortable',
       'Stand back up',
       'Repeat 10 times'
+    ],
+    animation: [
+      { pose: 'standing', duration: 400 },
+      { pose: 'squat', duration: 1000 },
+      { pose: 'standing', duration: 800 }
     ]
   },
   {
@@ -321,6 +340,15 @@ export const EXERCISES = [
       'Come back to centre',
       'Reach left arm up and over to the right',
       'Repeat 8 times each side'
+    ],
+    animation: [
+      { pose: 'standing', duration: 400 },
+      { pose: 'rightArmUp', duration: 400 },
+      { pose: 'reachLeft', duration: 1200 },
+      { pose: 'standing', duration: 400 },
+      { pose: 'leftArmUp', duration: 400 },
+      { pose: 'reachRight', duration: 1200 },
+      { pose: 'standing', duration: 400 }
     ]
   },
   {
@@ -616,6 +644,13 @@ export const EXERCISES = [
       'Breathe out for 4 counts',
       'Hold for 4 counts',
       'Repeat 4 times'
+    ],
+    animation: [
+      { pose: 'standing', duration: 300 },
+      { pose: 'breatheIn', duration: 2000 },
+      { pose: 'breatheIn', duration: 2000 },
+      { pose: 'breatheOut', duration: 2000 },
+      { pose: 'breatheOut', duration: 2000 }
     ]
   },
   {

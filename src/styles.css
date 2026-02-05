@@ -258,6 +258,50 @@ h1, h2, h3, .games-title, .exercise-name, .mystery-title, .crossword-title, .wor
   margin-bottom: var(--space-xl);
 }
 
+/* Stick Figure Animation */
+.stick-figure-placeholder {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-md);
+}
+
+.stick-figure-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  background: var(--gradient-card);
+  border: 3px solid var(--accent-soft);
+  border-radius: 50%;
+  box-shadow: 0 4px 20px var(--shadow-pink), inset 0 0 15px rgba(255, 107, 157, 0.1);
+  margin: 0 auto;
+}
+
+.stick-figure {
+  filter: drop-shadow(0 2px 4px rgba(255, 107, 157, 0.3));
+}
+
+@media (prefers-color-scheme: dark) {
+  .stick-figure-container {
+    background: linear-gradient(145deg, #3a2535 0%, #4d3045 100%);
+    border-color: var(--accent);
+    box-shadow: 0 4px 20px var(--shadow-pink), inset 0 0 20px rgba(255, 107, 157, 0.15);
+  }
+
+  .stick-figure .stick-line {
+    stroke: #ff80ab;
+  }
+
+  .stick-figure .stick-head {
+    stroke: #ff80ab;
+  }
+
+  .stick-figure .stick-joint {
+    fill: #ff6b9d;
+  }
+}
+
 .exercise-icon {
   font-size: 3rem;
   display: block;
