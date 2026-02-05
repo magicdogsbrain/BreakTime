@@ -7,22 +7,25 @@
 
 const RSS2JSON_API = 'https://api.rss2json.com/v1/api.json';
 
-// RSS Feed sources
+// RSS Feed sources - using only feeds that work reliably with RSS2JSON
 const FEEDS = {
   headlines: [
     { name: 'BBC News', url: 'https://feeds.bbci.co.uk/news/rss.xml' },
+    { name: 'BBC World', url: 'https://feeds.bbci.co.uk/news/world/rss.xml' },
     { name: 'Guardian', url: 'https://www.theguardian.com/uk/rss' }
   ],
   feelgood: [
-    { name: 'BBC Good News', url: 'https://feeds.bbci.co.uk/news/stories/rss.xml' },
-    { name: 'Positive News', url: 'https://www.positive.news/feed/' },
-    { name: 'Good News Network', url: 'https://www.goodnewsnetwork.org/feed/' }
+    // BBC feeds work well, others may get blocked
+    { name: 'BBC Stories', url: 'https://feeds.bbci.co.uk/news/stories/rss.xml' },
+    { name: 'BBC Magazine', url: 'https://feeds.bbci.co.uk/news/magazine/rss.xml' },
+    { name: 'BBC In Pictures', url: 'https://feeds.bbci.co.uk/news/in_pictures/rss.xml' }
   ],
   local: [
-    // Default to UK regional - could be customised
+    // UK regional BBC feeds
     { name: 'BBC England', url: 'https://feeds.bbci.co.uk/news/england/rss.xml' },
     { name: 'BBC Scotland', url: 'https://feeds.bbci.co.uk/news/scotland/rss.xml' },
-    { name: 'BBC Wales', url: 'https://feeds.bbci.co.uk/news/wales/rss.xml' }
+    { name: 'BBC Wales', url: 'https://feeds.bbci.co.uk/news/wales/rss.xml' },
+    { name: 'BBC N. Ireland', url: 'https://feeds.bbci.co.uk/news/northern_ireland/rss.xml' }
   ]
 };
 

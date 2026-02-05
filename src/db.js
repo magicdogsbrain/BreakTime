@@ -435,8 +435,12 @@ export async function unlockAchievement(achievement) {
   }
   const existing = await db.get('achievements', achievement.id);
   if (!existing) {
+    // Only store serializable properties - NOT the check function!
     await db.put('achievements', {
-      ...achievement,
+      id: achievement.id,
+      name: achievement.name,
+      desc: achievement.desc,
+      emoji: achievement.emoji,
       unlockedAt: Date.now()
     });
   }
