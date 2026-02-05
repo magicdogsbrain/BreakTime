@@ -1,8 +1,14 @@
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
+// Version bump forces service worker update on all clients
+const APP_VERSION = '1.1.0';
+
 export default defineConfig({
   base: '/BreakTime/',
+  define: {
+    __APP_VERSION__: JSON.stringify(APP_VERSION)
+  },
   plugins: [
     VitePWA({
       registerType: 'autoUpdate',
@@ -31,6 +37,9 @@ export default defineConfig({
         ]
       },
       workbox: {
+        // Force immediate activation of new service worker
+        skipWaiting: true,
+        clientsClaim: true,
         // Cache content JSON files and images
         globPatterns: ['**/*.{js,css,html,ico,png,svg}', 'content/*.json'],
         runtimeCaching: [
