@@ -22,6 +22,50 @@ import { TetrisGame } from './game-tetris.js';
 import { getBatchedContent, getWordPuzzlesByType } from './content-batch.js';
 
 /**
+ * Play a celebration sound using Web Audio API
+ * Creates a pleasant chime without needing audio files
+ */
+function playCelebrationSound() {
+  try {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContext) return;
+
+    const ctx = new AudioContext();
+    const now = ctx.currentTime;
+
+    // Play a pleasant ascending arpeggio (C-E-G-C)
+    const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+
+    notes.forEach((freq, i) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.frequency.value = freq;
+      osc.type = 'sine';
+
+      const startTime = now + i * 0.1;
+      const duration = 0.3;
+
+      gain.gain.setValueAtTime(0, startTime);
+      gain.gain.linearRampToValueAtTime(0.2, startTime + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.01, startTime + duration);
+
+      osc.start(startTime);
+      osc.stop(startTime + duration);
+    });
+
+    // Clean up context after sounds finish
+    setTimeout(() => ctx.close(), 1000);
+  } catch (e) {
+    // Silently fail - sound is not critical
+    console.log('Sound not available:', e.message);
+  }
+}
+
+/**
  * Main App
  * 
  * Philosophy:
@@ -581,7 +625,10 @@ class CarerCalmApp {
           </div>
         </div>
         
-        <button class="submit-btn" data-action="check-crossword" style="margin-top: 1.5rem;">Check answers</button>
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <button class="submit-btn" data-action="check-crossword">Check answers</button>
+          <button class="secondary-btn" data-action="reveal-crossword">Reveal answers</button>
+        </div>
       </div>
     `;
   }
@@ -957,6 +1004,7 @@ class CarerCalmApp {
         const correct = checkMysteryAnswer(this.currentMystery, this.mysteryAnswer);
         
         if (correct) {
+          playCelebrationSound();
           await savePuzzleProgress(this.currentMystery.id, {
             type: 'mystery',
             puzzleId: this.currentMystery.id,
@@ -965,7 +1013,7 @@ class CarerCalmApp {
           });
           await logActivity('puzzle', { type: 'mystery', puzzleId: this.currentMystery.id });
         }
-        
+
         // Show result
         const resultHtml = `
           <div class="mystery-result ${correct ? 'correct' : 'wrong'}">
@@ -1033,6 +1081,7 @@ class CarerCalmApp {
         });
         
         if (allCorrect) {
+          playCelebrationSound();
           await savePuzzleProgress(this.currentCrossword.id, {
             type: 'crossword',
             puzzleId: this.currentCrossword.id,
@@ -1053,6 +1102,32 @@ class CarerCalmApp {
       });
     });
     
+    // Reveal crossword answers
+    document.querySelectorAll('[data-action="reveal-crossword"]').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const c = this.currentCrossword;
+
+        // Fill in all cells with correct answers
+        document.querySelectorAll('.cell-input').forEach(input => {
+          const row = parseInt(input.dataset.row);
+          const col = parseInt(input.dataset.col);
+          const answer = c.grid[row][col];
+          input.value = answer;
+          input.style.background = '#d4e6f7'; // Light blue to show revealed
+          input.disabled = true;
+        });
+
+        // Replace buttons with completion message (but don't log as user-completed)
+        btn.parentElement.innerHTML = `
+          <div class="crossword-complete" style="text-align: center;">
+            <p style="font-size: 1.1rem; color: var(--text-secondary);">Answers revealed</p>
+            <button class="submit-btn" data-action="crossword-again" style="margin-top: 0.5rem;">Try another crossword</button>
+          </div>
+        `;
+        this.attachEventHandlers();
+      });
+    });
+
     // New crossword
     document.querySelectorAll('[data-action="crossword-again"]').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -1090,6 +1165,10 @@ class CarerCalmApp {
     document.querySelectorAll('[data-action="quiz-next"]').forEach(btn => {
       btn.addEventListener('click', () => {
         this.quizIndex++;
+        // Play celebration sound when quiz is complete
+        if (this.quizIndex >= this.currentQuiz.length) {
+          playCelebrationSound();
+        }
         this.render();
       });
     });
@@ -1124,6 +1203,7 @@ class CarerCalmApp {
         }
 
         if (correct) {
+          playCelebrationSound();
           await logActivity('puzzle', { type: this.wordPuzzleType });
         }
 
@@ -1176,6 +1256,7 @@ class CarerCalmApp {
           this.render();
 
           if (this.wordSearchFound.length === ws.words.length) {
+            playCelebrationSound();
             logActivity('puzzle', { type: 'word-search', puzzleId: ws.id });
           }
         } else {

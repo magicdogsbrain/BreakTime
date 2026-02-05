@@ -1,403 +1,1742 @@
 [
   {
     "id": "cross-021",
-    "title": "Baking Day",
+    "title": "By the Sea",
     "grid": [
-      ["S", "C", "O", "N", "E"],
-      ["L", "#", "V", "#", "G"],
-      ["I", "C", "E", "D", "G"],
-      ["C", "#", "N", "#", "S"],
-      ["E", "B", "U", "N", "S"]
+      [
+        "C",
+        "O",
+        "V",
+        "E",
+        "#"
+      ],
+      [
+        "L",
+        "#",
+        "A",
+        "#",
+        "A"
+      ],
+      [
+        "A",
+        "T",
+        "L",
+        "A",
+        "S"
+      ],
+      [
+        "M",
+        "#",
+        "O",
+        "#",
+        "K"
+      ],
+      [
+        "#",
+        "A",
+        "R",
+        "T",
+        "S"
+      ]
     ],
     "across": [
-      { "number": 1, "clue": "Teatime treat with jam and cream (5)", "answer": "SCONE", "row": 0, "col": 0 },
-      { "number": 4, "clue": "Topped with a sugar glaze (4)", "answer": "ICED", "row": 2, "col": 0 },
-      { "number": 6, "clue": "Hot cross ___ (4)", "answer": "BUNS", "row": 4, "col": 1 }
+      {
+        "number": 1,
+        "clue": "Sheltered bay (4)",
+        "answer": "COVE",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 3,
+        "clue": "Book of maps (5)",
+        "answer": "ATLAS",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "number": 5,
+        "clue": "Paintings and sculptures (4)",
+        "answer": "ARTS",
+        "row": 4,
+        "col": 1
+      }
     ],
     "down": [
-      { "number": 1, "clue": "A cut of cake or pie (5)", "answer": "SLICE", "row": 0, "col": 0 },
-      { "number": 2, "clue": "Bake in the ___ (4)", "answer": "OVEN", "row": 0, "col": 2 },
-      { "number": 3, "clue": "Laid by hens (4)", "answer": "EGGS", "row": 0, "col": 4 }
+      {
+        "number": 1,
+        "clue": "Shellfish (4)",
+        "answer": "CLAM",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 2,
+        "clue": "Bravery (5)",
+        "answer": "VALOR",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "number": 4,
+        "clue": "Inquires (4)",
+        "answer": "ASKS",
+        "row": 1,
+        "col": 4
+      }
     ]
   },
   {
     "id": "cross-022",
-    "title": "Christmas Cheer",
+    "title": "Kitchen Fun",
     "grid": [
-      ["S", "T", "A", "R", "#"],
-      ["A", "#", "N", "#", "E"],
-      ["N", "O", "G", "E", "L"],
-      ["T", "#", "E", "#", "F"],
-      ["A", "S", "L", "E", "D"]
+      [
+        "W",
+        "A",
+        "S",
+        "H",
+        "#"
+      ],
+      [
+        "E",
+        "#",
+        "L",
+        "#",
+        "N"
+      ],
+      [
+        "L",
+        "O",
+        "O",
+        "S",
+        "E"
+      ],
+      [
+        "D",
+        "#",
+        "P",
+        "#",
+        "X"
+      ],
+      [
+        "#",
+        "R",
+        "E",
+        "S",
+        "T"
+      ]
     ],
     "across": [
-      { "number": 1, "clue": "Tops the Christmas tree (4)", "answer": "STAR", "row": 0, "col": 0 },
-      { "number": 4, "clue": "Festive egg drink (3)", "answer": "NOG", "row": 2, "col": 0 },
-      { "number": 5, "clue": "Snow vehicle for gifts (4)", "answer": "SLED", "row": 4, "col": 1 }
+      {
+        "number": 1,
+        "clue": "Clean the dishes (4)",
+        "answer": "WASH",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 3,
+        "clue": "Not tight (5)",
+        "answer": "LOOSE",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "number": 5,
+        "clue": "Take a break (4)",
+        "answer": "REST",
+        "row": 4,
+        "col": 1
+      }
     ],
     "down": [
-      { "number": 1, "clue": "Father Christmas (5)", "answer": "SANTA", "row": 0, "col": 0 },
-      { "number": 2, "clue": "Heavenly messenger (5)", "answer": "ANGEL", "row": 0, "col": 2 },
-      { "number": 3, "clue": "Pointy-eared toy maker (3)", "answer": "ELF", "row": 1, "col": 4 }
+      {
+        "number": 1,
+        "clue": "Join metal together (4)",
+        "answer": "WELD",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 2,
+        "clue": "Incline or hill (5)",
+        "answer": "SLOPE",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "number": 4,
+        "clue": "Following (4)",
+        "answer": "NEXT",
+        "row": 1,
+        "col": 4
+      }
     ]
   },
   {
     "id": "cross-023",
-    "title": "Seaside Holiday",
+    "title": "Spring Garden",
     "grid": [
-      ["S", "H", "E", "L", "L"],
-      ["P", "#", "#", "O", "#"],
-      ["A", "W", "A", "V", "E"],
-      ["D", "#", "#", "E", "#"],
-      ["E", "B", "A", "S", "K"]
+      [
+        "B",
+        "U",
+        "L",
+        "B",
+        "#"
+      ],
+      [
+        "A",
+        "#",
+        "I",
+        "#",
+        "A"
+      ],
+      [
+        "S",
+        "T",
+        "E",
+        "A",
+        "L"
+      ],
+      [
+        "K",
+        "#",
+        "G",
+        "#",
+        "S"
+      ],
+      [
+        "#",
+        "H",
+        "E",
+        "R",
+        "O"
+      ]
     ],
     "across": [
-      { "number": 1, "clue": "Find this on the beach (5)", "answer": "SHELL", "row": 0, "col": 0 },
-      { "number": 4, "clue": "Rolling ocean water (4)", "answer": "WAVE", "row": 2, "col": 1 },
-      { "number": 6, "clue": "Lie in the warm sun (4)", "answer": "BASK", "row": 4, "col": 1 }
+      {
+        "number": 1,
+        "clue": "Daffodil starter (4)",
+        "answer": "BULB",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 3,
+        "clue": "Take without asking (5)",
+        "answer": "STEAL",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "number": 5,
+        "clue": "Brave person (4)",
+        "answer": "HERO",
+        "row": 4,
+        "col": 1
+      }
     ],
     "down": [
-      { "number": 1, "clue": "Bucket and ___ (5)", "answer": "SPADE", "row": 0, "col": 0 },
-      { "number": 2, "clue": "Adore or cherish (4)", "answer": "LOVE", "row": 0, "col": 3 }
+      {
+        "number": 1,
+        "clue": "Soak up the sun (4)",
+        "answer": "BASK",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 2,
+        "clue": "Medieval lord (5)",
+        "answer": "LIEGE",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "number": 4,
+        "clue": "As well (4)",
+        "answer": "ALSO",
+        "row": 1,
+        "col": 4
+      }
     ]
   },
   {
     "id": "cross-024",
-    "title": "Down the Pub",
+    "title": "Fireside",
     "grid": [
-      ["S", "T", "O", "U", "T"],
-      ["N", "#", "#", "#", "A"],
-      ["U", "L", "A", "G", "B"],
-      ["G", "#", "#", "#", "S"],
-      ["S", "M", "A", "L", "L"]
+      [
+        "F",
+        "I",
+        "R",
+        "E",
+        "#"
+      ],
+      [
+        "L",
+        "#",
+        "A",
+        "#",
+        "B"
+      ],
+      [
+        "U",
+        "L",
+        "T",
+        "R",
+        "A"
+      ],
+      [
+        "E",
+        "#",
+        "E",
+        "#",
+        "R"
+      ],
+      [
+        "#",
+        "A",
+        "D",
+        "D",
+        "S"
+      ]
     ],
     "across": [
-      { "number": 1, "clue": "Dark Irish beer (5)", "answer": "STOUT", "row": 0, "col": 0 },
-      { "number": 3, "clue": "Fall behind the pace (3)", "answer": "LAG", "row": 2, "col": 1 },
-      { "number": 5, "clue": "Not a large drink (5)", "answer": "SMALL", "row": 4, "col": 0 }
+      {
+        "number": 1,
+        "clue": "Warm hearth glow (4)",
+        "answer": "FIRE",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 3,
+        "clue": "Extreme or beyond (5)",
+        "answer": "ULTRA",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "number": 5,
+        "clue": "Puts together (4)",
+        "answer": "ADDS",
+        "row": 4,
+        "col": 1
+      }
     ],
     "down": [
-      { "number": 1, "clue": "Cosy pub corner seats (5)", "answer": "SNUGS", "row": 0, "col": 0 },
-      { "number": 2, "clue": "Bar bills to settle (4)", "answer": "TABS", "row": 0, "col": 4 }
+      {
+        "number": 1,
+        "clue": "Chimney passage (4)",
+        "answer": "FLUE",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 2,
+        "clue": "Given a score (5)",
+        "answer": "RATED",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "number": 4,
+        "clue": "Pub counters (4)",
+        "answer": "BARS",
+        "row": 1,
+        "col": 4
+      }
     ]
   },
   {
     "id": "cross-025",
-    "title": "In the Garden",
+    "title": "Music Night",
     "grid": [
-      ["S", "H", "E", "D", "#"],
-      ["E", "#", "A", "#", "H"],
-      ["E", "L", "R", "T", "O"],
-      ["D", "#", "T", "#", "E"],
-      ["S", "S", "H", "O", "E"]
+      [
+        "B",
+        "A",
+        "N",
+        "D",
+        "#"
+      ],
+      [
+        "E",
+        "#",
+        "A",
+        "#",
+        "S"
+      ],
+      [
+        "A",
+        "N",
+        "V",
+        "I",
+        "L"
+      ],
+      [
+        "R",
+        "#",
+        "E",
+        "#",
+        "I"
+      ],
+      [
+        "#",
+        "P",
+        "L",
+        "U",
+        "M"
+      ]
     ],
     "across": [
-      { "number": 1, "clue": "Garden storage building (4)", "answer": "SHED", "row": 0, "col": 0 },
-      { "number": 5, "clue": "Garden footwear (4)", "answer": "SHOE", "row": 4, "col": 1 }
+      {
+        "number": 1,
+        "clue": "Musical group (4)",
+        "answer": "BAND",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 3,
+        "clue": "Blacksmith block (5)",
+        "answer": "ANVIL",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "number": 5,
+        "clue": "Purple fruit (4)",
+        "answer": "PLUM",
+        "row": 4,
+        "col": 1
+      }
     ],
     "down": [
-      { "number": 1, "clue": "Planted in soil to grow (5)", "answer": "SEEDS", "row": 0, "col": 0 },
-      { "number": 2, "clue": "Soil or ground (5)", "answer": "EARTH", "row": 0, "col": 2 },
-      { "number": 3, "clue": "Garden digging blade (3)", "answer": "HOE", "row": 1, "col": 4 }
+      {
+        "number": 1,
+        "clue": "Large furry animal (4)",
+        "answer": "BEAR",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 2,
+        "clue": "Belly button (5)",
+        "answer": "NAVEL",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "number": 4,
+        "clue": "Thin and slender (4)",
+        "answer": "SLIM",
+        "row": 1,
+        "col": 4
+      }
     ]
   },
   {
     "id": "cross-026",
-    "title": "Breakfast Time",
+    "title": "Sweet Treats",
     "grid": [
-      ["T", "O", "A", "S", "T"],
-      ["E", "#", "#", "A", "#"],
-      ["A", "B", "E", "G", "S"],
-      ["R", "#", "#", "E", "#"],
-      ["S", "J", "A", "M", "S"]
+      [
+        "M",
+        "I",
+        "N",
+        "T",
+        "#"
+      ],
+      [
+        "O",
+        "#",
+        "U",
+        "#",
+        "J"
+      ],
+      [
+        "L",
+        "E",
+        "D",
+        "G",
+        "E"
+      ],
+      [
+        "E",
+        "#",
+        "G",
+        "#",
+        "L"
+      ],
+      [
+        "#",
+        "F",
+        "E",
+        "L",
+        "L"
+      ]
     ],
     "across": [
-      { "number": 1, "clue": "Bread from the toaster (5)", "answer": "TOAST", "row": 0, "col": 0 },
-      { "number": 4, "clue": "Pleads or implores (4)", "answer": "BEGS", "row": 2, "col": 1 },
-      { "number": 5, "clue": "Preserves for your toast (4)", "answer": "JAMS", "row": 4, "col": 1 }
+      {
+        "number": 1,
+        "clue": "Cool sweet flavour (4)",
+        "answer": "MINT",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 3,
+        "clue": "Narrow shelf (5)",
+        "answer": "LEDGE",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "number": 5,
+        "clue": "Dropped down (4)",
+        "answer": "FELL",
+        "row": 4,
+        "col": 1
+      }
     ],
     "down": [
-      { "number": 1, "clue": "Shed drops from your eyes (5)", "answer": "TEARS", "row": 0, "col": 0 },
-      { "number": 2, "clue": "Herb in a full English (4)", "answer": "SAGE", "row": 0, "col": 3 }
+      {
+        "number": 1,
+        "clue": "Burrowing animal (4)",
+        "answer": "MOLE",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 2,
+        "clue": "Gentle push (5)",
+        "answer": "NUDGE",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "number": 4,
+        "clue": "Set like jelly (4)",
+        "answer": "JELL",
+        "row": 1,
+        "col": 4
+      }
     ]
   },
   {
     "id": "cross-027",
     "title": "Autumn Walk",
     "grid": [
-      ["L", "E", "A", "F", "#"],
-      ["E", "#", "#", "O", "G"],
-      ["A", "C", "O", "R", "N"],
-      ["P", "#", "#", "K", "E"],
-      ["S", "C", "A", "R", "F"]
+      [
+        "L",
+        "E",
+        "A",
+        "F",
+        "#"
+      ],
+      [
+        "O",
+        "#",
+        "R",
+        "#",
+        "U"
+      ],
+      [
+        "G",
+        "R",
+        "E",
+        "E",
+        "N"
+      ],
+      [
+        "S",
+        "#",
+        "N",
+        "#",
+        "D"
+      ],
+      [
+        "#",
+        "T",
+        "A",
+        "C",
+        "O"
+      ]
     ],
     "across": [
-      { "number": 1, "clue": "Drops from trees in autumn (4)", "answer": "LEAF", "row": 0, "col": 0 },
-      { "number": 3, "clue": "Oak tree nut (5)", "answer": "ACORN", "row": 2, "col": 0 },
-      { "number": 5, "clue": "Woolly neck warmer (5)", "answer": "SCARF", "row": 4, "col": 0 }
+      {
+        "number": 1,
+        "clue": "Falls from trees (4)",
+        "answer": "LEAF",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 3,
+        "clue": "Colour of grass (5)",
+        "answer": "GREEN",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "number": 5,
+        "clue": "Mexican food wrap (4)",
+        "answer": "TACO",
+        "row": 4,
+        "col": 1
+      }
     ],
     "down": [
-      { "number": 1, "clue": "Bound or jumped (5)", "answer": "LEAPS", "row": 0, "col": 0 },
-      { "number": 2, "clue": "Cutlery prong (4)", "answer": "FORK", "row": 0, "col": 3 }
+      {
+        "number": 1,
+        "clue": "Fireplace wood (4)",
+        "answer": "LOGS",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 2,
+        "clue": "Sports stadium (5)",
+        "answer": "ARENA",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "number": 4,
+        "clue": "Reverse an action (4)",
+        "answer": "UNDO",
+        "row": 1,
+        "col": 4
+      }
     ]
   },
   {
     "id": "cross-028",
-    "title": "Furry Friends",
+    "title": "Night Sky",
     "grid": [
-      ["P", "A", "W", "S", "#"],
-      ["U", "#", "A", "#", "B"],
-      ["P", "R", "I", "D", "E"],
-      ["S", "#", "T", "#", "D"],
-      ["#", "T", "A", "I", "L"]
+      [
+        "G",
+        "L",
+        "O",
+        "W",
+        "#"
+      ],
+      [
+        "R",
+        "#",
+        "W",
+        "#",
+        "A"
+      ],
+      [
+        "I",
+        "N",
+        "N",
+        "E",
+        "R"
+      ],
+      [
+        "M",
+        "#",
+        "E",
+        "#",
+        "T"
+      ],
+      [
+        "#",
+        "A",
+        "D",
+        "D",
+        "S"
+      ]
     ],
     "across": [
-      { "number": 1, "clue": "Cat or dog feet (4)", "answer": "PAWS", "row": 0, "col": 0 },
-      { "number": 4, "clue": "Group of lions (5)", "answer": "PRIDE", "row": 2, "col": 0 },
-      { "number": 6, "clue": "Wagging dog appendage (4)", "answer": "TAIL", "row": 4, "col": 1 }
+      {
+        "number": 1,
+        "clue": "Warm soft light (4)",
+        "answer": "GLOW",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 3,
+        "clue": "Inside part (5)",
+        "answer": "INNER",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "number": 5,
+        "clue": "Increases by adding (4)",
+        "answer": "ADDS",
+        "row": 4,
+        "col": 1
+      }
     ],
     "down": [
-      { "number": 1, "clue": "Young dogs (4)", "answer": "PUPS", "row": 0, "col": 0 },
-      { "number": 2, "clue": "Patiently ___ for a treat (4)", "answer": "WAIT", "row": 0, "col": 2 },
-      { "number": 3, "clue": "Where a pet sleeps (3)", "answer": "BED", "row": 1, "col": 4 }
+      {
+        "number": 1,
+        "clue": "Dark and serious (4)",
+        "answer": "GRIM",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 2,
+        "clue": "Possessed (5)",
+        "answer": "OWNED",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "number": 4,
+        "clue": "Creative works (4)",
+        "answer": "ARTS",
+        "row": 1,
+        "col": 4
+      }
     ]
   },
   {
     "id": "cross-029",
-    "title": "Cosy Night In",
+    "title": "Pet Shop",
     "grid": [
-      ["D", "U", "V", "E", "T"],
-      ["R", "#", "#", "#", "E"],
-      ["A", "F", "I", "R", "E"],
-      ["M", "#", "#", "#", "D"],
-      ["A", "S", "O", "F", "A"]
+      [
+        "C",
+        "A",
+        "G",
+        "E",
+        "#"
+      ],
+      [
+        "O",
+        "#",
+        "E",
+        "#",
+        "M"
+      ],
+      [
+        "R",
+        "I",
+        "N",
+        "S",
+        "E"
+      ],
+      [
+        "N",
+        "#",
+        "I",
+        "#",
+        "W"
+      ],
+      [
+        "#",
+        "P",
+        "E",
+        "N",
+        "S"
+      ]
     ],
     "across": [
-      { "number": 1, "clue": "Bed cover for cold nights (5)", "answer": "DUVET", "row": 0, "col": 0 },
-      { "number": 3, "clue": "Crackling in the hearth (4)", "answer": "FIRE", "row": 2, "col": 1 },
-      { "number": 5, "clue": "Comfy seat for two (4)", "answer": "SOFA", "row": 4, "col": 1 }
+      {
+        "number": 1,
+        "clue": "Bird home (4)",
+        "answer": "CAGE",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 3,
+        "clue": "Wash out soap (5)",
+        "answer": "RINSE",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "number": 5,
+        "clue": "Writing tools (4)",
+        "answer": "PENS",
+        "row": 4,
+        "col": 1
+      }
     ],
     "down": [
-      { "number": 1, "clue": "Theatre performance (5)", "answer": "DRAMA", "row": 0, "col": 0 }
+      {
+        "number": 1,
+        "clue": "Cereal plant (4)",
+        "answer": "CORN",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 2,
+        "clue": "Magic lamp spirit (5)",
+        "answer": "GENIE",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "number": 4,
+        "clue": "Stable yards (4)",
+        "answer": "MEWS",
+        "row": 1,
+        "col": 4
+      }
     ]
   },
   {
     "id": "cross-030",
-    "title": "Music Room",
+    "title": "Village Life",
     "grid": [
-      ["D", "R", "U", "M", "S"],
-      ["U", "#", "#", "U", "#"],
-      ["E", "N", "O", "T", "E"],
-      ["T", "#", "#", "E", "#"],
-      ["S", "O", "N", "G", "S"]
+      [
+        "P",
+        "O",
+        "N",
+        "D",
+        "#"
+      ],
+      [
+        "I",
+        "#",
+        "E",
+        "#",
+        "B"
+      ],
+      [
+        "L",
+        "I",
+        "V",
+        "E",
+        "R"
+      ],
+      [
+        "E",
+        "#",
+        "E",
+        "#",
+        "E"
+      ],
+      [
+        "#",
+        "G",
+        "R",
+        "I",
+        "D"
+      ]
     ],
     "across": [
-      { "number": 1, "clue": "Bang these with sticks (5)", "answer": "DRUMS", "row": 0, "col": 0 },
-      { "number": 3, "clue": "Musical sound (4)", "answer": "NOTE", "row": 2, "col": 1 },
-      { "number": 5, "clue": "Sing-along tunes (5)", "answer": "SONGS", "row": 4, "col": 0 }
+      {
+        "number": 1,
+        "clue": "Duck water (4)",
+        "answer": "POND",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 3,
+        "clue": "Body organ (5)",
+        "answer": "LIVER",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "number": 5,
+        "clue": "Pattern of squares (4)",
+        "answer": "GRID",
+        "row": 4,
+        "col": 1
+      }
     ],
     "down": [
-      { "number": 1, "clue": "Pair of musicians (5)", "answer": "DUETS", "row": 0, "col": 0 },
-      { "number": 2, "clue": "Silent or hushed (4)", "answer": "MUTE", "row": 0, "col": 3 }
+      {
+        "number": 1,
+        "clue": "Stack or heap (4)",
+        "answer": "PILE",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 2,
+        "clue": "Not ever (5)",
+        "answer": "NEVER",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "number": 4,
+        "clue": "Raised animals (4)",
+        "answer": "BRED",
+        "row": 1,
+        "col": 4
+      }
     ]
   },
   {
     "id": "cross-031",
-    "title": "Tea and Cake",
+    "title": "Country Walk",
     "grid": [
-      ["S", "P", "O", "O", "N"],
-      ["U", "#", "#", "#", "A"],
-      ["G", "A", "T", "E", "S"],
-      ["A", "#", "#", "#", "T"],
-      ["R", "U", "S", "T", "Y"]
+      [
+        "H",
+        "I",
+        "L",
+        "L",
+        "#"
+      ],
+      [
+        "A",
+        "#",
+        "I",
+        "#",
+        "P"
+      ],
+      [
+        "N",
+        "O",
+        "V",
+        "E",
+        "L"
+      ],
+      [
+        "D",
+        "#",
+        "E",
+        "#",
+        "U"
+      ],
+      [
+        "#",
+        "A",
+        "D",
+        "D",
+        "S"
+      ]
     ],
     "across": [
-      { "number": 1, "clue": "Stir your tea with this (5)", "answer": "SPOON", "row": 0, "col": 0 },
-      { "number": 3, "clue": "Garden entrances (5)", "answer": "GATES", "row": 2, "col": 0 },
-      { "number": 5, "clue": "Old and corroded (5)", "answer": "RUSTY", "row": 4, "col": 0 }
+      {
+        "number": 1,
+        "clue": "Sloping ground (4)",
+        "answer": "HILL",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 3,
+        "clue": "Fictional book (5)",
+        "answer": "NOVEL",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "number": 5,
+        "clue": "Sums up (4)",
+        "answer": "ADDS",
+        "row": 4,
+        "col": 1
+      }
     ],
     "down": [
-      { "number": 1, "clue": "Sweet white crystals (5)", "answer": "SUGAR", "row": 0, "col": 0 },
-      { "number": 2, "clue": "Unpleasant or horrible (5)", "answer": "NASTY", "row": 0, "col": 4 }
+      {
+        "number": 1,
+        "clue": "Body part for gripping (4)",
+        "answer": "HAND",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 2,
+        "clue": "Resided (5)",
+        "answer": "LIVED",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "number": 4,
+        "clue": "Additional (4)",
+        "answer": "PLUS",
+        "row": 1,
+        "col": 4
+      }
     ]
   },
   {
     "id": "cross-032",
-    "title": "Rainy Day",
+    "title": "Railway",
     "grid": [
-      ["S", "T", "O", "R", "M"],
-      ["L", "#", "#", "A", "#"],
-      ["E", "M", "U", "I", "N"],
-      ["E", "#", "#", "N", "#"],
-      ["T", "O", "W", "E", "L"]
+      [
+        "R",
+        "A",
+        "I",
+        "L",
+        "#"
+      ],
+      [
+        "O",
+        "#",
+        "D",
+        "#",
+        "A"
+      ],
+      [
+        "S",
+        "T",
+        "E",
+        "A",
+        "M"
+      ],
+      [
+        "E",
+        "#",
+        "A",
+        "#",
+        "I"
+      ],
+      [
+        "#",
+        "U",
+        "S",
+        "E",
+        "D"
+      ]
     ],
     "across": [
-      { "number": 1, "clue": "Thunder and lightning (5)", "answer": "STORM", "row": 0, "col": 0 },
-      { "number": 4, "clue": "Large flightless bird (3)", "answer": "EMU", "row": 2, "col": 0 },
-      { "number": 5, "clue": "Dry off with this (5)", "answer": "TOWEL", "row": 4, "col": 0 }
+      {
+        "number": 1,
+        "clue": "Train track (4)",
+        "answer": "RAIL",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 3,
+        "clue": "Hot vapour power (5)",
+        "answer": "STEAM",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "number": 5,
+        "clue": "Previously owned (4)",
+        "answer": "USED",
+        "row": 4,
+        "col": 1
+      }
     ],
     "down": [
-      { "number": 1, "clue": "Icy winter precipitation (5)", "answer": "SLEET", "row": 0, "col": 0 },
-      { "number": 2, "clue": "Wet weather (4)", "answer": "RAIN", "row": 0, "col": 3 }
+      {
+        "number": 1,
+        "clue": "Garden flower (4)",
+        "answer": "ROSE",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 2,
+        "clue": "Thoughts and plans (5)",
+        "answer": "IDEAS",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "number": 4,
+        "clue": "In the middle of (4)",
+        "answer": "AMID",
+        "row": 1,
+        "col": 4
+      }
     ]
   },
   {
     "id": "cross-033",
-    "title": "Sunday Roast",
+    "title": "Seaside Trip",
     "grid": [
-      ["G", "R", "A", "V", "Y"],
-      ["N", "#", "#", "E", "#"],
-      ["A", "R", "O", "S", "E"],
-      ["W", "#", "#", "T", "#"],
-      ["S", "M", "I", "L", "E"]
+      [
+        "S",
+        "A",
+        "N",
+        "D",
+        "#"
+      ],
+      [
+        "L",
+        "#",
+        "O",
+        "#",
+        "A"
+      ],
+      [
+        "I",
+        "N",
+        "T",
+        "E",
+        "R"
+      ],
+      [
+        "D",
+        "#",
+        "E",
+        "#",
+        "E"
+      ],
+      [
+        "#",
+        "I",
+        "D",
+        "E",
+        "A"
+      ]
     ],
     "across": [
-      { "number": 1, "clue": "Pour this over your roast (5)", "answer": "GRAVY", "row": 0, "col": 0 },
-      { "number": 3, "clue": "Got up from the table (5)", "answer": "AROSE", "row": 2, "col": 0 },
-      { "number": 5, "clue": "Happy expression (5)", "answer": "SMILE", "row": 4, "col": 0 }
+      {
+        "number": 1,
+        "clue": "Beach grains (4)",
+        "answer": "SAND",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 3,
+        "clue": "Between or among (5)",
+        "answer": "INTER",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "number": 5,
+        "clue": "Thought or concept (4)",
+        "answer": "IDEA",
+        "row": 4,
+        "col": 1
+      }
     ],
     "down": [
-      { "number": 1, "clue": "Chews or nibbles (5)", "answer": "GNAWS", "row": 0, "col": 0 },
-      { "number": 2, "clue": "Waistcoat or tank top (4)", "answer": "VEST", "row": 0, "col": 3 }
+      {
+        "number": 1,
+        "clue": "Moved smoothly (4)",
+        "answer": "SLID",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 2,
+        "clue": "Written down (5)",
+        "answer": "NOTED",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "number": 4,
+        "clue": "Region or zone (4)",
+        "answer": "AREA",
+        "row": 1,
+        "col": 4
+      }
     ]
   },
   {
     "id": "cross-034",
-    "title": "Village Fete",
+    "title": "Baking Day",
     "grid": [
-      ["C", "A", "K", "E", "S"],
-      ["R", "#", "#", "#", "T"],
-      ["A", "R", "E", "N", "A"],
-      ["F", "#", "#", "#", "L"],
-      ["T", "R", "A", "I", "L"]
+      [
+        "C",
+        "A",
+        "K",
+        "E",
+        "#"
+      ],
+      [
+        "U",
+        "#",
+        "N",
+        "#",
+        "A"
+      ],
+      [
+        "B",
+        "L",
+        "E",
+        "E",
+        "D"
+      ],
+      [
+        "S",
+        "#",
+        "E",
+        "#",
+        "D"
+      ],
+      [
+        "#",
+        "A",
+        "L",
+        "P",
+        "S"
+      ]
     ],
     "across": [
-      { "number": 1, "clue": "Baked treats on a stall (5)", "answer": "CAKES", "row": 0, "col": 0 },
-      { "number": 3, "clue": "Show ring or stadium (5)", "answer": "ARENA", "row": 2, "col": 0 },
-      { "number": 5, "clue": "Nature walk footpath (5)", "answer": "TRAIL", "row": 4, "col": 0 }
+      {
+        "number": 1,
+        "clue": "Birthday treat (4)",
+        "answer": "CAKE",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 3,
+        "clue": "Lose blood (5)",
+        "answer": "BLEED",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "number": 5,
+        "clue": "European mountains (4)",
+        "answer": "ALPS",
+        "row": 4,
+        "col": 1
+      }
     ],
     "down": [
-      { "number": 1, "clue": "Arts and ___ (5)", "answer": "CRAFT", "row": 0, "col": 0 },
-      { "number": 2, "clue": "Market booth or table (5)", "answer": "STALL", "row": 0, "col": 4 }
+      {
+        "number": 1,
+        "clue": "Baby bears (4)",
+        "answer": "CUBS",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 2,
+        "clue": "Bend down (5)",
+        "answer": "KNEEL",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "number": 4,
+        "clue": "Increases (4)",
+        "answer": "ADDS",
+        "row": 1,
+        "col": 4
+      }
     ]
   },
   {
     "id": "cross-035",
-    "title": "Springtime",
+    "title": "Treasure Hunt",
     "grid": [
-      ["L", "A", "M", "B", "S"],
-      ["A", "#", "#", "U", "#"],
-      ["W", "E", "E", "D", "S"],
-      ["N", "#", "#", "S", "#"],
-      ["S", "H", "O", "W", "S"]
+      [
+        "R",
+        "O",
+        "B",
+        "E",
+        "#"
+      ],
+      [
+        "A",
+        "#",
+        "L",
+        "#",
+        "E"
+      ],
+      [
+        "M",
+        "O",
+        "U",
+        "N",
+        "D"
+      ],
+      [
+        "P",
+        "#",
+        "R",
+        "#",
+        "G"
+      ],
+      [
+        "#",
+        "A",
+        "B",
+        "L",
+        "E"
+      ]
     ],
     "across": [
-      { "number": 1, "clue": "Baby sheep in spring (5)", "answer": "LAMBS", "row": 0, "col": 0 },
-      { "number": 3, "clue": "Unwanted garden plants (5)", "answer": "WEEDS", "row": 2, "col": 0 },
-      { "number": 5, "clue": "Flower ___ and dog ___ (5)", "answer": "SHOWS", "row": 4, "col": 0 }
+      {
+        "number": 1,
+        "clue": "Dressing gown (4)",
+        "answer": "ROBE",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 3,
+        "clue": "Small hill (5)",
+        "answer": "MOUND",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "number": 5,
+        "clue": "Capable (4)",
+        "answer": "ABLE",
+        "row": 4,
+        "col": 1
+      }
     ],
     "down": [
-      { "number": 1, "clue": "Grass to mow (5)", "answer": "LAWNS", "row": 0, "col": 0 },
-      { "number": 2, "clue": "Flower ___ or rose ___ (4)", "answer": "BUDS", "row": 0, "col": 3 }
+      {
+        "number": 1,
+        "clue": "Sloped entrance (4)",
+        "answer": "RAMP",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 2,
+        "clue": "Book summary (5)",
+        "answer": "BLURB",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "number": 4,
+        "clue": "Border or rim (4)",
+        "answer": "EDGE",
+        "row": 1,
+        "col": 4
+      }
     ]
   },
   {
     "id": "cross-036",
-    "title": "Country Walk",
+    "title": "Sunday Best",
     "grid": [
-      ["S", "T", "I", "L", "E"],
-      ["T", "#", "#", "A", "#"],
-      ["O", "A", "K", "N", "E"],
-      ["N", "#", "#", "E", "#"],
-      ["E", "D", "G", "E", "S"]
+      [
+        "T",
+        "O",
+        "R",
+        "E",
+        "#"
+      ],
+      [
+        "A",
+        "#",
+        "E",
+        "#",
+        "B"
+      ],
+      [
+        "S",
+        "C",
+        "A",
+        "R",
+        "E"
+      ],
+      [
+        "K",
+        "#",
+        "C",
+        "#",
+        "S"
+      ],
+      [
+        "#",
+        "S",
+        "H",
+        "O",
+        "T"
+      ]
     ],
     "across": [
-      { "number": 1, "clue": "Fence step for walkers (5)", "answer": "STILE", "row": 0, "col": 0 },
-      { "number": 3, "clue": "Strong British tree (3)", "answer": "OAK", "row": 2, "col": 0 },
-      { "number": 5, "clue": "Borders or boundaries (5)", "answer": "EDGES", "row": 4, "col": 0 }
+      {
+        "number": 1,
+        "clue": "Ripped apart (4)",
+        "answer": "TORE",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 3,
+        "clue": "Frighten (5)",
+        "answer": "SCARE",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "number": 5,
+        "clue": "Attempt or try (4)",
+        "answer": "SHOT",
+        "row": 4,
+        "col": 1
+      }
     ],
     "down": [
-      { "number": 1, "clue": "Rock or pebble (5)", "answer": "STONE", "row": 0, "col": 0 },
-      { "number": 2, "clue": "Country path or road (4)", "answer": "LANE", "row": 0, "col": 3 }
+      {
+        "number": 1,
+        "clue": "Job to do (4)",
+        "answer": "TASK",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 2,
+        "clue": "Stretch out to (5)",
+        "answer": "REACH",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "number": 4,
+        "clue": "Top quality (4)",
+        "answer": "BEST",
+        "row": 1,
+        "col": 4
+      }
     ]
   },
   {
     "id": "cross-037",
-    "title": "Cottage Life",
+    "title": "Teatime",
     "grid": [
-      ["R", "O", "S", "E", "S"],
-      ["U", "#", "#", "A", "#"],
-      ["G", "R", "A", "V", "E"],
-      ["S", "#", "#", "E", "#"],
-      ["#", "L", "A", "N", "E"]
+      [
+        "F",
+        "U",
+        "N",
+        "D",
+        "#"
+      ],
+      [
+        "A",
+        "#",
+        "O",
+        "#",
+        "I"
+      ],
+      [
+        "D",
+        "E",
+        "B",
+        "U",
+        "T"
+      ],
+      [
+        "S",
+        "#",
+        "L",
+        "#",
+        "E"
+      ],
+      [
+        "#",
+        "T",
+        "E",
+        "R",
+        "M"
+      ]
     ],
     "across": [
-      { "number": 1, "clue": "Climbing garden flowers (5)", "answer": "ROSES", "row": 0, "col": 0 },
-      { "number": 3, "clue": "Churchyard resting place (5)", "answer": "GRAVE", "row": 2, "col": 0 },
-      { "number": 5, "clue": "Country road or path (4)", "answer": "LANE", "row": 4, "col": 1 }
+      {
+        "number": 1,
+        "clue": "Money source (4)",
+        "answer": "FUND",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 3,
+        "clue": "First appearance (5)",
+        "answer": "DEBUT",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "number": 5,
+        "clue": "School period (4)",
+        "answer": "TERM",
+        "row": 4,
+        "col": 1
+      }
     ],
     "down": [
-      { "number": 1, "clue": "Floor coverings (4)", "answer": "RUGS", "row": 0, "col": 0 },
-      { "number": 2, "clue": "Roof overhang (4)", "answer": "EAVE", "row": 0, "col": 3 }
+      {
+        "number": 1,
+        "clue": "Passing trends (4)",
+        "answer": "FADS",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 2,
+        "clue": "Grand and dignified (5)",
+        "answer": "NOBLE",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "number": 4,
+        "clue": "Single thing (4)",
+        "answer": "ITEM",
+        "row": 1,
+        "col": 4
+      }
     ]
   },
   {
     "id": "cross-038",
-    "title": "Bonfire Night",
+    "title": "Book Club",
     "grid": [
-      ["S", "P", "A", "R", "K"],
-      ["M", "#", "#", "O", "#"],
-      ["O", "G", "L", "O", "W"],
-      ["K", "#", "#", "T", "#"],
-      ["E", "B", "U", "R", "N"]
+      [
+        "O",
+        "M",
+        "E",
+        "N",
+        "#"
+      ],
+      [
+        "P",
+        "#",
+        "X",
+        "#",
+        "W"
+      ],
+      [
+        "A",
+        "S",
+        "T",
+        "E",
+        "R"
+      ],
+      [
+        "L",
+        "#",
+        "R",
+        "#",
+        "A"
+      ],
+      [
+        "#",
+        "L",
+        "A",
+        "M",
+        "P"
+      ]
     ],
     "across": [
-      { "number": 1, "clue": "Tiny bit of fire (5)", "answer": "SPARK", "row": 0, "col": 0 },
-      { "number": 3, "clue": "Warm fire shine (4)", "answer": "GLOW", "row": 2, "col": 1 },
-      { "number": 5, "clue": "Set alight (4)", "answer": "BURN", "row": 4, "col": 1 }
+      {
+        "number": 1,
+        "clue": "Sign of things to come (4)",
+        "answer": "OMEN",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 3,
+        "clue": "Star-shaped flower (5)",
+        "answer": "ASTER",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "number": 5,
+        "clue": "Bedside light (4)",
+        "answer": "LAMP",
+        "row": 4,
+        "col": 1
+      }
     ],
     "down": [
-      { "number": 1, "clue": "Haze from the bonfire (5)", "answer": "SMOKE", "row": 0, "col": 0 },
-      { "number": 2, "clue": "Underground plant part (4)", "answer": "ROOT", "row": 0, "col": 3 }
+      {
+        "number": 1,
+        "clue": "Shimmering gemstone (4)",
+        "answer": "OPAL",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 2,
+        "clue": "Additional bonus (5)",
+        "answer": "EXTRA",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "number": 4,
+        "clue": "Cover in paper (4)",
+        "answer": "WRAP",
+        "row": 1,
+        "col": 4
+      }
     ]
   },
   {
     "id": "cross-039",
-    "title": "Picnic Basket",
+    "title": "Pub Quiz",
     "grid": [
-      ["B", "R", "E", "A", "D"],
-      ["L", "#", "#", "P", "#"],
-      ["A", "O", "L", "P", "D"],
-      ["N", "#", "#", "L", "#"],
-      ["K", "N", "E", "E", "S"]
+      [
+        "S",
+        "H",
+        "I",
+        "N",
+        "#"
+      ],
+      [
+        "W",
+        "#",
+        "R",
+        "#",
+        "S"
+      ],
+      [
+        "A",
+        "D",
+        "A",
+        "P",
+        "T"
+      ],
+      [
+        "P",
+        "#",
+        "T",
+        "#",
+        "E"
+      ],
+      [
+        "#",
+        "T",
+        "E",
+        "A",
+        "M"
+      ]
     ],
     "across": [
-      { "number": 1, "clue": "Sandwich base (5)", "answer": "BREAD", "row": 0, "col": 0 },
-      { "number": 5, "clue": "Leg joints for sitting (5)", "answer": "KNEES", "row": 4, "col": 0 }
+      {
+        "number": 1,
+        "clue": "Front of lower leg (4)",
+        "answer": "SHIN",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 3,
+        "clue": "Adjust to change (5)",
+        "answer": "ADAPT",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "number": 5,
+        "clue": "Group working together (4)",
+        "answer": "TEAM",
+        "row": 4,
+        "col": 1
+      }
     ],
     "down": [
-      { "number": 1, "clue": "Picnic cloth (5)", "answer": "BLANK", "row": 0, "col": 0 },
-      { "number": 2, "clue": "Juicy red fruit (5)", "answer": "APPLE", "row": 0, "col": 3 }
+      {
+        "number": 1,
+        "clue": "Exchange or trade (4)",
+        "answer": "SWAP",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 2,
+        "clue": "Very angry (5)",
+        "answer": "IRATE",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "number": 4,
+        "clue": "Flower stalk (4)",
+        "answer": "STEM",
+        "row": 1,
+        "col": 4
+      }
     ]
   },
   {
     "id": "cross-040",
-    "title": "Fish and Chips",
+    "title": "Winter Warmth",
     "grid": [
-      ["C", "O", "D", "#", "#"],
-      ["H", "#", "I", "N", "K"],
-      ["I", "S", "P", "A", "T"],
-      ["P", "#", "#", "P", "#"],
-      ["S", "A", "L", "T", "S"]
+      [
+        "V",
+        "E",
+        "S",
+        "T",
+        "#"
+      ],
+      [
+        "I",
+        "#",
+        "T",
+        "#",
+        "T"
+      ],
+      [
+        "C",
+        "L",
+        "O",
+        "S",
+        "E"
+      ],
+      [
+        "E",
+        "#",
+        "N",
+        "#",
+        "R"
+      ],
+      [
+        "#",
+        "H",
+        "E",
+        "L",
+        "M"
+      ]
     ],
     "across": [
-      { "number": 1, "clue": "Popular British fish (3)", "answer": "COD", "row": 0, "col": 0 },
-      { "number": 3, "clue": "Pen liquid (3)", "answer": "INK", "row": 1, "col": 2 },
-      { "number": 5, "clue": "Season your chips (5)", "answer": "SALTS", "row": 4, "col": 0 }
+      {
+        "number": 1,
+        "clue": "Sleeveless top (4)",
+        "answer": "VEST",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 3,
+        "clue": "Near or shut (5)",
+        "answer": "CLOSE",
+        "row": 2,
+        "col": 0
+      },
+      {
+        "number": 5,
+        "clue": "Ship steering wheel (4)",
+        "answer": "HELM",
+        "row": 4,
+        "col": 1
+      }
     ],
     "down": [
-      { "number": 1, "clue": "Fried potato slices (5)", "answer": "CHIPS", "row": 0, "col": 0 },
-      { "number": 2, "clue": "Quick snooze (3)", "answer": "NAP", "row": 1, "col": 3 }
+      {
+        "number": 1,
+        "clue": "Bad habit (4)",
+        "answer": "VICE",
+        "row": 0,
+        "col": 0
+      },
+      {
+        "number": 2,
+        "clue": "Rock or pebble (5)",
+        "answer": "STONE",
+        "row": 0,
+        "col": 2
+      },
+      {
+        "number": 4,
+        "clue": "School period (4)",
+        "answer": "TERM",
+        "row": 1,
+        "col": 4
+      }
     ]
   }
 ]
