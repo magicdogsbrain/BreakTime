@@ -175,189 +175,189 @@ export const WORD_SEARCHES = [
     id: 'ws-comfort',
     title: 'Comfort Words',
     words: ['COSY', 'WARM', 'SOFT', 'CALM', 'REST', 'PEACE'],
-    // COSY: diagonal from (0,0)
-    // WARM: horizontal at row 2
-    // SOFT: vertical from (0,5)
-    // CALM: horizontal at row 5
-    // REST: diagonal from (2,7) going down-left
-    // PEACE: horizontal at row 7
+    // PEACE: H from (6,0)
+    // COSY: R from (0,4)
+    // WARM: V from (2,5)
+    // SOFT: H from (7,3)
+    // CALM: V from (4,7)
+    // REST: R from (0,3)
     grid: [
-      ['C', 'M', 'R', 'T', 'L', 'S', 'X', 'B'],
-      ['A', 'O', 'E', 'P', 'K', 'O', 'N', 'R'],
-      ['W', 'A', 'R', 'M', 'G', 'F', 'J', 'E'],
-      ['H', 'Q', 'Z', 'S', 'D', 'T', 'V', 'S'],
-      ['U', 'I', 'N', 'P', 'Y', 'A', 'L', 'T'],
-      ['C', 'A', 'L', 'M', 'F', 'E', 'O', 'K'],
-      ['G', 'D', 'J', 'B', 'R', 'W', 'H', 'Q'],
-      ['P', 'E', 'A', 'C', 'E', 'N', 'Y', 'Z']
+      ['L', 'C', 'Z', 'R', 'C', 'A', 'X', 'Q'],
+      ['D', 'Z', 'E', 'O', 'W', 'Z', 'W', 'G'],
+      ['K', 'S', 'S', 'M', 'W', 'W', 'W', 'A'],
+      ['T', 'Y', 'G', 'S', 'M', 'A', 'X', 'M'],
+      ['Q', 'V', 'J', 'F', 'M', 'R', 'H', 'C'],
+      ['Y', 'D', 'E', 'X', 'A', 'M', 'A', 'A'],
+      ['P', 'E', 'A', 'C', 'E', 'N', 'D', 'L'],
+      ['S', 'H', 'P', 'S', 'O', 'F', 'T', 'M']
     ]
   },
   {
     id: 'ws-cuppa',
     title: 'Time for Tea',
     words: ['TEA', 'CUP', 'MILK', 'SUGAR', 'BREW', 'BISCUIT'],
-    // TEA: horizontal at row 0
-    // CUP: vertical from (1,0)
-    // MILK: diagonal from (2,2)
-    // SUGAR: horizontal at row 4
-    // BREW: vertical from (3,7)
-    // BISCUIT: horizontal at row 6
+    // BISCUIT: D from (1,1)
+    // SUGAR: D from (3,0)
+    // MILK: V from (1,7)
+    // BREW: R from (0,7)
+    // TEA: V from (0,4)
+    // CUP: H from (0,1)
     grid: [
-      ['T', 'E', 'A', 'X', 'R', 'N', 'K', 'J'],
-      ['C', 'F', 'G', 'H', 'Q', 'Z', 'V', 'B'],
-      ['U', 'D', 'M', 'W', 'Y', 'A', 'L', 'R'],
-      ['P', 'N', 'O', 'I', 'T', 'S', 'C', 'E'],
-      ['S', 'U', 'G', 'A', 'R', 'L', 'E', 'W'],
-      ['J', 'K', 'H', 'F', 'D', 'K', 'P', 'Q'],
-      ['B', 'I', 'S', 'C', 'U', 'I', 'T', 'N'],
-      ['Y', 'R', 'Z', 'M', 'W', 'X', 'V', 'A']
+      ['E', 'C', 'U', 'P', 'T', 'G', 'A', 'B'],
+      ['R', 'B', 'K', 'N', 'E', 'W', 'R', 'M'],
+      ['T', 'Y', 'I', 'V', 'A', 'E', 'Z', 'I'],
+      ['S', 'M', 'D', 'S', 'W', 'N', 'V', 'L'],
+      ['X', 'U', 'E', 'L', 'C', 'R', 'F', 'K'],
+      ['M', 'S', 'G', 'G', 'E', 'U', 'H', 'W'],
+      ['Q', 'V', 'C', 'A', 'F', 'G', 'I', 'J'],
+      ['W', 'B', 'V', 'L', 'R', 'X', 'R', 'T']
     ]
   },
   {
     id: 'ws-nature',
     title: 'In the Garden',
     words: ['BIRD', 'TREE', 'FLOWER', 'GRASS', 'SUN', 'BEE'],
-    // BIRD: diagonal from (0,0)
-    // TREE: vertical from (0,6)
-    // FLOWER: horizontal at row 4
-    // GRASS: horizontal at row 6
-    // SUN: diagonal from (1,3)
-    // BEE: vertical from (5,2)
+    // FLOWER: D from (1,2)
+    // GRASS: D from (2,0)
+    // BIRD: D from (0,3)
+    // TREE: H from (7,0)
+    // SUN: H from (0,0)
+    // BEE: D from (0,5)
     grid: [
-      ['B', 'M', 'K', 'Q', 'Z', 'J', 'T', 'N'],
-      ['A', 'I', 'H', 'S', 'P', 'W', 'R', 'X'],
-      ['D', 'F', 'R', 'G', 'U', 'Y', 'E', 'L'],
-      ['V', 'C', 'N', 'D', 'T', 'N', 'E', 'O'],
-      ['F', 'L', 'O', 'W', 'E', 'R', 'A', 'P'],
-      ['Y', 'Q', 'B', 'J', 'K', 'M', 'H', 'S'],
-      ['G', 'R', 'A', 'S', 'S', 'X', 'Z', 'V'],
-      ['W', 'T', 'E', 'D', 'C', 'R', 'N', 'Q']
+      ['S', 'U', 'N', 'B', 'F', 'B', 'Q', 'M'],
+      ['B', 'A', 'F', 'D', 'I', 'Q', 'E', 'E'],
+      ['G', 'G', 'E', 'L', 'G', 'R', 'W', 'E'],
+      ['W', 'R', 'W', 'A', 'O', 'L', 'D', 'G'],
+      ['E', 'N', 'A', 'E', 'Z', 'W', 'V', 'Y'],
+      ['S', 'R', 'Y', 'S', 'S', 'G', 'E', 'Z'],
+      ['Q', 'S', 'C', 'D', 'S', 'S', 'L', 'R'],
+      ['T', 'R', 'E', 'E', 'R', 'N', 'B', 'R']
     ]
   },
   {
     id: 'ws-home',
     title: 'Around the House',
     words: ['SOFA', 'LAMP', 'TABLE', 'CHAIR', 'BED', 'RUG'],
-    // SOFA: horizontal at row 0
-    // LAMP: vertical from (1,7)
-    // TABLE: diagonal from (2,1)
-    // CHAIR: horizontal at row 5
-    // BED: vertical from (0,4)
-    // RUG: diagonal from (5,5)
+    // TABLE: V from (3,2)
+    // CHAIR: R from (2,7)
+    // SOFA: V from (2,3)
+    // LAMP: R from (1,7)
+    // BED: V from (2,0)
+    // RUG: R from (1,3)
     grid: [
-      ['S', 'O', 'F', 'A', 'B', 'N', 'Q', 'Z'],
-      ['K', 'M', 'H', 'J', 'E', 'W', 'X', 'L'],
-      ['P', 'T', 'R', 'Y', 'D', 'V', 'C', 'A'],
-      ['N', 'G', 'A', 'F', 'Q', 'K', 'S', 'M'],
-      ['D', 'W', 'Z', 'B', 'J', 'H', 'T', 'P'],
-      ['C', 'H', 'A', 'I', 'R', 'R', 'N', 'Y'],
-      ['V', 'X', 'K', 'M', 'L', 'E', 'U', 'F'],
-      ['Q', 'J', 'S', 'P', 'W', 'D', 'C', 'G']
+      ['T', 'F', 'R', 'N', 'P', 'K', 'C', 'K'],
+      ['J', 'P', 'W', 'R', 'X', 'F', 'Z', 'L'],
+      ['B', 'F', 'U', 'S', 'X', 'R', 'A', 'C'],
+      ['E', 'G', 'T', 'O', 'M', 'M', 'H', 'S'],
+      ['D', 'P', 'A', 'F', 'P', 'A', 'Y', 'T'],
+      ['Z', 'Y', 'B', 'A', 'I', 'F', 'T', 'N'],
+      ['Z', 'F', 'L', 'R', 'Y', 'G', 'P', 'Q'],
+      ['R', 'G', 'E', 'H', 'F', 'W', 'M', 'Q']
     ]
   },
   {
     id: 'ws-food',
     title: 'Comfort Food',
     words: ['CAKE', 'TOAST', 'SOUP', 'PIE', 'BREAD', 'CHIPS'],
-    // CAKE: diagonal from (0,0)
-    // TOAST: horizontal at row 2
-    // SOUP: vertical from (3,6)
-    // PIE: horizontal at row 4
-    // BREAD: horizontal at row 6
-    // CHIPS: vertical from (1,2)
+    // TOAST: D from (3,3)
+    // BREAD: H from (1,0)
+    // CHIPS: R from (1,6)
+    // CAKE: H from (6,2)
+    // SOUP: H from (7,3)
+    // PIE: V from (3,0)
     grid: [
-      ['C', 'N', 'M', 'Q', 'Z', 'J', 'K', 'W'],
-      ['F', 'A', 'C', 'R', 'T', 'X', 'V', 'Y'],
-      ['T', 'O', 'A', 'S', 'T', 'D', 'L', 'N'],
-      ['H', 'G', 'I', 'K', 'E', 'M', 'S', 'Q'],
-      ['P', 'I', 'E', 'P', 'J', 'W', 'O', 'Z'],
-      ['R', 'Y', 'S', 'V', 'N', 'H', 'U', 'A'],
-      ['B', 'R', 'E', 'A', 'D', 'X', 'P', 'F'],
-      ['K', 'L', 'Q', 'M', 'T', 'C', 'G', 'R']
+      ['W', 'S', 'J', 'N', 'B', 'J', 'E', 'V'],
+      ['B', 'R', 'E', 'A', 'D', 'G', 'C', 'Y'],
+      ['A', 'M', 'L', 'Y', 'S', 'H', 'P', 'C'],
+      ['P', 'V', 'C', 'T', 'I', 'B', 'V', 'T'],
+      ['I', 'J', 'W', 'P', 'O', 'T', 'N', 'Y'],
+      ['E', 'Z', 'S', 'K', 'P', 'A', 'H', 'A'],
+      ['A', 'Q', 'C', 'A', 'K', 'E', 'S', 'L'],
+      ['Z', 'S', 'F', 'S', 'O', 'U', 'P', 'T']
     ]
   },
   {
     id: 'ws-weather',
     title: 'Weather Words',
     words: ['RAIN', 'SNOW', 'WIND', 'CLOUD', 'SUN', 'FOG'],
-    // RAIN: horizontal at row 1
-    // SNOW: diagonal from (0,7) going down-left
-    // WIND: vertical from (2,0)
-    // CLOUD: horizontal at row 5
-    // SUN: diagonal from (3,3)
-    // FOG: horizontal at row 7
+    // CLOUD: R from (2,5)
+    // RAIN: D from (3,3)
+    // SNOW: V from (4,0)
+    // WIND: V from (0,0)
+    // SUN: R from (4,5)
+    // FOG: H from (1,2)
     grid: [
-      ['Q', 'K', 'M', 'J', 'T', 'X', 'Z', 'S'],
-      ['R', 'A', 'I', 'N', 'V', 'P', 'N', 'L'],
-      ['W', 'Y', 'H', 'D', 'F', 'O', 'A', 'R'],
-      ['I', 'M', 'Q', 'S', 'K', 'W', 'B', 'C'],
-      ['N', 'T', 'Z', 'J', 'U', 'L', 'G', 'H'],
-      ['C', 'L', 'O', 'U', 'D', 'N', 'Y', 'P'],
-      ['D', 'V', 'X', 'R', 'A', 'E', 'Q', 'M'],
-      ['F', 'O', 'G', 'B', 'W', 'T', 'S', 'K']
+      ['W', 'R', 'Y', 'A', 'V', 'P', 'F', 'N'],
+      ['I', 'F', 'F', 'O', 'G', 'J', 'V', 'M'],
+      ['N', 'H', 'N', 'A', 'C', 'C', 'S', 'T'],
+      ['D', 'S', 'Q', 'R', 'L', 'A', 'P', 'X'],
+      ['S', 'J', 'K', 'O', 'A', 'S', 'H', 'V'],
+      ['N', 'R', 'U', 'Z', 'U', 'I', 'M', 'L'],
+      ['O', 'D', 'L', 'N', 'Z', 'R', 'N', 'W'],
+      ['W', 'C', 'V', 'V', 'F', 'F', 'A', 'W']
     ]
   },
   {
     id: 'ws-colour',
     title: 'Colour Palette',
     words: ['RED', 'BLUE', 'GREEN', 'PINK', 'GOLD', 'GREY'],
-    // RED: vertical from (0,0)
-    // BLUE: horizontal at row 2
-    // GREEN: diagonal from (3,2)
-    // PINK: horizontal at row 5
-    // GOLD: vertical from (4,7)
-    // GREY: horizontal at row 7
+    // GREEN: D from (0,0)
+    // BLUE: R from (4,6)
+    // PINK: R from (1,6)
+    // GOLD: D from (2,0)
+    // GREY: R from (1,4)
+    // RED: R from (5,7)
     grid: [
-      ['R', 'K', 'M', 'Q', 'Z', 'J', 'T', 'N'],
-      ['E', 'W', 'X', 'V', 'P', 'S', 'H', 'Y'],
-      ['D', 'B', 'L', 'U', 'E', 'F', 'A', 'C'],
-      ['L', 'N', 'G', 'K', 'M', 'Q', 'J', 'G'],
-      ['T', 'Y', 'H', 'R', 'D', 'V', 'X', 'O'],
-      ['P', 'I', 'N', 'K', 'Z', 'E', 'W', 'L'],
-      ['S', 'Q', 'M', 'F', 'A', 'E', 'C', 'D'],
-      ['G', 'R', 'E', 'Y', 'J', 'T', 'N', 'K']
+      ['G', 'K', 'L', 'S', 'T', 'M', 'E', 'H'],
+      ['Q', 'R', 'K', 'S', 'G', 'W', 'P', 'Z'],
+      ['G', 'E', 'E', 'R', 'R', 'I', 'R', 'Y'],
+      ['Z', 'O', 'E', 'E', 'N', 'R', 'T', 'H'],
+      ['V', 'Y', 'L', 'K', 'N', 'D', 'B', 'P'],
+      ['X', 'X', 'A', 'D', 'B', 'L', 'C', 'R'],
+      ['H', 'A', 'J', 'W', 'U', 'W', 'E', 'R'],
+      ['Y', 'H', 'A', 'E', 'W', 'D', 'W', 'C']
     ]
   },
   {
     id: 'ws-seasons',
     title: 'Seasons',
     words: ['SPRING', 'SUMMER', 'AUTUMN', 'WINTER', 'LEAF', 'SNOW'],
-    // SPRING: horizontal at row 0
-    // SUMMER: horizontal at row 2
-    // AUTUMN: vertical from (1,7)
-    // WINTER: horizontal at row 5
-    // LEAF: diagonal from (3,0)
-    // SNOW: vertical from (4,3)
+    // SPRING: R from (1,5)
+    // SUMMER: H from (6,2)
+    // AUTUMN: H from (5,2)
+    // WINTER: R from (0,5)
+    // LEAF: V from (1,0)
+    // SNOW: H from (3,4)
     grid: [
-      ['S', 'P', 'R', 'I', 'N', 'G', 'K', 'Q'],
-      ['M', 'J', 'X', 'V', 'T', 'H', 'D', 'A'],
-      ['S', 'U', 'M', 'M', 'E', 'R', 'N', 'U'],
-      ['L', 'K', 'Q', 'S', 'Z', 'Y', 'P', 'T'],
-      ['W', 'E', 'T', 'N', 'J', 'M', 'R', 'U'],
-      ['W', 'I', 'N', 'T', 'E', 'R', 'X', 'M'],
-      ['H', 'D', 'A', 'O', 'K', 'V', 'C', 'N'],
-      ['Q', 'Y', 'Z', 'W', 'F', 'S', 'G', 'B']
+      ['C', 'G', 'C', 'L', 'W', 'W', 'Q', 'B'],
+      ['L', 'R', 'P', 'V', 'I', 'S', 'D', 'Q'],
+      ['E', 'F', 'T', 'N', 'P', 'A', 'C', 'M'],
+      ['A', 'R', 'T', 'R', 'S', 'N', 'O', 'W'],
+      ['F', 'E', 'I', 'K', 'E', 'A', 'F', 'N'],
+      ['R', 'N', 'A', 'U', 'T', 'U', 'M', 'N'],
+      ['G', 'B', 'S', 'U', 'M', 'M', 'E', 'R'],
+      ['X', 'Y', 'H', 'Q', 'V', 'Y', 'N', 'W']
     ]
   },
   {
     id: 'ws-relax',
     title: 'Relaxation',
     words: ['YOGA', 'BATH', 'BOOK', 'WALK', 'NAP', 'CALM'],
-    // YOGA: horizontal at row 0
-    // BATH: diagonal from (1,4)
-    // BOOK: vertical from (2,0)
-    // WALK: horizontal at row 5
-    // NAP: diagonal from (3,2)
-    // CALM: horizontal at row 7
+    // YOGA: D from (1,1)
+    // BATH: H from (1,2)
+    // BOOK: H from (6,0)
+    // WALK: R from (1,6)
+    // CALM: H from (5,4)
+    // NAP: V from (1,0)
     grid: [
-      ['Y', 'O', 'G', 'A', 'M', 'Q', 'Z', 'K'],
-      ['T', 'J', 'X', 'V', 'B', 'N', 'S', 'H'],
-      ['B', 'K', 'N', 'R', 'W', 'A', 'P', 'D'],
-      ['O', 'M', 'N', 'Q', 'Y', 'Z', 'T', 'J'],
-      ['O', 'F', 'H', 'A', 'D', 'V', 'H', 'L'],
-      ['W', 'A', 'L', 'K', 'C', 'P', 'X', 'R'],
-      ['K', 'T', 'S', 'J', 'M', 'Q', 'N', 'Y'],
-      ['C', 'A', 'L', 'M', 'Z', 'W', 'G', 'E']
+      ['Z', 'F', 'C', 'P', 'G', 'B', 'G', 'M'],
+      ['N', 'Y', 'B', 'A', 'T', 'H', 'W', 'V'],
+      ['A', 'G', 'O', 'L', 'T', 'A', 'J', 'K'],
+      ['P', 'X', 'X', 'G', 'L', 'F', 'W', 'S'],
+      ['M', 'T', 'N', 'K', 'A', 'P', 'L', 'Y'],
+      ['Q', 'Q', 'Y', 'Y', 'C', 'A', 'L', 'M'],
+      ['B', 'O', 'O', 'K', 'E', 'Q', 'C', 'Q'],
+      ['Z', 'J', 'L', 'W', 'H', 'T', 'M', 'F']
     ]
   },
   {
@@ -365,21 +365,21 @@ export const WORD_SEARCHES = [
     id: 'ws-feelings',
     title: 'Good Feelings',
     words: ['HAPPY', 'JOY', 'LOVE', 'HOPE', 'SMILE', 'KIND'],
-    // HAPPY: horizontal at row 1
-    // JOY: diagonal from (0,5) going down-left
-    // LOVE: vertical from (3,0)
-    // HOPE: diagonal from (4,3)
-    // SMILE: horizontal at row 6
-    // KIND: vertical from (2,7)
+    // HAPPY: V from (3,0)
+    // SMILE: D from (3,1)
+    // LOVE: H from (3,2)
+    // HOPE: H from (4,3)
+    // KIND: H from (0,3)
+    // JOY: R from (5,6)
     grid: [
-      ['Q', 'N', 'T', 'Z', 'M', 'J', 'R', 'W'],
-      ['H', 'A', 'P', 'P', 'Y', 'O', 'X', 'K'],
-      ['V', 'F', 'K', 'D', 'Y', 'S', 'G', 'I'],
-      ['L', 'W', 'R', 'M', 'H', 'Q', 'J', 'N'],
-      ['O', 'T', 'Z', 'H', 'N', 'X', 'V', 'D'],
-      ['V', 'Q', 'K', 'J', 'O', 'F', 'R', 'Y'],
-      ['S', 'M', 'I', 'L', 'E', 'P', 'W', 'T'],
-      ['E', 'X', 'N', 'D', 'Z', 'M', 'E', 'Q']
+      ['H', 'M', 'G', 'K', 'I', 'N', 'D', 'X'],
+      ['W', 'L', 'T', 'V', 'Q', 'V', 'J', 'W'],
+      ['T', 'W', 'W', 'E', 'A', 'J', 'K', 'F'],
+      ['H', 'S', 'L', 'O', 'V', 'E', 'R', 'G'],
+      ['A', 'R', 'M', 'H', 'O', 'P', 'E', 'E'],
+      ['P', 'Q', 'Y', 'I', 'Y', 'Y', 'J', 'V'],
+      ['P', 'Q', 'K', 'J', 'L', 'O', 'Z', 'N'],
+      ['Y', 'M', 'S', 'N', 'Y', 'E', 'Z', 'T']
     ]
   }
 ];
